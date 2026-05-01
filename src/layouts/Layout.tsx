@@ -6,7 +6,7 @@ export const Layout = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <main>
+      <main className="pt-32">
         <Outlet />
       </main>
       <Footer />

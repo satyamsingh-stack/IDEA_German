@@ -14,14 +14,18 @@ export const Navbar = () => {
         <div className="max-w-full mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             {/* Logo Section */}
-            <div className="flex items-center gap-12">
-              <Link to="/" className="flex flex-col items-start">
-                <span className="text-4xl font-bold text-brand-orange leading-none">IDEA</span>
-              </Link>
-              <div className="hidden lg:block text-center">
-                <h1 className="text-2xl font-bold text-gray-900 tracking-wider">INSTITUTE OF LEGAL RESEARCH</h1>
+              <div className="flex items-center gap-4">
+                <Link to="/" className="flex items-center gap-3">
+                  <img 
+                    src="/images/logo.webp" 
+                    alt="IDEA" 
+                    className="w-[200px] h-[71px] object-contain"
+                  />
+                </Link>
+                <div className="hidden lg:block">
+                  <h1 className="text-2xl font-bold text-gray-900 tracking-wider">INSTITUTE OF LEGAL RESEARCH</h1>
+                </div>
               </div>
-            </div>
           </div>
         </div>
       </div>
