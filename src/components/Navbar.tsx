@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
+import { useLanguage } from '../contexts/LanguageContext'
+import { LanguageSwitcher } from './LanguageSwitcher'
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const { t } = useLanguage()
 
   const toggleMenu = () => setIsOpen(!isOpen)
 
@@ -32,10 +35,13 @@ export const Navbar = () => {
               </div>
             </div>
 
-            {/* Desktop Badge */}
-            <div className="hidden lg:flex items-center gap-2 px-4 py-2 rounded-lg">
-              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-              <span className="text-xs text-gray-500 font-medium">Active Research</span>
+            {/* Desktop Actions */}
+            <div className="hidden lg:flex items-center gap-4">
+              <LanguageSwitcher />
+              <div className="flex items-center gap-2 px-4 py-2 rounded-lg">
+                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                <span className="text-xs text-gray-500 font-medium">{t('nav.activeResearch')}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -49,7 +55,7 @@ export const Navbar = () => {
             <div className="hidden lg:flex items-center gap-0 text-xs font-bold">
               <div className="relative group">
                 <Link to="/" className="block px-5 py-4 text-brand-orange hover:bg-white/80 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.8)] transition-all duration-200 h-16 flex items-center gap-1 relative">
-                  <span className="relative z-10">INSTITUT</span>
+                  <span className="relative z-10">{t('nav.institute')}</span>
                   <span className="text-[10px] relative z-10 text-brand-orange/700 group-hover:text-brand-orange transition-colors">▼</span>
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-orange to-orange-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                 </Link>
@@ -60,20 +66,20 @@ export const Navbar = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                       </svg>
-                      STANDORT
+                      {t('nav.location')}
                     </span>
                   </Link>
                 </div>
               </div>
 
               <Link to="/innovation-und-rechtsberatung" className="block px-5 py-4 text-gray-600 hover:bg-white/80 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.8)] hover:text-brand-orange transition-all duration-200 h-16 flex items-center relative group">
-                <span className="relative z-10">FORSCHUNG, ENTWICKLUNG UND INNOVATION</span>
+                <span className="relative z-10">{t('nav.researchDevInnovation')}</span>
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               </Link>
 
               <div className="relative group">
                 <Link to="/forschung" className="block px-5 py-4 text-gray-600 hover:bg-white/80 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.8)] hover:text-brand-orange transition-all duration-200 h-16 flex items-center gap-1 relative">
-                  <span className="relative z-10">FORSCHUNG</span>
+                  <span className="relative z-10">{t('nav.research')}</span>
                   <span className="text-[10px] relative z-10 text-gray-400 group-hover:text-brand-orange transition-colors">▼</span>
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                 </Link>
@@ -83,7 +89,7 @@ export const Navbar = () => {
                       <svg className="w-3.5 h-3.5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
                       </svg>
-                      PROJEKTE
+                      {t('nav.projects')}
                     </span>
                   </Link>
                 </div>
@@ -91,7 +97,7 @@ export const Navbar = () => {
 
               <div className="relative group">
                 <Link to="/staff" className="block px-5 py-4 text-gray-600 hover:bg-white/80 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.8)] hover:text-brand-orange transition-all duration-200 h-16 flex items-center gap-1 relative">
-                  <span className="relative z-10">WISSENSCHAFTLER</span>
+                  <span className="relative z-10">{t('nav.scientists')}</span>
                   <span className="text-[10px] relative z-10 text-gray-400 group-hover:text-brand-orange transition-colors">▼</span>
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-green-500 to-emerald-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                 </Link>
@@ -101,7 +107,7 @@ export const Navbar = () => {
                       <svg className="w-3.5 h-3.5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                       </svg>
-                      DIREKTOR
+                      {t('nav.director')}
                     </span>
                   </Link>
                 </div>
@@ -109,7 +115,7 @@ export const Navbar = () => {
 
               <div className="relative group">
                 <Link to="/publikationen" className="block px-5 py-4 text-gray-600 hover:bg-white/80 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.8)] hover:text-brand-orange transition-all duration-200 h-16 flex items-center gap-1 relative">
-                  <span className="relative z-10">PUBLIKATIONEN</span>
+                  <span className="relative z-10">{t('nav.publications')}</span>
                   <span className="text-[10px] relative z-10 text-gray-400 group-hover:text-brand-orange transition-colors">▼</span>
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                 </Link>
@@ -128,8 +134,9 @@ export const Navbar = () => {
 
             {/* Right Actions */}
             <div className="flex items-center gap-4 ml-auto">
+              <LanguageSwitcher />
               <Link to="/#contact" className="bg-gradient-to-r from-brand-orange to-orange-600 hover:from-orange-600 hover:to-brand-orange text-white font-bold px-8 py-2.5 rounded-full transition-all duration-300 shadow-lg shadow-orange-500/20 hover:shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-0.5 text-xs uppercase tracking-wider">
-                Kontakt
+                {t('nav.contact')}
               </Link>
 
               {/* Mobile Menu Button */}
@@ -150,25 +157,25 @@ export const Navbar = () => {
         <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-2xl">
           <div className="py-2 space-y-1 px-4">
             <Link to="/" className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-orange-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-orange-100 text-sm">
-              INSTITUT
+              {t('nav.institute')}
             </Link>
             <Link to="/standort" className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-orange-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-orange-100 text-sm">
-              STANDORT
+              {t('nav.location')}
             </Link>
             <Link to="/innovation-und-rechtsberatung" className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-blue-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-blue-100 text-sm">
-              FORSCHUNG, ENTWICKLUNG UND INNOVATION
+              {t('nav.researchDevInnovation')}
             </Link>
             <Link to="/forschung" className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-blue-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-blue-100 text-sm">
-              FORSCHUNG
+              {t('nav.research')}
             </Link>
             <Link to="/staff" className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-green-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-green-100 text-sm">
-              WISSENSCHAFTLER
+              {t('nav.scientists')}
             </Link>
             <Link to="/publikationen" className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-purple-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-purple-100 text-sm">
-              PUBLIKATIONEN
+              {t('nav.publications')}
             </Link>
             <Link to="/#contact" className="w-full bg-gradient-to-r from-brand-orange to-orange-600 hover:from-orange-600 hover:to-brand-orange text-white font-bold py-4 px-6 transition-all rounded-xl text-sm block text-center shadow-lg shadow-orange-500/20">
-              Kontakt
+              {t('nav.contact')}
             </Link>
           </div>
         </div>

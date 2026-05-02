@@ -2,7 +2,7 @@ import { DirectorDetailSection } from '../components/DirectorDetailSection'
 
 export const DirectorPage = () => {
   return (
-    <div>
+    <div className="pt-20 md:pt-28">
       <DirectorDetailSection />
     </div>
   )

@@ -1,12 +1,16 @@
+import { useLanguage } from '../contexts/LanguageContext'
+
 export const ResearchSection = () => {
+  const { t } = useLanguage()
+
   const researchAreas = [
-    "Verfassungsrecht und Gleichheitsgrundsätze",
-    "Europäisches Antidiskriminierungsrecht",
-    "Menschenrechte und internationales öffentliches Recht",
-    "Recht der sexuellen Orientierung und Geschlechtsidentität",
-    "Familienrecht und rechtliche Anerkennung",
-    "Vergleichende Rechtswissenschaft",
-    "Rechtsphilosophie und Rechtsanthropologie"
+    t('research.area1'),
+    t('research.area2'),
+    t('research.area3'),
+    t('research.area4'),
+    t('research.area5'),
+    t('research.area6'),
+    t('research.area7')
   ]
 
   return (
@@ -18,20 +22,20 @@ export const ResearchSection = () => {
           <div className="rounded-lg overflow-hidden shadow-lg">
             <img
               src="/images/thirdPage.webp"
-              alt="Forschung und Schwerpunkte"
+              alt={t('page.research')}
               className="w-full h-auto md:h-full object-cover"
             />
           </div>
 
           {/* Right: Text Content */}
           <div className="leading-relaxed">
-            {/* Heading */}
+            {/* Heading intro */}
             <div className="mb-6 md:mb-10">
               <p className="text-xl md:text-2xl font-bold text-brand-black mb-4">
                 FORSCHUNG UND SCHWERPUNKTE
               </p>
               <p className="text-gray-700 text-lg leading-relaxed">
-                Die Forschungstätigkeit von IDEA konzentriert sich insbesondere auf folgende Bereiche:
+                {t('research.intro')}
               </p>
             </div>
 
@@ -48,7 +52,7 @@ export const ResearchSection = () => {
             {/* Quote/Summary */}
             <div className="mt-8 p-5 bg-white border-l-4 border-brand-orange">
               <p className="text-gray-700 leading-relaxed italic">
-                Ziel der Forschung ist es, rechtliche Entwicklungen, Rechtssysteme und Rechtskulturen im internationalen Vergleich zu analysieren und deren Auswirkungen auf die Rechte sexueller Minderheiten sowie auf gesellschaftliche und rechtliche Transformationsprozesse zu untersuchen.
+                {t('research.goal')}
               </p>
             </div>
           </div>

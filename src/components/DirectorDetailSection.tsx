@@ -1,40 +1,44 @@
 import { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export const DirectorDetailSection = () => {
   const [openAccordion, setOpenAccordion] = useState('teaching')
+  const { t } = useLanguage()
 
   const toggleAccordion = (section: string) => {
     setOpenAccordion(openAccordion === section ? '' : section)
   }
 
   const teachingAreas = [
-    "Human Rights Law",
-    "Public International Law",
-    "Constitutional Law",
-    "Legal Anthropology",
-    "Philosophy of Law",
-    "Techno-Feudalism",
-    "Postcolonialism",
-    "Othering",
-    "Migration",
-    "Neocolonialism",
-    "Heterosexism",
-    "Gender",
-    "Sexuality"
+    t('teaching.humanRights'),
+    t('teaching.publicIntlLaw'),
+    t('teaching.constitutional'),
+    t('teaching.anthropology'),
+    t('teaching.philosophy'),
+    t('teaching.technofeudalism'),
+    t('teaching.postcolonialism'),
+    t('teaching.othering'),
+    t('teaching.migration'),
+    t('teaching.neocolonialism'),
+    t('teaching.heterosexism'),
+    t('teaching.gender'),
+    t('teaching.sexuality')
   ]
 
   return (
-    <section id="director" className="py-16 md:py-24 bg-brand-gray">
+    <section id="director" className="py-12 md:py-20 bg-brand-gray">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Director Profile */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
-          <h4 className="text-lg font-bold text-brand-orange mb-2">DIREKTOR</h4>
-          <h3 className="text-3xl font-bold text-brand-black mb-8">
+        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-12">
+          <h4 className="text-sm md:text-base font-bold text-brand-orange uppercase tracking-wider mb-2">
+            {t('director.title')}
+          </h4>
+          <h3 className="text-2xl md:text-3xl font-bold text-brand-black mb-6 md:mb-8">
             Prof. Dr. (jur.) Yeshwant Naik
           </h3>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {/* Director Image */}
             <div className="md:col-span-1">
               <img
@@ -52,7 +56,7 @@ export const DirectorDetailSection = () => {
                   onClick={() => toggleAccordion('teaching')}
                   className="w-full flex justify-between items-center p-4 text-left font-semibold text-brand-black hover:bg-gray-50 transition"
                 >
-                  <span>Lehr- und Forschungsgebiete</span>
+                  <span>{t('director.teachingResearch')}</span>
                   {openAccordion === 'teaching' ? (
                     <ChevronUp className="w-5 h-5 text-brand-orange" />
                   ) : (
@@ -74,7 +78,7 @@ export const DirectorDetailSection = () => {
                   onClick={() => toggleAccordion('publications')}
                   className="w-full flex justify-between items-center p-4 text-left font-semibold text-brand-black hover:bg-gray-50 transition"
                 >
-                  <span>Publikationen</span>
+                  <span>{t('director.publications')}</span>
                   {openAccordion === 'publications' ? (
                     <ChevronUp className="w-5 h-5 text-brand-orange" />
                   ) : (
@@ -85,10 +89,10 @@ export const DirectorDetailSection = () => {
                   <div className="p-4 pt-0 border-t border-gray-100">
                     <div className="space-y-4 max-h-96 overflow-y-auto pr-2">
                       <div>
-                        <h5 className="font-bold text-brand-black mb-2">Books</h5>
+                        <h5 className="font-bold text-brand-black mb-2">{t('director.books')}</h5>
                         <ul className="space-y-3 text-sm">
                           <li className="text-gray-700">
-                            <span className="font-semibold">2026</span> (forthcoming): <em>Literature and the Legal Imaginary: Equality vs. Othering, Exclusion and Discrimination in Indian law and Literature</em>
+                            <span className="font-semibold">2026</span> ({t('director.forthcoming')}): <em>Literature and the Legal Imaginary: Equality vs. Othering, Exclusion and Discrimination in Indian law and Literature</em>
                           </li>
                           <li className="text-gray-700">
                             <span className="font-semibold">2023</span>: <em>LGBTIQ+ curriculum in Higher Education: Issues and Concerns</em>. Münster University Publication

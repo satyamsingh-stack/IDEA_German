@@ -1,34 +1,37 @@
+import { useLanguage } from '../contexts/LanguageContext'
+
 export const PublicationsSection = () => {
-  // Sample publications (matching website style)
+  const { t } = useLanguage()
+
   const publications = [
     {
-      title: "A CRITIQUE OF GERMANY'S PROSTITUTION LEGISLATION",
-      category: "Legal Analysis"
+      title: t('pub.1.title'),
+      category: t('pub.1.category')
     },
     {
-      title: "Austria's Constitutional Court Recognizes Non-Binary People as a Matter of Human Rights",
-      category: "Human Rights"
+      title: t('pub.2.title'),
+      category: t('pub.2.category')
     },
     {
-      title: "Comparative and Transnational LGBTIQ+ Legal Studies: Toward a South Asia–Anchored Global Research Framework",
-      category: "Research"
+      title: t('pub.3.title'),
+      category: t('pub.3.category')
     },
     {
-      title: "Human Rights Violations Against the LGBTQ+ Community in Iran",
-      category: "Human Rights"
+      title: t('pub.4.title'),
+      category: t('pub.4.category')
     },
     {
-      title: "INVISIBLE LIVES: MALE SEX WORKERS IN INDIA",
-      category: "Social Issues"
+      title: t('pub.5.title'),
+      category: t('pub.5.category')
     }
   ]
 
   return (
-    <section id="publications" className="py-16 md:py-24 bg-white">
+    <section id="publications" className="py-12 md:py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-brand-black mb-4">Publikationen</h2>
-        <p className="text-gray-700 mb-12 text-lg">
-          IDEA LEGAL RESEARCH PAPER SERIES
+        <h2 className="text-2xl md:text-4xl font-bold text-brand-black mb-4">{t('publications.title')}</h2>
+        <p className="text-gray-700 mb-8 md:mb-12 text-lg">
+          {t('publications.series')}
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -46,7 +49,7 @@ export const PublicationsSection = () => {
                 {pub.title}
               </h3>
               <button className="text-brand-orange font-semibold text-sm hover:underline">
-                Mehr lesen →
+                {t('director.readMore')}
               </button>
             </div>
           ))}
@@ -57,7 +60,7 @@ export const PublicationsSection = () => {
             href="#"
             className="inline-block px-8 py-3 border-2 border-brand-black text-brand-black hover:bg-brand-black hover:text-white rounded-lg transition font-semibold"
           >
-            Alle Publikationen anzeigen
+            {t('director.showAll')}
           </a>
         </div>
       </div>

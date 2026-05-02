@@ -1,4 +1,8 @@
+import { useLanguage } from '../contexts/LanguageContext'
+
 export const HeroSection = () => {
+  const { t } = useLanguage()
+
   return (
     <section className="min-h-screen flex items-center bg-white pt-24 md:pt-32 pb-16 relative overflow-hidden">
       {/* Animated Background Elements */}
@@ -15,33 +19,33 @@ export const HeroSection = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-orange/10 rounded-full border border-brand-orange/20">
               <span className="w-2 h-2 bg-brand-orange rounded-full animate-pulse"></span>
-              <span className="text-sm font-semibold text-brand-orange uppercase tracking-wider">Research Institute</span>
+              <span className="text-sm font-semibold text-brand-orange uppercase tracking-wider">{t('hero.badge')}</span>
             </div>
 
             {/* H1 Section */}
             <div className="animate-fadeIn">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-brand-black leading-[1.1] mb-6 font-sans">
-                Welcome to IDEA
+                {t('hero.welcome')}
               </h1>
               <p className="text-gray-700 leading-relaxed mb-6 text-sm sm:text-base font-normal">
-                Das Inclusion Diversity Equality Action (IDEA) Institut für Rechtsforschung ist ein unabhängiges gemeinnütziges Institut mit Sitz in Deutschland und der Schweiz. Es widmet sich der rechtswissenschaftlichen Forschung zu Fragen von Gleichheit, Antidiskriminierung, Menschenrechten und Rechtsstaatlichkeit im nationalen und internationalen Kontext.
+                {t('hero.description')}
               </p>
             </div>
 
             {/* Profil und Mission Section */}
             <div className="animate-fadeIn" style={{animationDelay: '0.2s'}}>
               <p className="text-base sm:text-lg font-bold text-brand-black mb-6 uppercase tracking-wider">
-                Profile and Mission
+                {t('hero.profileMission')}
               </p>
               <div className="space-y-4">
                 <p className="text-gray-700 leading-relaxed text-sm sm:text-base font-normal">
-                  IDEA ist ein unabhängiges Institut für Rechtsforschung mit einem spezialisierten Fokus auf die rechtliche Analyse von Fragen der sexuellen Orientierung und Geschlechtsidentität innerhalb der deutschen und europäischen Rechtsordnung.
+                  {t('hero.mission1')}
                 </p>
                 <p className="text-gray-700 leading-relaxed text-sm sm:text-base font-normal">
-                  Während bestehende Forschung diese Themen in verschiedenen rechtsdogmatischen Bereichen behandelt, bleibt sie häufig fragmentiert. IDEA verfolgt das Ziel, diese Forschung zu bündeln, systematisch weiterzuentwickeln und durch eine eigenständige Plattform sichtbar zu machen.
+                  {t('hero.mission2')}
                 </p>
                 <p className="text-gray-700 leading-relaxed text-sm sm:text-base font-normal">
-                  Durch interdisziplinäre Zusammenarbeit trägt IDEA zur Weiterentwicklung des Verständnisses von Gleichheit, Nichtdiskriminierung und Grundrechten bei und leistet einen Beitrag zur Stärkung inklusiver Rechtssysteme in Europa.
+                  {t('hero.mission3')}
                 </p>
               </div>
             </div>
@@ -55,7 +59,7 @@ export const HeroSection = () => {
                 <div className="absolute top-4 left-4 w-16 h-16 border-t-4 border-l-4 border-brand-orange rounded-tl-xl"></div>
                 <img
                   src="/images/firstPage.jpeg"
-                  alt="IDEA Initiative"
+                  alt={t('hero.imageAlt')}
                   className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -67,7 +71,7 @@ export const HeroSection = () => {
             <div className="w-full max-w-sm rounded-lg overflow-hidden shadow-lg">
               <img
                 src="/images/firstPage.jpeg"
-                alt="IDEA Initiative"
+                alt={t('hero.imageAlt')}
                 className="w-full h-auto object-cover"
               />
             </div>
