@@ -10,6 +10,8 @@ export const Navbar = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen)
 
+  const closeMenu = () => setIsOpen(false)
+
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-xl z-50 border-b border-gray-200 shadow-sm">
       {/* Top Bar with Logo and Title */}
@@ -156,25 +158,25 @@ export const Navbar = () => {
       {isOpen && (
         <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-2xl">
           <div className="py-2 space-y-1 px-4">
-            <Link to="/" className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-orange-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-orange-100 text-sm">
+            <Link to="/" onClick={closeMenu} className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-orange-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-orange-100 text-sm">
               {t('nav.institute')}
             </Link>
-            <Link to="/standort" className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-orange-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-orange-100 text-sm">
+            <Link to="/standort" onClick={closeMenu} className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-orange-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-orange-100 text-sm">
               {t('nav.location')}
             </Link>
-            <Link to="/innovation-und-rechtsberatung" className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-blue-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-blue-100 text-sm">
+            <Link to="/innovation-und-rechtsberatung" onClick={closeMenu} className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-blue-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-blue-100 text-sm">
               {t('nav.researchDevInnovation')}
             </Link>
-            <Link to="/forschung" className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-blue-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-blue-100 text-sm">
+            <Link to="/forschung" onClick={closeMenu} className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-blue-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-blue-100 text-sm">
               {t('nav.research')}
             </Link>
-            <Link to="/staff" className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-green-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-green-100 text-sm">
+            <Link to="/staff" onClick={closeMenu} className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-green-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-green-100 text-sm">
               {t('nav.scientists')}
             </Link>
-            <Link to="/publikationen" className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-purple-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-purple-100 text-sm">
+            <Link to="/publikationen" onClick={closeMenu} className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-purple-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-purple-100 text-sm">
               {t('nav.publications')}
             </Link>
-            <Link to="/#contact" className="w-full bg-gradient-to-r from-brand-orange to-orange-600 hover:from-orange-600 hover:to-brand-orange text-white font-bold py-4 px-6 transition-all rounded-xl text-sm block text-center shadow-lg shadow-orange-500/20">
+            <Link to="/#contact" onClick={closeMenu} className="w-full bg-gradient-to-r from-brand-orange to-orange-600 hover:from-orange-600 hover:to-brand-orange text-white font-bold py-4 px-6 transition-all rounded-xl text-sm block text-center shadow-lg shadow-orange-500/20">
               {t('nav.contact')}
             </Link>
           </div>

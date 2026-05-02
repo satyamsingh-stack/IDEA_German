@@ -14,8 +14,19 @@ export const HeroSection = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[70vh]">
-          {/* Left Content */}
-          <div className="space-y-8">
+          {/* Mobile Image - shown above content on mobile (order-1), hidden on desktop */}
+          <div className="lg:hidden flex justify-center order-1">
+            <div className="w-full rounded-lg overflow-hidden shadow-lg">
+              <img
+                src="/images/firstPage.jpeg"
+                alt={t('hero.imageAlt')}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Left Content - on mobile it comes after image (order-2), on desktop it's first (order-1) */}
+          <div className="space-y-8 order-2 lg:order-1">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-orange/10 rounded-full border border-brand-orange/20">
               <span className="w-2 h-2 bg-brand-orange rounded-full animate-pulse"></span>
@@ -51,8 +62,8 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Image - Desktop Only */}
-          <div className="hidden lg:flex justify-center lg:justify-end items-center animate-fadeIn" style={{animationDelay: '0.3s'}}>
+          {/* Right Image - Desktop Only - shown on desktop as second column (order-2), hidden on mobile */}
+          <div className="hidden lg:flex justify-center lg:justify-end items-center animate-fadeIn order-2 lg:order-2" style={{animationDelay: '0.3s'}}>
             <div className="relative group w-full max-w-2xl">
               <div className="absolute -inset-2 bg-gradient-to-r from-brand-orange to-orange-400 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
               <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl">
@@ -63,17 +74,6 @@ export const HeroSection = () => {
                   className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-            </div>
-          </div>
-
-          {/* Mobile Only Content - Image on mobile */}
-          <div className="col-span-1 lg:hidden flex justify-center mt-8">
-            <div className="w-full max-w-sm rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="/images/firstPage.jpeg"
-                alt={t('hero.imageAlt')}
-                className="w-full h-auto object-cover"
-              />
             </div>
           </div>
         </div>
