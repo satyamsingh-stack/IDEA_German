@@ -22,7 +22,7 @@ export const Navbar = () => {
             <div className="flex items-center gap-6">
               <Link to="/" className="flex items-center gap-4">
                 <img 
-                  src="/images/logo.webp" 
+                  src="/images/logo.png" 
                   alt="IDEA" 
                   className="w-[200px] h-[71px] object-contain"
                 />
