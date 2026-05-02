@@ -10,45 +10,48 @@ export const ResearchSection = () => {
   ]
 
   return (
-    <section id="research" className="py-16 md:py-24 bg-gray-50">
+    <section id="research" className="py-12 md:py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-brand-black mb-8">Forschung und Schwerpunkte</h2>
+        {/* Two-column layout: Image left, Text right */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+          {/* Left: Image */}
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <img
+              src="/images/thirdPage.webp"
+              alt="Forschung und Schwerpunkte"
+              className="w-full h-auto md:h-full object-cover"
+            />
+          </div>
 
-        <p className="text-gray-700 leading-relaxed mb-8 text-lg">
-          Die Forschungstätigkeit von IDEA konzentriert sich insbesondere auf folgende Bereiche:
-        </p>
-
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {researchAreas.slice(0, 5).map((area, index) => (
-            <div key={index} className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-brand-orange rounded-full mt-3 flex-shrink-0"></div>
-              <p className="text-gray-700 text-lg leading-relaxed">{area}</p>
+          {/* Right: Text Content */}
+          <div className="leading-relaxed">
+            {/* Heading */}
+            <div className="mb-6 md:mb-10">
+              <p className="text-xl md:text-2xl font-bold text-brand-black mb-4">
+                FORSCHUNG UND SCHWERPUNKTE
+              </p>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                Die Forschungstätigkeit von IDEA konzentriert sich insbesondere auf folgende Bereiche:
+              </p>
             </div>
-          ))}
-        </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {researchAreas.slice(5, 7).map((area, index) => (
-            <div key={index + 5} className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-brand-orange rounded-full mt-3 flex-shrink-0"></div>
-              <p className="text-gray-700 text-lg leading-relaxed">{area}</p>
+            {/* Research Areas List */}
+            <div className="space-y-3 mb-8">
+              {researchAreas.map((area, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 bg-brand-orange rounded-full mt-2.5 flex-shrink-0"></div>
+                  <p className="text-gray-700 text-base leading-relaxed">{area}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
 
-        <div className="mt-12 p-6 bg-white border-l-4 border-brand-orange italic">
-          <p className="text-gray-700 leading-relaxed">
-            Ziel der Forschung ist es, rechtliche Entwicklungen, Rechtssysteme und Rechtskulturen im internationalen Vergleich zu analysieren und deren Auswirkungen auf die Rechte sexueller Minderheiten sowie auf gesellschaftliche und rechtliche Transformationsprozesse zu untersuchen.
-          </p>
-        </div>
-
-        {/* Image */}
-        <div className="mt-12 rounded-lg overflow-hidden shadow-lg">
-          <img
-            src="https://ideainstitute.ch/wp-content/uploads/2025/02/1-4-1024x768.webp"
-            alt="Forschung"
-            className="w-full h-auto object-cover"
-          />
+            {/* Quote/Summary */}
+            <div className="mt-8 p-5 bg-white border-l-4 border-brand-orange">
+              <p className="text-gray-700 leading-relaxed italic">
+                Ziel der Forschung ist es, rechtliche Entwicklungen, Rechtssysteme und Rechtskulturen im internationalen Vergleich zu analysieren und deren Auswirkungen auf die Rechte sexueller Minderheiten sowie auf gesellschaftliche und rechtliche Transformationsprozesse zu untersuchen.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
