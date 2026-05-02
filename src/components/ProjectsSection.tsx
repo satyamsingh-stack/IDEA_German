@@ -1,65 +1,67 @@
 export const ProjectsSection = () => {
   const projects = [
     {
-      title: "Honour Killings in Germany: An Analysis of Legal Frameworks and Implications",
-      status: "Ongoing"
+      title: "Ehrenmorde in Deutschland: Eine Analyse der rechtlichen Rahmenbedingungen und Implikationen",
+      status: "Laufend"
     },
     {
-      title: "Exploring Diversity, Inclusion, and Equal Opportunity in German Universities: A Study of Attitudes Towards Sexual Minorities and the Legal and Practical Implications",
-      status: "Ongoing"
+      title: "Erforschung von Diversität, Inklusion und Chancengleichheit an deutschen Universitäten: Eine Studie über Einstellungen gegenüber sexuellen Minderheiten sowie die rechtlichen und praktischen Implikationen",
+      status: "Laufend"
     },
     {
-      title: "Narratives of Equality and Otherness in Indian Law and Literature: Examining the Rights of the Marginalised Other",
-      status: "Ongoing"
+      title: "Narrative von Gleichheit und Andersheit im indischen Recht und in der Literatur: Eine Untersuchung der Rechte des marginalisierten Anderen",
+      status: "Laufend"
     },
     {
-      title: "Higher Education Curriculums : Issues, Concerns and Challenges, December 2018 – July 2023",
-      status: "Completed"
+      title: "Lehrpläne der Hochschulbildung: Probleme, Anliegen und Herausforderungen, Dezember 2018 – Juli 2023",
+      status: "Abgeschlossen"
     },
     {
-      title: "Workplace Discrimination in Germany, December 2021 – September 2023",
-      status: "Completed"
+      title: "Diskriminierung am Arbeitsplatz in Deutschland, Dezember 2021 – September 2023",
+      status: "Abgeschlossen"
     }
   ];
 
   return (
-    <section id="projects" className="py-16 md:py-24 bg-white">
+    <section id="projects" className="py-12 md:py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-brand-black mb-8">Projekte</h2>
+        {/* Two-column layout: Image left, Projects list right */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+          {/* Left: Image */}
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <img
+              src="/images/fourthPage.webp"
+              alt="Research Projects"
+              className="w-full h-auto md:h-full object-cover"
+            />
+          </div>
 
-        <div className="space-y-6">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="border-l-4 border-brand-orange p-6 bg-gray-50 rounded-lg hover:shadow-md transition"
-            >
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-full ${
-                      project.status === 'Ongoing' 
-                        ? 'bg-brand-orange text-white' 
-                        : 'bg-gray-200 text-gray-700'
-                    }`}>
-                      {project.status}
-                    </span>
-                  </div>
-                  <p className="text-gray-700 leading-relaxed text-lg">
-                    {project.title}
-                  </p>
+          {/* Right: Projects List */}
+          <div className="space-y-4">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className={`p-5 rounded-lg border-l-4 ${
+                  project.status === 'Laufend'
+                    ? 'bg-brand-orange/5 border-brand-orange'
+                    : 'bg-gray-50 border-gray-300'
+                }`}
+              >
+                <div className="flex items-start gap-2 mb-2">
+                  <span className={`inline-block px-2 py-0.5 text-xs font-semibold rounded-full flex-shrink-0 ${
+                    project.status === 'Laufend'
+                      ? 'bg-brand-orange text-white'
+                      : 'bg-gray-200 text-gray-700'
+                  }`}>
+                    {project.status}
+                  </span>
                 </div>
+                <p className="text-gray-700 leading-relaxed text-base md:text-lg">
+                  {project.title}
+                </p>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Image */}
-        <div className="mt-12 rounded-lg overflow-hidden shadow-lg">
-          <img
-            src="https://ideainstitute.ch/wp-content/uploads/2025/02/hand-1024x683.webp"
-            alt="Hand"
-            className="w-full h-auto object-cover"
-          />
+            ))}
+          </div>
         </div>
       </div>
     </section>

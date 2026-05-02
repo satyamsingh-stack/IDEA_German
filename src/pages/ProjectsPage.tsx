@@ -2,9 +2,14 @@ import { ProjectsSection } from '../components/ProjectsSection'
 
 export const ProjectsPage = () => {
   return (
-    <div className="pt-32">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-brand-black mb-8">Projekte</h1>
+    <div className="pt-20 md:pt-28">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 md:mb-10">
+        <div className="flex flex-col items-start">
+          <p className="text-sm md:text-base font-bold text-brand-black uppercase tracking-wider">
+            PROJEKTE
+          </p>
+          <div className="w-12 h-0.5 bg-brand-orange mt-2"></div>
+        </div>
       </div>
       <ProjectsSection />
     </div>

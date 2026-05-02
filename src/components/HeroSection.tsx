@@ -48,7 +48,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Right Image - Desktop Only */}
-          <div className="flex justify-center lg:justify-end items-center animate-fadeIn" style={{animationDelay: '0.3s'}}>
+          <div className="hidden lg:flex justify-center lg:justify-end items-center animate-fadeIn" style={{animationDelay: '0.3s'}}>
             <div className="relative group w-full max-w-2xl">
               <div className="absolute -inset-2 bg-gradient-to-r from-brand-orange to-orange-400 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
               <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl">
