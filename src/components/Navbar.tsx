@@ -19,14 +19,21 @@ export const Navbar = () => {
         <div className="max-w-full mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             {/* Logo Section */}
-            <div className="flex items-center gap-6">
-              <Link to="/" className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <Link to="/" className="flex items-center gap-2">
                 <img 
                   src="/images/logo.png" 
                   alt="IDEA" 
-                  className="w-[200px] h-[71px] object-contain"
+                  className="w-[150px] h-[53px] object-contain lg:w-[200px] lg:h-[71px]"
                 />
               </Link>
+              <div className="block lg:hidden">
+                <div className="relative">
+                  <h1 className="text-xs font-bold text-gray-900 tracking-widest uppercase">
+                    INSTITUTE OF LEGAL RESEARCH
+                  </h1>
+                </div>
+              </div>
               <div className="hidden lg:block">
                 <div className="relative">
                   <h1 className="text-2xl font-bold text-gray-900 tracking-widest uppercase">
@@ -38,11 +45,11 @@ export const Navbar = () => {
             </div>
 
             {/* Desktop Actions */}
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="flex items-center gap-2 lg:gap-4">
               <LanguageSwitcher />
-              <div className="flex items-center gap-2 px-4 py-2 rounded-lg">
+              <div className="flex items-center gap-1 px-2 py-1 lg:px-4 lg:py-2 rounded-lg">
                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                <span className="text-xs text-gray-500 font-medium">{t('nav.activeResearch')}</span>
+                <span className="text-[10px] lg:text-xs text-gray-500 font-medium">{t('nav.activeResearch')}</span>
               </div>
             </div>
           </div>
@@ -136,7 +143,6 @@ export const Navbar = () => {
 
             {/* Right Actions */}
             <div className="flex items-center gap-4 ml-auto">
-              <LanguageSwitcher />
               <Link to="/#contact" className="bg-gradient-to-r from-brand-orange to-orange-600 hover:from-orange-600 hover:to-brand-orange text-white font-bold px-8 py-2.5 rounded-full transition-all duration-300 shadow-lg shadow-orange-500/20 hover:shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-0.5 text-xs uppercase tracking-wider">
                 {t('nav.contact')}
               </Link>
