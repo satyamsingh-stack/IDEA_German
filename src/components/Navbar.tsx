@@ -54,7 +54,7 @@ export const Navbar = () => {
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-orange to-orange-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                 </Link>
                 <div className="absolute left-0 pt-1 hidden group-hover:block bg-white/95 backdrop-blur-sm shadow-xl rounded-lg min-w-max border border-gray-200 z-50">
-                  <Link to="/" className="block px-5 py-3 hover:bg-gradient-to-r hover:from-orange-50 hover:to-white text-gray-700 text-xs font-semibold border-b border-gray-100 transition-all">
+                  <Link to="/standort" className="block px-5 py-3 hover:bg-gradient-to-r hover:from-orange-50 hover:to-white text-gray-700 text-xs font-semibold border-b border-gray-100 transition-all">
                     <span className="flex items-center gap-2">
                       <svg className="w-3.5 h-3.5 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
@@ -151,6 +151,9 @@ export const Navbar = () => {
           <div className="py-2 space-y-1 px-4">
             <Link to="/" className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-orange-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-orange-100 text-sm">
               INSTITUT
+            </Link>
+            <Link to="/standort" className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-orange-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-orange-100 text-sm">
+              STANDORT
             </Link>
             <Link to="/innovation-und-rechtsberatung" className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-blue-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-blue-100 text-sm">
               FORSCHUNG, ENTWICKLUNG UND INNOVATION

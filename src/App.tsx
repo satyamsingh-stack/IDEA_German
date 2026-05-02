@@ -8,6 +8,7 @@ import {
   StaffPage,
   DirectorPage,
   PublicationsPage,
+  LocationPage,
   ImpressumPage,
   PrivacyPolicyPage,
   TermsAndConditionsPage,
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
+          <Route path="standort" element={<LocationPage />} />
           <Route path="innovation-und-rechtsberatung" element={<InnovationPage />} />
           <Route path="forschung" element={<ResearchPage />} />
           <Route path="research-current-projects" element={<ProjectsPage />} />
