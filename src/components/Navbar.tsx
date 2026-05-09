@@ -1,43 +1,156 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ChevronDown } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { LanguageSwitcher } from './LanguageSwitcher'
 
+interface NavItem {
+  label: string
+  path: string
+  children?: NavItem[]
+}
+
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [openMenus, setOpenMenus] = useState<string[]>([])
   const { t } = useLanguage()
 
   const toggleMenu = () => setIsOpen(!isOpen)
+  const closeMenu = () => {
+    setIsOpen(false)
+    setOpenMenus([])
+  }
 
-  const closeMenu = () => setIsOpen(false)
+  const toggleSubmenu = (label: string) => {
+    setOpenMenus(prev =>
+      prev.includes(label) ? prev.filter(l => l !== label) : [...prev, label]
+    )
+  }
+
+   const navItems: NavItem[] = [
+     { label: t('nav.home'), path: '/' },
+     { label: t('nav.about'), path: '/about' },
+     { label: t('nav.research'), path: '/forschung' },
+     { label: t('nav.publications'), path: '/publikationen' },
+     {
+       label: t('nav.insights'),
+       path: '#',
+       children: [
+         { label: t('nav.blog'), path: '/blog' },
+         { label: t('nav.explainers'), path: '/explainers' },
+         { label: t('nav.faq'), path: '/faq' },
+       ],
+     },
+     { label: t('nav.programsEvents'), path: '/programs-events' },
+     { label: t('nav.initiatives'), path: '/initiatives' },
+     { label: t('nav.newsletter'), path: '/newsletter' },
+     { label: t('nav.contact'), path: '/contact' },
+   ]
+
+  const renderNavItem = (item: NavItem, isMobile: boolean = false) => {
+    const hasChildren = item.children && item.children.length > 0
+
+    if (hasChildren) {
+      return (
+        <div key={item.label} className="relative group">
+          <button
+            onClick={() => {
+              if (isMobile) {
+                toggleSubmenu(item.label)
+              }
+            }}
+            className={`flex items-center justify-between w-full px-5 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-200 ${
+              isMobile
+                ? 'text-gray-700 hover:text-brand-orange hover:bg-gray-50 rounded-xl'
+                : 'text-gray-600 hover:text-brand-orange'
+            }`}
+            aria-expanded={isMobile ? openMenus.includes(item.label) : undefined}
+          >
+            <span>{item.label}</span>
+            <ChevronDown
+              size={isMobile ? 16 : 14}
+              className={`ml-1 transition-transform duration-200 ${
+                openMenus.includes(item.label) ? 'rotate-180' : ''
+              }`}
+            />
+          </button>
+          {hasChildren && (
+            <div
+              className={`${
+                isMobile
+                  ? openMenus.includes(item.label) ? 'block' : 'hidden'
+                  : 'absolute left-0 pt-1 hidden group-hover:block'
+              }`}
+            >
+              <div
+                className={`${
+                  isMobile
+                    ? 'bg-gray-50 rounded-xl mx-2 mb-2'
+                    : 'bg-white/95 backdrop-blur-sm shadow-xl rounded-lg min-w-max border border-gray-200 z-50'
+                }`}
+              >
+                {item.children!.map(child => (
+                  <Link
+                    key={child.label}
+                    to={child.path}
+                    onClick={() => {
+                      closeMenu()
+                      setOpenMenus([])
+                    }}
+                    className={`block px-5 py-3 text-sm font-medium transition-all ${
+                      isMobile
+                        ? 'text-gray-700 hover:bg-white hover:rounded-xl px-7'
+                        : 'text-gray-700 hover:bg-gradient-to-r hover:from-orange-50 hover:to-white hover:text-brand-orange border-b border-gray-100 last:border-0'
+                    }`}
+                  >
+                    {child.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )
+    }
+
+    return (
+      <Link
+        key={item.label}
+        to={item.path}
+        onClick={closeMenu}
+        className={`flex items-center ${
+          isMobile
+            ? 'px-5 py-4 text-sm font-bold uppercase tracking-wider text-gray-700 hover:text-brand-orange hover:bg-gray-50 rounded-xl transition-all'
+            : 'px-5 py-4 text-sm font-bold uppercase tracking-wider text-gray-600 hover:text-brand-orange hover:bg-white/80 transition-all duration-200 relative group'
+        }`}
+      >
+        {item.label}
+        {!isMobile && (
+          <span className="absolute bottom-0 left-0 w-full h-0.5 bg-brand-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+        )}
+      </Link>
+    )
+  }
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-xl z-50 border-b border-gray-200 shadow-sm">
       {/* Top Bar with Logo and Title */}
       <div className="border-b border-gray-100 bg-gradient-to-r from-white via-white to-gray-50">
-        <div className="max-w-full mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
+        <div className="max-w-full mx-auto px-6">
+          <div className="flex justify-between items-center h-16 lg:h-20">
             {/* Logo Section */}
             <div className="flex items-center gap-2">
-              <Link to="/" className="flex items-center gap-2">
-                <img 
-                  src="/images/logo.png" 
-                  alt="IDEA" 
+              <Link to="/" onClick={closeMenu} className="flex items-center gap-2">
+                <img
+                  src="/images/logo.png"
+                  alt="IDEA"
                   className="w-[150px] h-[53px] object-contain lg:w-[200px] lg:h-[71px]"
                 />
               </Link>
-              <div className="block lg:hidden">
-                <div className="relative">
-                  <h1 className="text-xs font-bold text-gray-900 tracking-widest uppercase">
-                    INSTITUTE OF LEGAL RESEARCH
-                  </h1>
-                </div>
-              </div>
               <div className="hidden lg:block">
                 <div className="relative">
                   <h1 className="text-2xl font-bold text-gray-900 tracking-widest uppercase">
-                    INSTITUTE OF LEGAL RESEARCH
+                    {t('nav.institute')}
                   </h1>
                   <div className="absolute -bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-brand-orange via-orange-400 to-transparent opacity-60"></div>
                 </div>
@@ -59,132 +172,29 @@ export const Navbar = () => {
       {/* Main Navigation Bar */}
       <div className="bg-white/80 backdrop-blur-sm border-b border-gray-100 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.8)]">
         <div className="max-w-full mx-auto px-6">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-center items-center h-16">
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center gap-0 text-xs font-bold">
-              <div className="relative group">
-                <Link to="/" className="block px-5 py-4 text-brand-orange hover:bg-white/80 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.8)] transition-all duration-200 h-16 flex items-center gap-1 relative">
-                  <span className="relative z-10">{t('nav.institute')}</span>
-                  <span className="text-[10px] relative z-10 text-brand-orange/700 group-hover:text-brand-orange transition-colors">▼</span>
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-orange to-orange-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-                </Link>
-                <div className="absolute left-0 pt-1 hidden group-hover:block bg-white/95 backdrop-blur-sm shadow-xl rounded-lg min-w-max border border-gray-200 z-50">
-                  <Link to="/standort" className="block px-5 py-3 hover:bg-gradient-to-r hover:from-orange-50 hover:to-white text-gray-700 text-xs font-semibold border-b border-gray-100 transition-all">
-                    <span className="flex items-center gap-2">
-                      <svg className="w-3.5 h-3.5 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                      </svg>
-                      {t('nav.location')}
-                    </span>
-                  </Link>
-                </div>
-              </div>
-
-              <Link to="/innovation-und-rechtsberatung" className="block px-5 py-4 text-gray-600 hover:bg-white/80 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.8)] hover:text-brand-orange transition-all duration-200 h-16 flex items-center relative group">
-                <span className="relative z-10">{t('nav.researchDevInnovation')}</span>
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-              </Link>
-
-              <div className="relative group">
-                <Link to="/forschung" className="block px-5 py-4 text-gray-600 hover:bg-white/80 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.8)] hover:text-brand-orange transition-all duration-200 h-16 flex items-center gap-1 relative">
-                  <span className="relative z-10">{t('nav.research')}</span>
-                  <span className="text-[10px] relative z-10 text-gray-400 group-hover:text-brand-orange transition-colors">▼</span>
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-                </Link>
-                <div className="absolute left-0 pt-1 hidden group-hover:block bg-white/95 backdrop-blur-sm shadow-xl rounded-lg min-w-max border border-gray-200 z-50">
-                  <Link to="/research-current-projects" className="block px-5 py-3 hover:bg-gradient-to-r hover:from-blue-50 hover:to-white text-gray-700 text-xs font-semibold border-b border-gray-100 transition-all">
-                    <span className="flex items-center gap-2">
-                      <svg className="w-3.5 h-3.5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-                      </svg>
-                      {t('nav.projects')}
-                    </span>
-                  </Link>
-                </div>
-              </div>
-
-              <div className="relative group">
-                <Link to="/staff" className="block px-5 py-4 text-gray-600 hover:bg-white/80 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.8)] hover:text-brand-orange transition-all duration-200 h-16 flex items-center gap-1 relative">
-                  <span className="relative z-10">{t('nav.scientists')}</span>
-                  <span className="text-[10px] relative z-10 text-gray-400 group-hover:text-brand-orange transition-colors">▼</span>
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-green-500 to-emerald-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-                </Link>
-                <div className="absolute left-0 pt-1 hidden group-hover:block bg-white/95 backdrop-blur-sm shadow-xl rounded-lg min-w-max border border-gray-200 z-50">
-                  <Link to="/staff-direktor" className="block px-5 py-3 hover:bg-gradient-to-r hover:from-green-50 hover:to-white text-gray-700 text-xs font-semibold border-b border-gray-100 transition-all">
-                    <span className="flex items-center gap-2">
-                      <svg className="w-3.5 h-3.5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                      </svg>
-                      {t('nav.director')}
-                    </span>
-                  </Link>
-                </div>
-              </div>
-
-              <div className="relative group">
-                <Link to="/publikationen" className="block px-5 py-4 text-gray-600 hover:bg-white/80 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.8)] hover:text-brand-orange transition-all duration-200 h-16 flex items-center gap-1 relative">
-                  <span className="relative z-10">{t('nav.publications')}</span>
-                  <span className="text-[10px] relative z-10 text-gray-400 group-hover:text-brand-orange transition-colors">▼</span>
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-                </Link>
-                <div className="absolute left-0 pt-1 hidden group-hover:block bg-white/95 backdrop-blur-sm shadow-xl rounded-lg min-w-max border border-gray-200 z-50">
-                  <Link to="/publikationen" className="block px-5 py-3 hover:bg-gradient-to-r hover:from-purple-50 hover:to-white text-gray-700 text-xs font-semibold border-b border-gray-100 transition-all">
-                    <span className="flex items-center gap-2">
-                      <svg className="w-3.5 h-3.5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                      </svg>
-                      IDEA LEGAL RESEARCH PAPER SERIES
-                    </span>
-                  </Link>
-                </div>
-              </div>
+              {navItems.map(item => renderNavItem(item))}
             </div>
 
-            {/* Right Actions */}
-            <div className="flex items-center gap-4 ml-auto">
-              <Link to="/#contact" className="bg-gradient-to-r from-brand-orange to-orange-600 hover:from-orange-600 hover:to-brand-orange text-white font-bold px-8 py-2.5 rounded-full transition-all duration-300 shadow-lg shadow-orange-500/20 hover:shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-0.5 text-xs uppercase tracking-wider">
-                {t('nav.contact')}
-              </Link>
-
-              {/* Mobile Menu Button */}
-              <button
-                onClick={toggleMenu}
-                className="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 hover:bg-gray-100 transition-all duration-200 border border-gray-200"
-                aria-label="Toggle menu"
-              >
-                {isOpen ? <X size={20} className="text-gray-600" /> : <Menu size={20} className="text-gray-600" />}
-              </button>
-            </div>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={toggleMenu}
+              className="lg:hidden ml-auto w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 hover:bg-gray-100 transition-all duration-200 border border-gray-200"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={20} className="text-gray-600" /> : <Menu size={20} className="text-gray-600" />}
+            </button>
           </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-2xl">
-          <div className="py-2 space-y-1 px-4">
-            <Link to="/" onClick={closeMenu} className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-orange-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-orange-100 text-sm">
-              {t('nav.institute')}
-            </Link>
-            <Link to="/standort" onClick={closeMenu} className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-orange-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-orange-100 text-sm">
-              {t('nav.location')}
-            </Link>
-            <Link to="/innovation-und-rechtsberatung" onClick={closeMenu} className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-blue-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-blue-100 text-sm">
-              {t('nav.researchDevInnovation')}
-            </Link>
-            <Link to="/forschung" onClick={closeMenu} className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-blue-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-blue-100 text-sm">
-              {t('nav.research')}
-            </Link>
-            <Link to="/staff" onClick={closeMenu} className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-green-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-green-100 text-sm">
-              {t('nav.scientists')}
-            </Link>
-            <Link to="/publikationen" onClick={closeMenu} className="block px-5 py-4 text-gray-700 font-bold hover:bg-gradient-to-r hover:from-purple-50 hover:to-white rounded-xl transition-all border border-transparent hover:border-purple-100 text-sm">
-              {t('nav.publications')}
-            </Link>
-            <Link to="/#contact" onClick={closeMenu} className="w-full bg-gradient-to-r from-brand-orange to-orange-600 hover:from-orange-600 hover:to-brand-orange text-white font-bold py-4 px-6 transition-all rounded-xl text-sm block text-center shadow-lg shadow-orange-500/20">
-              {t('nav.contact')}
-            </Link>
+        <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-2xl animate-slideDown">
+          <div className="py-3 px-4 space-y-1">
+            {navItems.map(item => renderNavItem(item, true))}
           </div>
         </div>
       )}
