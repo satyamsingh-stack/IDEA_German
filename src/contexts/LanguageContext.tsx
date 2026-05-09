@@ -10,11 +10,11 @@ interface Translation {
 }
 
 const translations: Translation = {
-  // Navigation
-  'nav.institute': {
-    de: 'INSTITUT',
-    en: 'INSTITUTE'
-  },
+   // Navigation
+   'nav.institute': {
+     de: 'INSTITUT FÜR RECHTSFORSCHUNG',
+     en: 'INSTITUTE OF LEGAL RESEARCH'
+   },
   'nav.location': {
     de: 'STANDORT',
     en: 'LOCATION'
@@ -38,6 +38,146 @@ const translations: Translation = {
   'nav.director': {
     de: 'DIREKTOR',
     en: 'DIRECTOR'
+  },
+  'director.title': {
+    de: 'DIREKTOR',
+    en: 'DIRECTOR'
+  },
+  'director.name': {
+    de: 'Dr. Yeshwant Naik',
+    en: 'Dr. Yeshwant Naik'
+  },
+  'director.role': {
+    de: 'Direktor | Rechtsforschung & Akademische Leitung',
+    en: 'Director | Legal Research & Academic Lead'
+  },
+  'director.bio1': {
+    de: 'Dr. Yeshwant Naik ist ein Rechtswissenschaftler für vergleichendes Recht und Menschenrechte, dessen Arbeit sich auf Sexualität, Geschlechtsidentität, Migration, Asyl und transnationale Rechtssysteme konzentriert.',
+    en: 'Dr. Yeshwant Naik is a comparative law and human rights scholar whose work focuses on sexuality, gender identity, migration, asylum, and transnational legal systems.'
+  },
+  'director.bio2': {
+    de: 'Seine Forschung untersucht rechtliche Reaktionen auf Verwundbarkeit, Minderheitenschutz, Gewalt und rechtliche Ausgrenzung mit besonderem Schwerpunkt auf Europa und Indien.',
+    en: 'His research examines legal responses to vulnerability, minority protection, violence, and legal exclusion, with particular emphasis on Europe and India.'
+  },
+  'director.researchInterests': {
+    de: 'Forschungsinteressen',
+    en: 'Research Interests'
+  },
+  'director.interest1': {
+    de: 'vergleichendes Recht',
+    en: 'comparative law'
+  },
+  'director.interest2': {
+    de: 'Menschenrechtsrecht',
+    en: 'human rights law'
+  },
+  'director.interest3': {
+    de: 'LGBTQ+-Rechte',
+    en: 'LGBTQ+ rights'
+  },
+  'director.interest4': {
+    de: 'Migrations- und Flüchtlingsrecht',
+    en: 'migration and refugee law'
+  },
+  'director.interest5': {
+    de: 'Recht und Gesellschaft',
+    en: 'law and society'
+  },
+  'director.interest6': {
+    de: 'rechtliche Pluralität',
+    en: 'legal pluralism'
+  },
+  'director.methodology': {
+    de: 'Methodologischer Ansatz',
+    en: 'Methodological Approach'
+  },
+  'director.methodIntro': {
+    de: 'Dr. Naiks Arbeit verfolgt einen interdisziplinären sozio-rechtlichen Ansatz, der folgende Methoden verbindet:',
+    en: 'Dr. Naik\'s work adopts an interdisciplinary socio-legal approach combining:'
+  },
+  'director.method1': {
+    de: 'vergleichende verfassungsrechtliche Analyse',
+    en: 'comparative constitutional analysis'
+  },
+  'director.method2': {
+    de: 'qualitative Rechtsforschung',
+    en: 'qualitative legal research'
+  },
+  'director.method3': {
+    de: 'sozio-rechtliche Studien zu Migration, Sexualität und Gender',
+    en: 'socio-legal studies of migration, sexuality, and gender'
+  },
+  'director.method4': {
+    de: 'transnationale und vergleichende Rechtsanalyse',
+    en: 'transnational and comparative legal analysis'
+  },
+  'director.publications': {
+    de: 'Ausgewählte Publikationen',
+    en: 'Selected Publications'
+  },
+  'director.booksTitle': {
+    de: 'Bücher & Monographien',
+    en: 'Books & Monographs'
+  },
+  'director.book1': {
+    de: 'The Legal Imaginary: Equality and Othering in Indian Law and Literature (in Vorbereitung, Ethics Press, 2027)',
+    en: 'The Legal Imaginary: Equality and Othering in Indian Law and Literature (forthcoming, Ethics Press, 2027)'
+  },
+  'director.book2': {
+    de: 'Domestic Violence Against Male Same-Sex Partners in the EU with Special Reference to Refugee and Migrant Gay Men in Germany (Springer, 2022)',
+    en: 'Domestic Violence Against Male Same-Sex Partners in the EU with Special Reference to Refugee and Migrant Gay Men in Germany (Springer, 2022)'
+  },
+  'director.book3': {
+    de: 'Homosexuality in the Jurisprudence of the Supreme Court of India (Springer, 2017)',
+    en: 'Homosexuality in the Jurisprudence of the Supreme Court of India (Springer, 2017)'
+  },
+  'director.editedTitle': {
+    de: 'Herausgeberschaften & Buchkapitel',
+    en: 'Edited Volumes & Book Chapters'
+  },
+  'director.chapter1': {
+    de: '"Homophobic Bullying, Hate Crime, and Migration in Switzerland and Germany," in Violence Against Sexual and Gender Minorities Around the World (Edward Elgar, in Vorbereitung 2027)',
+    en: '"Homophobic Bullying, Hate Crime, and Migration in Switzerland and Germany," in Violence Against Sexual and Gender Minorities Around the World (Edward Elgar, forthcoming 2027)'
+  },
+  'director.chapter2': {
+    de: '"The Complex Legal Landscape of LGBTQ+ Rights in India," in Avant-Garde Law: New Frontiers at the Crossroads of Global Family Law (Bloomsbury Academic, in Vorbereitung 2027)',
+    en: '"The Complex Legal Landscape of LGBTQ+ Rights in India," in Avant-Garde Law: New Frontiers at the Crossroads of Global Family Law (Bloomsbury Academic, forthcoming 2027)'
+  },
+  'director.chapter3': {
+    de: '"Transgender Family Rights Issues and Concerns: A Comparative Legal Analysis of Asia and Europe," in Exploring Norms and Families Across the Globe (Lexington Books, 2022)',
+    en: '"Transgender Family Rights Issues and Concerns: A Comparative Legal Analysis of Asia and Europe," in Exploring Norms and Families Across the Globe (Lexington Books, 2022)'
+  },
+  'director.chapter4': {
+    de: 'LGBTIQ+ Inclusive Curriculum in Higher Education: Issues and Challenges (mitherausgegebener Band, University of Münster, 2023)',
+    en: 'LGBTIQ+ Inclusive Curriculum in Higher Education: Issues and Challenges (co-edited volume, University of Münster, 2023)'
+  },
+  'director.reportsTitle': {
+    de: 'Forschungsberichte',
+    en: 'Research Reports'
+  },
+  'director.report1': {
+    de: 'LGBTIQ in the Workplace: Injustice and Discrimination in Germany — Legal Analysis (University of Münster, 2023)',
+    en: 'LGBTIQ in the Workplace: Injustice and Discrimination in Germany — Legal Analysis (University of Münster, 2023)'
+  },
+  'director.commentaryTitle': {
+    de: 'Kommentare & Öffentliche Beiträge',
+    en: 'Commentary & Public Writing'
+  },
+  'director.comment1': {
+    de: '"A Critical Analysis of the Indian Supreme Court\'s Ruling on Same-Sex Marriage" (Oxford Human Rights Hub, 2025)',
+    en: '"A Critical Analysis of the Indian Supreme Court\'s Ruling on Same-Sex Marriage" (Oxford Human Rights Hub, 2025)'
+  },
+  'director.comment2': {
+    de: '"Germany\'s New Gender Self-Determination Act: Advances and Challenges" (Oxford Human Rights Hub, 2024)',
+    en: '"Germany\'s New Gender Self-Determination Act: Advances and Challenges" (Oxford Human Rights Hub, 2024)'
+  },
+  'director.articlesTitle': {
+    de: 'Zeitschriftenartikel',
+    en: 'Journal Articles'
+  },
+  'director.article1': {
+    de: '"Regulations on Sex Toy Industry in Europe," Technium Social Sciences Journal (2021)',
+    en: '"Regulations on Sex Toy Industry in Europe," Technium Social Sciences Journal (2021)'
   },
   'nav.publications': {
     de: 'PUBLIKATIONEN',

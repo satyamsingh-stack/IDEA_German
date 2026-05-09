@@ -30,6 +30,7 @@ export const Navbar = () => {
    const navItems: NavItem[] = [
      { label: t('nav.home'), path: '/' },
      { label: t('nav.about'), path: '/about' },
+     { label: t('nav.director'), path: '/staff-direktor' },
      { label: t('nav.research'), path: '/forschung' },
      { label: t('nav.publications'), path: '/publikationen' },
      {
