@@ -3,6 +3,7 @@ import { Layout } from './layouts/Layout'
 import { LanguageProvider } from './contexts/LanguageContext'
 import {
   HomePage,
+  AboutPage,
   InnovationPage,
   ResearchPage,
   ProjectsPage,
@@ -15,6 +16,13 @@ import {
   TermsAndConditionsPage,
   RefundPolicyPage,
   ShippingPolicyPage,
+  BlogPage,
+  ExplainersPage,
+  FAQPage,
+  ProgramsEventsPage,
+  InitiativesPage,
+  NewsletterPage,
+  ContactPage,
 } from './pages'
 
 function App() {
@@ -24,6 +32,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
+            <Route path="about" element={<AboutPage />} />
             <Route path="standort" element={<LocationPage />} />
             <Route path="innovation-und-rechtsberatung" element={<InnovationPage />} />
             <Route path="forschung" element={<ResearchPage />} />
@@ -31,6 +40,13 @@ function App() {
             <Route path="staff" element={<StaffPage />} />
             <Route path="staff-direktor" element={<DirectorPage />} />
             <Route path="publikationen" element={<PublicationsPage />} />
+            <Route path="blog" element={<BlogPage />} />
+            <Route path="explainers" element={<ExplainersPage />} />
+            <Route path="faq" element={<FAQPage />} />
+            <Route path="programs-events" element={<ProgramsEventsPage />} />
+            <Route path="initiatives" element={<InitiativesPage />} />
+            <Route path="newsletter" element={<NewsletterPage />} />
+            <Route path="contact" element={<ContactPage />} />
             <Route path="impressum" element={<ImpressumPage />} />
             <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
             <Route path="general-terms-and-conditions" element={<TermsAndConditionsPage />} />

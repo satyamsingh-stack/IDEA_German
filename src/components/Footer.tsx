@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../contexts/LanguageContext'
 
 export const Footer = () => {
@@ -10,15 +11,15 @@ export const Footer = () => {
       <div className="py-6 border-b border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-6 text-sm">
-            <a href="/impressum" className="hover:text-brand-orange transition">{t('footer.imprint')}</a>
+            <Link to="/impressum" className="hover:text-brand-orange transition">{t('footer.imprint')}</Link>
             <span className="text-gray-600">|</span>
-            <a href="/privacy-policy" className="hover:text-brand-orange transition">{t('footer.privacy')}</a>
+            <Link to="/privacy-policy" className="hover:text-brand-orange transition">{t('footer.privacy')}</Link>
             <span className="text-gray-600">|</span>
-            <a href="/general-terms-and-conditions" className="hover:text-brand-orange transition">{t('footer.terms')}</a>
+            <Link to="/general-terms-and-conditions" className="hover:text-brand-orange transition">{t('footer.terms')}</Link>
             <span className="text-gray-600">|</span>
-            <a href="/refund-policy" className="hover:text-brand-orange transition">{t('footer.refund')}</a>
+            <Link to="/refund-policy" className="hover:text-brand-orange transition">{t('footer.refund')}</Link>
             <span className="text-gray-600">|</span>
-            <a href="/shipping-policy" className="hover:text-brand-orange transition">{t('footer.shipping')}</a>
+            <Link to="/shipping-policy" className="hover:text-brand-orange transition">{t('footer.shipping')}</Link>
           </div>
         </div>
       </div>

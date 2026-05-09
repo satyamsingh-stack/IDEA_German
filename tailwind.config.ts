@@ -18,8 +18,8 @@ export default {
         'brand-gray': '#f7f7f7',
       },
       fontFamily: {
-        sans: ['Fira Sans', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        serif: ['Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['Times New Roman', 'Times', 'Georgia', 'serif'],
       },
       animation: {
         fadeIn: 'fadeIn 0.5s ease-in',
