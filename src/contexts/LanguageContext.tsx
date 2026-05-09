@@ -911,15 +911,11 @@ const translations: Translation = {
      de: 'Gleichheit und Antidiskriminierungsrecht',
      en: 'equality and non-discrimination law'
    },
-   'blog.comingSoon': {
-     de: 'Blog-Artikel und Kommentare – in Kürze.',
-     en: 'Blog articles and commentary – coming soon.'
-   },
-   'nav.subtitle': {
-     de: 'Rechtsforschung · Gleichheit · Inklusion',
-     en: 'Legal Research · Equality · Inclusion'
-   },
-   'newsletter.title': {
+    'blog.comingSoon': {
+      de: 'Blog-Artikel und Kommentare – in Kürze.',
+      en: 'Blog articles and commentary – coming soon.'
+    },
+    'newsletter.title': {
      de: 'NEWSLETTER',
      en: 'NEWSLETTER'
    },
@@ -983,20 +979,12 @@ const translations: Translation = {
      de: 'Ihr Name',
      en: 'Your name'
    },
-   'newsletter.placeholderEmail': {
-     de: 'ihre@email.de',
-     en: 'your@email.com'
-   },
-   'nav.subtitle': {
-     de: 'Rechtsforschung · Gleichheit · Inklusion',
-     en: 'Legal Research · Equality · Inclusion'
-   },
-   'nav.subtitle': {
-     de: 'Rechtsforschung · Gleichheit · Inklusion',
-     en: 'Legal Research · Equality · Inclusion'
-   },
+    'newsletter.placeholderEmail': {
+      de: 'ihre@email.de',
+      en: 'your@email.com'
+    },
 
-  // Page Titles
+   // Page Titles
   'page.innovation': {
     de: 'Forschung, Entwicklung und Innovation',
     en: 'Research, Development and Innovation'
@@ -1146,38 +1134,8 @@ const translations: Translation = {
     en: 'Workplace Discrimination in Germany, December 2021 – September 2023'
   },
 
-  // Director Page
-  'director.title': {
-    de: 'DIREKTOR',
-    en: 'DIRECTOR'
-  },
-  'director.teachingResearch': {
-    de: 'Lehr- und Forschungsgebiete',
-    en: 'Teaching & Research Areas'
-  },
-  'director.publications': {
-    de: 'Publikationen',
-    en: 'Publications'
-  },
-  'director.books': {
-    de: 'Bücher',
-    en: 'Books'
-  },
-  'director.readMore': {
-    de: 'Mehr lesen →',
-    en: 'Read more →'
-  },
-  'director.showAll': {
-    de: 'Alle Publikationen anzeigen',
-    en: 'Show all publications'
-  },
-  'director.forthcoming': {
-    de: 'Erscheint',
-    en: 'Forthcoming'
-  },
-
-  // Publications Page
-  'publications.title': {
+   // Publications Page
+   'publications.title': {
     de: 'Publikationen',
     en: 'Publications'
   },
