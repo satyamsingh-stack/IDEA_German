@@ -6,7 +6,7 @@ export const AboutPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Intro Section */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-[#1a2744] leading-relaxed text-lg break-words">
             {t('about.introDesc')}
@@ -15,14 +15,14 @@ export const AboutPage = () => {
       </section>
 
       {/* Our Mission Section */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
-              {t('about.missionTitle')}
-            </h2>
-          </div>
+           <div className="flex items-center gap-3 mb-4">
+             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
+             <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
+               {t('about.missionTitle')}
+             </h2>
+           </div>
           <p className="text-[#1a2744] text-lg leading-relaxed mb-4 max-w-3xl break-words">
             {t('about.missionIntro')}
           </p>
@@ -44,14 +44,14 @@ export const AboutPage = () => {
       </section>
 
       {/* Our Approach Section */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
-              {t('about.approachTitle')}
-            </h2>
-          </div>
+           <div className="flex items-center gap-3 mb-4">
+             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
+             <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
+               {t('about.approachTitle')}
+             </h2>
+           </div>
           <p className="text-[#1a2744] text-lg leading-relaxed mb-4 max-w-3xl break-words">
             {t('about.approachDesc')}
           </p>
@@ -70,14 +70,14 @@ export const AboutPage = () => {
       </section>
 
       {/* Our Perspective Section */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
-              {t('about.perspectiveTitle')}
-            </h2>
-          </div>
+           <div className="flex items-center gap-3 mb-4">
+             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
+             <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
+               {t('about.perspectiveTitle')}
+             </h2>
+           </div>
           <p className="text-[#1a2744] text-lg leading-relaxed mb-4 max-w-3xl break-words">
             {t('about.perspectiveDesc')}
           </p>
@@ -96,14 +96,14 @@ export const AboutPage = () => {
       </section>
 
       {/* Who We Are Section */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
-              {t('about.whoWeAreTitle')}
-            </h2>
-          </div>
+           <div className="flex items-center gap-3 mb-4">
+             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
+             <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
+               {t('about.whoWeAreTitle')}
+             </h2>
+           </div>
           <p className="text-[#1a2744] text-lg leading-relaxed mb-10 max-w-3xl break-words">
             {t('about.whoWeAreDesc')}
           </p>
@@ -177,14 +177,14 @@ export const AboutPage = () => {
       </section>
 
       {/* Collaborative Framework Section */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
-              {t('about.collabTitle')}
-            </h2>
-          </div>
+           <div className="flex items-center gap-3 mb-4">
+             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
+             <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
+               {t('about.collabTitle')}
+             </h2>
+           </div>
           <p className="text-[#1a2744] text-lg leading-relaxed mb-4 max-w-3xl break-words">
             {t('about.collabDesc')}
           </p>
@@ -203,14 +203,14 @@ export const AboutPage = () => {
       </section>
 
       {/* Research Positioning Section */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
-              {t('about.researchTitle')}
-            </h2>
-          </div>
+           <div className="flex items-center gap-3 mb-4">
+             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
+             <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
+               {t('about.researchTitle')}
+             </h2>
+           </div>
           <p className="text-[#1a2744] leading-relaxed text-lg break-words">
             {t('about.researchDesc')}
           </p>

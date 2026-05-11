@@ -3,9 +3,9 @@ export const InsightsPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Insights Intro */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-[#1a2744] leading-tight mb-6">
+           <h1 className="text-3xl md:text-4xl font-bold text-[#1a2744] leading-tight mb-4">
             Understanding Law, Rights, and Lived Realities
           </h1>
           <p className="text-[#1a2744] text-lg leading-relaxed mb-4 break-words">
@@ -17,7 +17,7 @@ export const InsightsPage = () => {
           <p className="text-[#1a2744] text-lg leading-relaxed mb-4">
             The section includes:
           </p>
-          <ul className="mb-10">
+           <ul className="mb-6">
             <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
               <span>legal explainers</span>

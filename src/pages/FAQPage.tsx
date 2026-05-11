@@ -1,7 +1,7 @@
 export const FAQPage = () => {
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative py-12 md:py-20 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* What is the IDEA Institute? */}
           <div className="mb-8">

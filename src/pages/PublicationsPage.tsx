@@ -1,11 +1,11 @@
 export const PublicationsPage = () => {
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative py-12 md:py-20 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* IDEA Legal Research Paper Series */}
           <div className="mb-12">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
                 IDEA Legal Research Paper Series
@@ -38,7 +38,7 @@ export const PublicationsPage = () => {
 
           {/* Research Publications */}
           <div className="mb-12">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
                 Research Publications
@@ -203,7 +203,7 @@ export const PublicationsPage = () => {
 
           {/* Accessing Publications */}
           <div>
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
                 Accessing Publications

@@ -6,7 +6,7 @@ export const DirectorPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Main Content */}
-      <section className="relative py-12 md:py-20 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="absolute inset-0 bg-gradient-to-b from-orange-50/20 to-white"></div>
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">

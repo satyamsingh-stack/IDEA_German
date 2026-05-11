@@ -6,10 +6,10 @@ export const HomePage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a2744] leading-tight mb-6 tracking-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a2744] leading-tight mb-4 tracking-tight">
               {t('home.subtitle')}
             </h1>
             <p className="text-[#1a2744] text-lg leading-relaxed break-words">
@@ -20,9 +20,9 @@ export const HomePage = () => {
       </section>
 
       {/* What We Do Section */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
+           <div className="flex items-center gap-3 mb-4">
             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
               {t('home.whatWeDo')}
@@ -46,9 +46,9 @@ export const HomePage = () => {
       </section>
 
       {/* Why This Matters Section */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
+           <div className="flex items-center gap-3 mb-4">
             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
               {t('home.whyThisMatters')}
@@ -75,9 +75,9 @@ export const HomePage = () => {
       </section>
 
       {/* Our Work Section */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
+           <div className="flex items-center gap-3 mb-4">
             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
               {t('home.ourWork')}
@@ -95,9 +95,9 @@ export const HomePage = () => {
       </section>
 
       {/* Start Here Section */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
+           <div className="flex items-center gap-3 mb-4">
             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
               {t('home.startHere')}
@@ -121,9 +121,9 @@ export const HomePage = () => {
       </section>
 
       {/* Get Involved Section */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
+           <div className="flex items-center gap-3 mb-4">
             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
               {t('home.getInvolved')}

@@ -12,9 +12,9 @@ export const ExplainersPage = () => {
       </section>
 
       {/* What is SOGI Law? */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
+           <div className="flex items-center gap-3 mb-4">
             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
             <h3 className="text-2xl md:text-3xl font-bold text-[#1a2744]">
               What is SOGI Law?
@@ -98,9 +98,9 @@ export const ExplainersPage = () => {
       </section>
 
       {/* How Does LGBTQ+ Asylum Work in Europe? */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
+           <div className="flex items-center gap-3 mb-4">
             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
             <h3 className="text-2xl md:text-3xl font-bold text-[#1a2744]">
               How Does LGBTQ+ Asylum Work in Europe?
@@ -180,9 +180,9 @@ export const ExplainersPage = () => {
       </section>
 
       {/* Why Are LGBTQ+ Rights Different Across Countries? */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
+           <div className="flex items-center gap-3 mb-4">
             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
             <h3 className="text-2xl md:text-3xl font-bold text-[#1a2744]">
               Why Are LGBTQ+ Rights Different Across Countries?
@@ -266,9 +266,9 @@ export const ExplainersPage = () => {
       </section>
 
       {/* What Happens When Rights Do Not Travel Across Borders? */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
+           <div className="flex items-center gap-3 mb-4">
             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
             <h3 className="text-2xl md:text-3xl font-bold text-[#1a2744]">
               What Happens When Rights Do Not Travel Across Borders?
@@ -335,9 +335,9 @@ export const ExplainersPage = () => {
       </section>
 
       {/* What is the Gap Between Law and Lived Reality? */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
+           <div className="flex items-center gap-3 mb-4">
             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
             <h3 className="text-2xl md:text-3xl font-bold text-[#1a2744]">
               What is the Gap Between Law and Lived Reality?

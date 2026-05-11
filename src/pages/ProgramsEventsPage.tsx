@@ -1,7 +1,7 @@
 export const ProgramsEventsPage = () => {
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative py-12 md:py-20 bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-[#1a2744] text-lg leading-relaxed mb-4 break-words">
             The Institute organises academic and public-facing activities that support research, dialogue, education, and public understanding of comparative and transnational legal issues.
