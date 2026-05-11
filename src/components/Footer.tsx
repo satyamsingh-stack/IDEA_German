@@ -6,7 +6,7 @@ export const Footer = () => {
   const { t } = useLanguage()
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-700 text-white">
       {/* Footer Links */}
       <div className="py-6 border-b border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,12 +14,6 @@ export const Footer = () => {
             <Link to="/impressum" className="hover:text-brand-orange transition">{t('footer.imprint')}</Link>
             <span className="text-gray-600">|</span>
             <Link to="/privacy-policy" className="hover:text-brand-orange transition">{t('footer.privacy')}</Link>
-            <span className="text-gray-600">|</span>
-            <Link to="/general-terms-and-conditions" className="hover:text-brand-orange transition">{t('footer.terms')}</Link>
-            <span className="text-gray-600">|</span>
-            <Link to="/refund-policy" className="hover:text-brand-orange transition">{t('footer.refund')}</Link>
-            <span className="text-gray-600">|</span>
-            <Link to="/shipping-policy" className="hover:text-brand-orange transition">{t('footer.shipping')}</Link>
           </div>
         </div>
       </div>
