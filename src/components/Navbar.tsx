@@ -33,10 +33,10 @@ export const Navbar = () => {
      { label: t('nav.director'), path: '/staff-direktor' },
      { label: t('nav.research'), path: '/forschung' },
      { label: t('nav.publications'), path: '/publikationen' },
-     {
-       label: t('nav.insights'),
-       path: '#',
-       children: [
+      {
+        label: t('nav.insights'),
+        path: '/insights',
+        children: [
          { label: t('nav.blog'), path: '/blog' },
          { label: t('nav.explainers'), path: '/explainers' },
          { label: t('nav.faq'), path: '/faq' },
@@ -51,30 +51,50 @@ export const Navbar = () => {
    const renderNavItem = (item: NavItem, isMobile: boolean = false) => {
      const hasChildren = item.children && item.children.length > 0
 
-     if (hasChildren) {
-       return (
-         <div key={item.label} className="relative group">
-           <button
-             onClick={() => {
-               if (isMobile) {
-                 toggleSubmenu(item.label)
-               }
-             }}
-             className={`flex items-center justify-between w-full px-5 py-4 text-sm font-bold uppercase tracking-[0.1em] transition-all duration-300 ease-out ${
-               isMobile
-                 ? 'text-gray-800 hover:text-brand-orange hover:bg-gradient-to-r hover:from-orange-50/50 hover:to-transparent rounded-xl'
-                 : 'text-gray-700 hover:text-brand-orange relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-gradient-to-r after:from-brand-orange after:to-orange-400 after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100'
-             }`}
-             aria-expanded={isMobile ? openMenus.includes(item.label) : undefined}
-           >
-             <span className="relative z-10">{item.label}</span>
-             <ChevronDown
-               size={isMobile ? 16 : 14}
-               className={`ml-1 transition-all duration-300 ease-out ${
-                 openMenus.includes(item.label) ? 'rotate-180 text-brand-orange' : 'text-gray-500'
-               }`}
-             />
-           </button>
+      if (hasChildren) {
+        const hasValidPath = item.path && item.path !== '#'
+        return (
+          <div key={item.label} className="relative group">
+            <div className="flex items-center">
+              {hasValidPath ? (
+                <Link
+                  to={item.path}
+                  onClick={closeMenu}
+                  className={`flex items-center px-5 py-4 text-sm font-bold uppercase tracking-[0.1em] transition-all duration-300 ease-out ${
+                    isMobile
+                      ? 'text-gray-800 hover:text-brand-orange hover:bg-gradient-to-r hover:from-orange-50/50 hover:to-transparent rounded-xl'
+                      : 'text-gray-700 hover:text-brand-orange relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-gradient-to-r after:from-brand-orange after:to-orange-400 after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100'
+                  }`}
+                >
+                  <span className="relative z-10">{item.label}</span>
+                </Link>
+              ) : (
+                <span
+                  className={`flex items-center px-5 py-4 text-sm font-bold uppercase tracking-[0.1em] ${
+                    isMobile
+                      ? 'text-gray-800'
+                      : 'text-gray-700 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-gradient-to-r after:from-brand-orange after:to-orange-400 after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100'
+                  }`}
+                >
+                  <span className="relative z-10">{item.label}</span>
+                </span>
+              )}
+              <button
+                onClick={() => {
+                  if (isMobile) {
+                    toggleSubmenu(item.label)
+                  }
+                }}
+                className="p-2 -ml-2"
+              >
+                <ChevronDown
+                  size={isMobile ? 16 : 14}
+                  className={`transition-all duration-300 ease-out ${
+                    openMenus.includes(item.label) ? 'rotate-180 text-brand-orange' : 'text-gray-500'
+                  }`}
+                />
+              </button>
+            </div>
            {hasChildren && (
              <div
                className={`${

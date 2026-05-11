@@ -16,6 +16,7 @@ import {
   TermsAndConditionsPage,
   RefundPolicyPage,
   ShippingPolicyPage,
+  InsightsPage,
   BlogPage,
   ExplainersPage,
   FAQPage,
@@ -40,6 +41,7 @@ function App() {
             <Route path="staff" element={<StaffPage />} />
             <Route path="staff-direktor" element={<DirectorPage />} />
             <Route path="publikationen" element={<PublicationsPage />} />
+            <Route path="insights" element={<InsightsPage />} />
             <Route path="blog" element={<BlogPage />} />
             <Route path="explainers" element={<ExplainersPage />} />
             <Route path="faq" element={<FAQPage />} />
