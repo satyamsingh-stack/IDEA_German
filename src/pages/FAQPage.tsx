@@ -1,64 +1,138 @@
-import { useLanguage } from '../contexts/LanguageContext'
-
-const faqs = [
-  {
-    question: { de: 'Was ist das IDEA Institut?', en: 'What is the IDEA Institute?' },
-    answer: { de: 'Das IDEA Institut ist ein unabhängiges Rechtsforschungsinstitut mit Fokus auf LGBTQ+-Rechte, Gleichheit und Inklusion.', en: 'The IDEA Institute is an independent legal research institute focused on LGBTQ+ rights, equality, and inclusion.' }
-  },
-  {
-    question: { de: 'Wo ist das Institut ansässig?', en: 'Where is the Institute based?' },
-    answer: { de: 'Das Institut hat seinen Sitz in Deutschland und der Schweiz.', en: 'The Institute is based in Germany and Switzerland.' }
-  },
-  {
-    question: { de: 'Welche Forschungsbereiche werden abgedeckt?', en: 'What research areas are covered?' },
-    answer: { de: 'Wir decken vergleichende Rechtsforschung, Politikanalyse, akademische Veröffentlichungen und zugängliche rechtliche Einblicke ab.', en: 'We cover comparative legal research, policy analysis, academic publications, and accessible legal insights.' }
-  },
-  {
-    question: { de: 'Wie kann ich mitmachen?', en: 'How can I get involved?' },
-    answer: { de: 'Sie können unserem Newsletter abonnieren, uns auf LinkedIn folgen oder uns für Zusammenarbeit und Veranstaltungen kontaktieren.', en: 'You can subscribe to our newsletter, follow us on LinkedIn, or contact us for collaboration and events.' }
-  },
-  {
-    question: { de: 'Sind die Publikationen kostenlos zugänglich?', en: 'Are publications freely accessible?' },
-    answer: { de: 'Einige Publikationen sind frei zugänglich, andere können über unseren Shop erworben werden.', en: 'Some publications are freely accessible, while others can be purchased through our shop.' }
-  },
-  {
-    question: { de: 'Bietet das Institut Beratungsdienstleistungen an?', en: 'Does the Institute offer consulting services?' },
-    answer: { de: 'Ja, wir bieten rechtliche Beratung und Schulungen im Bereich LGBTQ+ Recht und Gleichstellung an.', en: 'Yes, we offer legal consulting and training in the area of LGBTQ+ law and equality.' }
-  }
-]
-
 export const FAQPage = () => {
-  const { t, language } = useLanguage()
-
   return (
-    <div className="pt-20 md:pt-28">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 md:mb-8">
-        <div className="flex flex-col items-start">
-          <p className="text-sm md:text-base font-bold text-brand-black uppercase tracking-wider">
-            {t('nav.faq')}
-          </p>
-          <div className="w-12 h-0.5 bg-brand-orange mt-2"></div>
-        </div>
-      </div>
-      <section className="py-12 md:py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-black mb-4">{t('nav.faq')}</h2>
-            <p className="text-gray-700 text-lg">
-              Find answers to commonly asked questions about the IDEA Institute and our work.
+    <div className="min-h-screen bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* What is the IDEA Institute? */}
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold text-[#1a2744] mb-2">
+              What is the IDEA Institute?
+            </h3>
+            <p className="text-[#1a2744] leading-relaxed text-lg">
+              The IDEA Institute is an independent legal research institute based in Germany and Switzerland. It focuses on comparative and transnational legal research relating to sexuality, gender identity, equality, migration, and asylum.
             </p>
           </div>
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <details key={index} className="border border-gray-200 rounded-lg">
-                <summary className="px-5 py-4 font-semibold text-brand-black cursor-pointer hover:bg-gray-50 transition">
-                  {faq.question[language]}
-                </summary>
-                <div className="px-5 py-4 text-gray-700 leading-relaxed border-t border-gray-100">
-                  {faq.answer[language]}
-                </div>
-              </details>
-            ))}
+
+          {/* Is IDEA an advocacy or activist organisation? */}
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold text-[#1a2744] mb-2">
+              Is IDEA an advocacy or activist organisation?
+            </h3>
+            <p className="text-[#1a2744] leading-relaxed text-lg mb-2">
+              No. The IDEA Institute is a research-led academic institute.
+            </p>
+            <p className="text-[#1a2744] leading-relaxed text-lg">
+              Its role is to analyse, document, and interpret legal systems rather than engage in activism or campaigning. The Institute focuses on evidence-based legal research and public legal understanding.
+            </p>
+          </div>
+
+          {/* What is comparative legal research? */}
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold text-[#1a2744] mb-2">
+              What is comparative legal research?
+            </h3>
+            <p className="text-[#1a2744] leading-relaxed text-lg mb-2">
+              Comparative legal research examines how different legal systems regulate similar issues.
+            </p>
+            <p className="text-[#1a2744] leading-relaxed text-lg mb-2">
+              For example, it may involve comparing:
+            </p>
+            <ul className="mb-2">
+              <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                <span>asylum law across countries</span>
+              </li>
+              <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                <span>gender recognition systems</span>
+              </li>
+              <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                <span>anti-discrimination protections</span>
+              </li>
+              <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                <span>judicial approaches to equality rights</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* What is the difference between law and lived reality? */}
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold text-[#1a2744] mb-2">
+              What is the difference between law and lived reality?
+            </h3>
+            <p className="text-[#1a2744] leading-relaxed text-lg mb-2">
+              Law refers to formal legal rules and protections.
+            </p>
+            <p className="text-[#1a2744] leading-relaxed text-lg">
+              Lived reality refers to how those laws affect people in everyday life. In many contexts, legal rights may exist formally but remain difficult to access or enforce in practice.
+            </p>
+          </div>
+
+          {/* Does the Institute provide legal advice? */}
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold text-[#1a2744] mb-2">
+              Does the Institute provide legal advice?
+            </h3>
+            <p className="text-[#1a2744] leading-relaxed text-lg">
+              No. The IDEA Institute does not provide legal representation or individual legal advice. Its work is academic, educational, and research based.
+            </p>
+          </div>
+
+          {/* Does IDEA focus on a specific region? */}
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold text-[#1a2744] mb-2">
+              Does IDEA focus on a specific region?
+            </h3>
+            <p className="text-[#1a2744] leading-relaxed text-lg mb-2">
+              The Institute's work is anchored in South Asia and operates comparatively across:
+            </p>
+            <ul className="mb-2">
+              <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                <span>the Global South</span>
+              </li>
+              <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                <span>Europe</span>
+              </li>
+              <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                <span>international legal frameworks</span>
+              </li>
+            </ul>
+            <p className="text-[#1a2744] leading-relaxed text-lg">
+              This allows for cross-regional analysis of legal systems and transnational legal developments.
+            </p>
+          </div>
+
+          {/* IDEA Insights */}
+          <div>
+            <h3 className="text-2xl font-bold text-[#1a2744] mb-2">
+              IDEA Insights
+            </h3>
+            <p className="text-[#1a2744] leading-relaxed text-lg mb-2">
+              IDEA Insights is the Institute's newsletter featuring:
+            </p>
+            <ul>
+              <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                <span>research updates</span>
+              </li>
+              <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                <span>short legal explainers</span>
+              </li>
+              <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                <span>commentary on current developments</span>
+              </li>
+              <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                <span>selected institutional news and events</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>

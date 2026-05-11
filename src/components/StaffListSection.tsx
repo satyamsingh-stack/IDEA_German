@@ -4,7 +4,7 @@ export const StaffListSection = () => {
   const { t } = useLanguage()
 
   return (
-    <section id="staff" className="py-12 md:py-20 bg-brand-gray">
+    <section id="staff" className="py-8 md:py-12 bg-brand-gray">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Founder and Director */}
         <div className="mb-10 md:mb-16">
