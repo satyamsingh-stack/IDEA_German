@@ -9,33 +9,33 @@ export const NewsletterPage = () => {
               IDEA Insights
             </h1>
           </div>
-          <p className="text-[#1a2744] text-lg leading-relaxed mb-4 break-words">
-            IDEA Insights is the monthly newsletter of the Institute, featuring accessible updates on comparative LGBTQ+ law, migration, asylum, and transnational legal developments.
-          </p>
-          <p className="text-[#1a2744] text-lg leading-relaxed mb-4">
-            The newsletter includes:
-          </p>
-          <ul className="mb-6">
-            <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
-              <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-              <span>key research insights</span>
-            </li>
-            <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
-              <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-              <span>comparative legal and policy developments</span>
-            </li>
-            <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
-              <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-              <span>short explainers and commentary</span>
-            </li>
-            <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
-              <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-              <span>research publications and institutional updates</span>
-            </li>
-          </ul>
-          <p className="text-[#1a2744] text-lg leading-relaxed break-words">
-            Subscribe to receive accessible legal insights, research updates, and news from the Institute.
-          </p>
+<p className="text-black text-lg leading-relaxed mb-4 break-words">
+             IDEA Insights is the monthly newsletter of the Institute, featuring accessible updates on comparative LGBTQ+ law, migration, asylum, and transnational legal developments.
+           </p>
+           <p className="text-black text-lg leading-relaxed mb-4">
+             The newsletter includes:
+           </p>
+           <ul className="mb-6">
+             <li className="text-black leading-relaxed flex items-start gap-2">
+               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+               <span>key research insights</span>
+             </li>
+             <li className="text-black leading-relaxed flex items-start gap-2">
+               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+               <span>comparative legal and policy developments</span>
+             </li>
+             <li className="text-black leading-relaxed flex items-start gap-2">
+               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+               <span>short explainers and commentary</span>
+             </li>
+             <li className="text-black leading-relaxed flex items-start gap-2">
+               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+               <span>research publications and institutional updates</span>
+             </li>
+           </ul>
+           <p className="text-black text-lg leading-relaxed break-words">
+             Subscribe to receive accessible legal insights, research updates, and news from the Institute.
+           </p>
         </div>
       </section>
     </div>

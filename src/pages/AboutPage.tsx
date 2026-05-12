@@ -8,7 +8,7 @@ export const AboutPage = () => {
       {/* Intro Section */}
       <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#1a2744] leading-relaxed text-lg break-words">
+          <p className="text-black leading-relaxed text-lg break-words">
             {t('about.introDesc')}
           </p>
         </div>
@@ -23,21 +23,21 @@ export const AboutPage = () => {
                {t('about.missionTitle')}
              </h2>
            </div>
-          <p className="text-[#1a2744] text-lg leading-relaxed mb-4 max-w-3xl break-words">
+          <p className="text-black text-lg leading-relaxed mb-4 max-w-3xl break-words">
             {t('about.missionIntro')}
           </p>
-          <p className="text-[#1a2744] text-lg leading-relaxed mb-4">
+          <p className="text-black text-lg leading-relaxed mb-4">
             {t('about.missionDesc')}
           </p>
           <ul className="mb-6">
             {[1, 2, 3, 4, 5].map((i) => (
-              <li key={i} className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+              <li key={i} className="text-black leading-relaxed flex items-start gap-2">
                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
                 <span>{t(`about.mission.${i}` as const)}</span>
               </li>
             ))}
           </ul>
-          <p className="text-[#1a2744] leading-relaxed text-lg break-words">
+          <p className="text-black leading-relaxed text-lg break-words">
             {t('about.missionGoal')}
           </p>
         </div>
@@ -52,18 +52,18 @@ export const AboutPage = () => {
                {t('about.approachTitle')}
              </h2>
            </div>
-          <p className="text-[#1a2744] text-lg leading-relaxed mb-4 max-w-3xl break-words">
+          <p className="text-black text-lg leading-relaxed mb-4 max-w-3xl break-words">
             {t('about.approachDesc')}
           </p>
           <ul className="mb-6">
             {[1, 2, 3, 4, 5].map((i) => (
-              <li key={i} className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+              <li key={i} className="text-black leading-relaxed flex items-start gap-2">
                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
                 <span>{t(`about.approach.${i}` as const)}</span>
               </li>
             ))}
           </ul>
-          <p className="text-[#1a2744] leading-relaxed text-lg break-words">
+          <p className="text-black leading-relaxed text-lg break-words">
             {t('about.approachGoal')}
           </p>
         </div>
@@ -78,18 +78,18 @@ export const AboutPage = () => {
                {t('about.perspectiveTitle')}
              </h2>
            </div>
-          <p className="text-[#1a2744] text-lg leading-relaxed mb-4 max-w-3xl break-words">
+          <p className="text-black text-lg leading-relaxed mb-4 max-w-3xl break-words">
             {t('about.perspectiveDesc')}
           </p>
           <ul className="mb-6">
             {[1, 2, 3, 4].map((i) => (
-              <li key={i} className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+              <li key={i} className="text-black leading-relaxed flex items-start gap-2">
                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
                 <span>{t(`about.perspective.${i}` as const)}</span>
               </li>
             ))}
           </ul>
-          <p className="text-[#1a2744] leading-relaxed text-lg break-words">
+          <p className="text-black leading-relaxed text-lg break-words">
             {t('about.perspectiveGoal')}
           </p>
         </div>
@@ -104,7 +104,7 @@ export const AboutPage = () => {
                {t('about.whoWeAreTitle')}
              </h2>
            </div>
-          <p className="text-[#1a2744] text-lg leading-relaxed mb-10 max-w-3xl break-words">
+          <p className="text-black leading-relaxed mb-10 max-w-3xl break-words">
             {t('about.whoWeAreDesc')}
           </p>
 
@@ -113,18 +113,18 @@ export const AboutPage = () => {
             <div>
               <h3 className="text-xl font-bold text-[#1a2744] mb-1">{t('about.drNaik.title')}</h3>
               <p className="text-brand-orange font-semibold mb-3">{t('about.drNaik.role')}</p>
-              <p className="text-[#1a2744] leading-relaxed mb-4 break-words">
+              <p className="text-black leading-relaxed mb-4 break-words">
                 {t('about.drNaik.desc')}
               </p>
               <ul className="mb-4">
                 {[1, 2, 3].map((i) => (
-                  <li key={i} className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+                  <li key={i} className="text-black leading-relaxed flex items-start gap-2">
                     <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
                     <span className="break-words">{t(`about.drNaik.${i}` as const)}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-[#1a2744] leading-relaxed break-words">
+              <p className="text-black leading-relaxed break-words">
                 {t('about.drNaik.4')}
               </p>
             </div>
@@ -133,12 +133,12 @@ export const AboutPage = () => {
             <div>
               <h3 className="text-xl font-bold text-[#1a2744] mb-1">{t('about.thomasHornung.title')}</h3>
               <p className="text-brand-orange font-semibold mb-3">{t('about.thomasHornung.role')}</p>
-              <p className="text-[#1a2744] leading-relaxed mb-4 break-words">
+              <p className="text-black leading-relaxed mb-4 break-words">
                 {t('about.thomasHornung.desc')}
               </p>
               <ul>
                 {[1, 2, 3].map((i) => (
-                  <li key={i} className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+                  <li key={i} className="text-black leading-relaxed flex items-start gap-2">
                     <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
                     <span className="break-words">{t(`about.thomasHornung.${i}` as const)}</span>
                   </li>
@@ -150,7 +150,7 @@ export const AboutPage = () => {
             <div>
               <h3 className="text-xl font-bold text-[#1a2744] mb-1">{t('about.bettinaSchwenker.title')}</h3>
               <p className="text-brand-orange font-semibold mb-3">{t('about.bettinaSchwenker.role')}</p>
-              <p className="text-[#1a2744] leading-relaxed break-words">
+              <p className="text-black leading-relaxed break-words">
                 {t('about.bettinaSchwenker.desc')}
               </p>
             </div>
@@ -159,7 +159,7 @@ export const AboutPage = () => {
             <div>
               <h3 className="text-xl font-bold text-[#1a2744] mb-1">{t('about.mirkoKnepper.title')}</h3>
               <p className="text-brand-orange font-semibold mb-3">{t('about.mirkoKnepper.role')}</p>
-              <p className="text-[#1a2744] leading-relaxed break-words">
+              <p className="text-black leading-relaxed break-words">
                 {t('about.mirkoKnepper.desc')}
               </p>
             </div>
@@ -168,7 +168,7 @@ export const AboutPage = () => {
             <div>
               <h3 className="text-xl font-bold text-[#1a2744] mb-1">{t('about.heraldGronberg.title')}</h3>
               <p className="text-brand-orange font-semibold mb-3">{t('about.heraldGronberg.role')}</p>
-              <p className="text-[#1a2744] leading-relaxed break-words">
+              <p className="text-black leading-relaxed break-words">
                 {t('about.heraldGronberg.desc')}
               </p>
             </div>
@@ -185,18 +185,18 @@ export const AboutPage = () => {
                {t('about.collabTitle')}
              </h2>
            </div>
-          <p className="text-[#1a2744] text-lg leading-relaxed mb-4 max-w-3xl break-words">
+          <p className="text-black text-lg leading-relaxed mb-4 max-w-3xl break-words">
             {t('about.collabDesc')}
           </p>
           <ul className="mb-6">
             {[1, 2, 3].map((i) => (
-              <li key={i} className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+              <li key={i} className="text-black leading-relaxed flex items-start gap-2">
                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
                 <span>{t(`about.collab.${i}` as const)}</span>
               </li>
             ))}
           </ul>
-          <p className="text-[#1a2744] leading-relaxed text-lg break-words">
+          <p className="text-black leading-relaxed text-lg break-words">
             {t('about.collabGoal')}
           </p>
         </div>
@@ -211,7 +211,7 @@ export const AboutPage = () => {
                {t('about.researchTitle')}
              </h2>
            </div>
-          <p className="text-[#1a2744] leading-relaxed text-lg break-words">
+          <p className="text-black leading-relaxed text-lg break-words">
             {t('about.researchDesc')}
           </p>
         </div>

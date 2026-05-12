@@ -12,7 +12,7 @@ export const HomePage = () => {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a2744] leading-tight mb-4 tracking-tight">
               {t('home.subtitle')}
             </h1>
-            <p className="text-[#1a2744] text-lg leading-relaxed break-words">
+            <p className="text-black text-lg leading-relaxed break-words">
               {t('home.description')}
             </p>
           </div>
@@ -28,18 +28,18 @@ export const HomePage = () => {
               {t('home.whatWeDo')}
             </h2>
           </div>
-          <p className="text-[#1a2744] text-lg leading-relaxed mb-4 max-w-3xl break-words">
-            {t('home.whatWeDoDesc')}
-          </p>
-          <ul className="mb-6">
-            {[1, 2, 3].map((i) => (
-              <li key={i} className="text-[#1a2744] leading-relaxed flex items-start gap-2">
-                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                <span>{t(`home.whatWeDo.${i}` as const)}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-[#1a2744] leading-relaxed text-lg break-words">
+<p className="text-black text-lg leading-relaxed mb-4 max-w-3xl break-words">
+              {t('home.whatWeDoDesc')}
+            </p>
+            <ul className="mb-6">
+              {[1, 2, 3].map((i) => (
+                <li key={i} className="text-black leading-relaxed flex items-start gap-2">
+                  <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                  <span>{t(`home.whatWeDo.${i}` as const)}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-black leading-relaxed text-lg break-words">
             {t('home.whatWeDoBottom')}
           </p>
         </div>
@@ -54,21 +54,21 @@ export const HomePage = () => {
               {t('home.whyThisMatters')}
             </h2>
           </div>
-          <p className="text-[#1a2744] text-lg leading-relaxed mb-4 max-w-3xl break-words">
-            {t('home.whyDesc')}
-          </p>
-          <p className="text-[#1a2744] text-lg leading-relaxed mb-4">
-            {t('home.whyFor')}
-          </p>
-          <ul className="mb-6">
-            {[1, 2, 3].map((i) => (
-              <li key={i} className="text-[#1a2744] leading-relaxed flex items-start gap-2">
-                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                <span>{t(`home.why${i}` as const)}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-[#1a2744] leading-relaxed text-lg break-words">
+<p className="text-black text-lg leading-relaxed mb-4 max-w-3xl break-words">
+              {t('home.whyDesc')}
+            </p>
+            <p className="text-black text-lg leading-relaxed mb-4">
+              {t('home.whyFor')}
+            </p>
+            <ul className="mb-6">
+              {[1, 2, 3].map((i) => (
+                <li key={i} className="text-black leading-relaxed flex items-start gap-2">
+                  <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                  <span>{t(`home.why${i}` as const)}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-black leading-relaxed text-lg break-words">
             {t('home.whyBottom')}
           </p>
         </div>
@@ -83,14 +83,14 @@ export const HomePage = () => {
               {t('home.ourWork')}
             </h2>
           </div>
-          <ul>
-            {[1, 2, 3, 4].map((i) => (
-              <li key={i} className="text-[#1a2744] leading-relaxed flex items-start gap-2">
-                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                <span>{t(`home.ourWork${i}` as const)}</span>
-              </li>
-            ))}
-          </ul>
+<ul>
+              {[1, 2, 3, 4].map((i) => (
+                <li key={i} className="text-black leading-relaxed flex items-start gap-2">
+                  <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                  <span>{t(`home.ourWork${i}` as const)}</span>
+                </li>
+              ))}
+            </ul>
         </div>
       </section>
 
@@ -104,15 +104,15 @@ export const HomePage = () => {
             </h2>
           </div>
           <ul>
-            <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+            <li className="text-black leading-relaxed flex items-start gap-2">
               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
               <span>{t('home.startResearch')}</span>
             </li>
-            <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+            <li className="text-black leading-relaxed flex items-start gap-2">
               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
               <span>{t('home.startInsights')}</span>
             </li>
-            <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+            <li className="text-black leading-relaxed flex items-start gap-2">
               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
               <span>{t('home.startPublications')}</span>
             </li>
@@ -130,15 +130,15 @@ export const HomePage = () => {
             </h2>
           </div>
           <ul>
-            <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+            <li className="text-black leading-relaxed flex items-start gap-2">
               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
               <span>{t('home.getInvolvedDesc')}</span>
             </li>
-            <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+            <li className="text-black leading-relaxed flex items-start gap-2">
               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
               <span>{t('home.newsletter')}</span>
             </li>
-            <li className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+            <li className="text-black leading-relaxed flex items-start gap-2">
               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
               <span>{t('home.contact')}</span>
             </li>

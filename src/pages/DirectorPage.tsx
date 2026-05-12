@@ -15,17 +15,17 @@ export const DirectorPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744] mb-3 leading-tight">
                 {t('director.name')}
               </h2>
-              <p className="text-[#1a2744] text-lg leading-relaxed">
+              <p className="text-black text-lg leading-relaxed">
                 {t('director.role')}
               </p>
             </div>
 
             {/* Biography */}
             <div className="mb-12">
-              <p className="text-[#1a2744] text-lg leading-relaxed mb-4 break-words">
+              <p className="text-black text-lg leading-relaxed mb-4 break-words">
                 {t('director.bio1')}
               </p>
-              <p className="text-[#1a2744] text-lg leading-relaxed break-words">
+              <p className="text-black text-lg leading-relaxed break-words">
                 {t('director.bio2')}
               </p>
             </div>
@@ -45,7 +45,7 @@ export const DirectorPage = () => {
                   'director.interest5',
                   'director.interest6'
                 ].map((key) => (
-                  <li key={key} className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+                  <li key={key} className="text-black leading-relaxed flex items-start gap-2">
                     <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
                     <span className="break-words">{t(key)}</span>
                   </li>
@@ -59,7 +59,7 @@ export const DirectorPage = () => {
                 <span className="w-1.5 h-6 bg-brand-orange rounded-full"></span>
                 {t('director.methodology')}
               </h3>
-              <p className="text-[#1a2744] text-lg leading-relaxed mb-6 break-words">
+              <p className="text-black text-lg leading-relaxed mb-6 break-words">
                 {t('director.methodIntro')}
               </p>
               <ul>
@@ -69,7 +69,7 @@ export const DirectorPage = () => {
                   'director.method3',
                   'director.method4'
                 ].map((key) => (
-                  <li key={key} className="text-[#1a2744] leading-relaxed flex items-start gap-2">
+                  <li key={key} className="text-black leading-relaxed flex items-start gap-2">
                     <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
                     <span className="break-words">{t(key)}</span>
                   </li>
@@ -89,14 +89,46 @@ export const DirectorPage = () => {
                 <h4 className="text-xl font-bold text-[#1a2744] mb-4 relative pl-4 border-l-2 border-brand-orange">
                   {t('director.booksTitle')}
                 </h4>
-                <ul>
-                  {['director.book1', 'director.book2', 'director.book3'].map((key) => (
-                    <li key={key} className="text-[#1a2744] leading-relaxed flex items-start gap-2">
-                      <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                      <span className="break-words">{t(key)}</span>
-                    </li>
-                  ))}
-                </ul>
+<ul>
+                   {['director.book1', 'director.book2', 'director.book3'].map((key) => (
+                     <li key={key} className="text-black leading-relaxed flex items-start gap-2">
+                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                       <span className="break-words">{t(key)}</span>
+                     </li>
+                   ))}
+                 </ul>
+                 <ul>
+                   {['director.chapter1', 'director.chapter2', 'director.chapter3', 'director.chapter4'].map((key) => (
+                     <li key={key} className="text-black leading-relaxed flex items-start gap-2">
+                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                       <span className="break-words">{t(key)}</span>
+                     </li>
+                   ))}
+                 </ul>
+                 <ul>
+                   {['director.report1'].map((key) => (
+                     <li key={key} className="text-black leading-relaxed flex items-start gap-2">
+                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                       <span className="break-words">{t(key)}</span>
+                     </li>
+                   ))}
+                 </ul>
+                 <ul>
+                   {['director.comment1', 'director.comment2'].map((key) => (
+                     <li key={key} className="text-black leading-relaxed flex items-start gap-2">
+                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                       <span className="break-words">{t(key)}</span>
+                     </li>
+                   ))}
+                 </ul>
+                 <ul>
+                   {['director.article1'].map((key) => (
+                     <li key={key} className="text-black leading-relaxed flex items-start gap-2">
+                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                       <span className="break-words">{t(key)}</span>
+                     </li>
+                   ))}
+                 </ul>
               </div>
 
               {/* Edited Volumes & Book Chapters */}
@@ -106,10 +138,10 @@ export const DirectorPage = () => {
                 </h4>
                 <ul>
                   {['director.chapter1', 'director.chapter2', 'director.chapter3', 'director.chapter4'].map((key) => (
-                    <li key={key} className="text-[#1a2744] leading-relaxed flex items-start gap-2">
-                      <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                      <span className="break-words">{t(key)}</span>
-                    </li>
+<li key={key} className="text-black leading-relaxed flex items-start gap-2">
+                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                       <span className="break-words">{t(key)}</span>
+                     </li>
                   ))}
                 </ul>
               </div>
@@ -121,10 +153,10 @@ export const DirectorPage = () => {
                 </h4>
                 <ul>
                   {['director.report1'].map((key) => (
-                    <li key={key} className="text-[#1a2744] leading-relaxed flex items-start gap-2">
-                      <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                      <span className="break-words">{t(key)}</span>
-                    </li>
+<li key={key} className="text-black leading-relaxed flex items-start gap-2">
+                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                       <span className="break-words">{t(key)}</span>
+                     </li>
                   ))}
                 </ul>
               </div>
@@ -136,10 +168,10 @@ export const DirectorPage = () => {
                 </h4>
                 <ul>
                   {['director.comment1', 'director.comment2'].map((key) => (
-                    <li key={key} className="text-[#1a2744] leading-relaxed flex items-start gap-2">
-                      <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                      <span className="break-words">{t(key)}</span>
-                    </li>
+<li key={key} className="text-black leading-relaxed flex items-start gap-2">
+                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                       <span className="break-words">{t(key)}</span>
+                     </li>
                   ))}
                 </ul>
               </div>
@@ -151,10 +183,10 @@ export const DirectorPage = () => {
                 </h4>
                 <ul>
                   {['director.article1'].map((key) => (
-                    <li key={key} className="text-[#1a2744] leading-relaxed flex items-start gap-2">
-                      <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                      <span className="break-words">{t(key)}</span>
-                    </li>
+<li key={key} className="text-black leading-relaxed flex items-start gap-2">
+                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                       <span className="break-words">{t(key)}</span>
+                     </li>
                   ))}
                 </ul>
               </div>
