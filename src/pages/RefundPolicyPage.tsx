@@ -19,9 +19,9 @@ export const RefundPolicyPage = () => {
                 {t('refund.digitalProducts')}
               </h2>
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <p className="text-gray-700 leading-relaxed">
-                  {t('refund.digitalProductsText')}
-                </p>
+                 <p className="text-gray-700 leading-relaxed text-justify">
+                   {t('refund.digitalProductsText')}
+                 </p>
               </div>
             </div>
 
@@ -31,9 +31,9 @@ export const RefundPolicyPage = () => {
                 {t('refund.exceptions')}
               </h2>
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <p className="text-gray-700 leading-relaxed">
-                  {t('refund.exceptionsText')}
-                </p>
+                 <p className="text-gray-700 leading-relaxed text-justify">
+                   {t('refund.exceptionsText')}
+                 </p>
               </div>
             </div>
 

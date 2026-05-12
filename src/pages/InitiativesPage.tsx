@@ -8,7 +8,7 @@ export const InitiativesPage = () => {
       {/* Intro Section */}
       <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-<p className="text-black leading-relaxed text-lg break-words">
+ <p className="text-black leading-relaxed text-lg break-words text-justify">
             {t('initiatives.intro')}
           </p>
         </div>
@@ -23,29 +23,29 @@ export const InitiativesPage = () => {
                {t('initiatives.prideInLawTitle')}
              </h2>
            </div>
-           <p className="text-black text-lg leading-relaxed mb-6 max-w-3xl break-words">
-             {t('initiatives.prideInLawDesc')}
-           </p>
+            <p className="text-black text-lg leading-relaxed mb-6 max-w-3xl break-words text-justify">
+              {t('initiatives.prideInLawDesc')}
+            </p>
 
-           <p className="text-black text-lg leading-relaxed mb-4">
-             {t('initiatives.prideInLawSupports')}
-           </p>
-           <ul className="mb-6">
-             {[1, 2, 3, 4].map((i) => (
-               <li key={i} className="text-black leading-relaxed flex items-start gap-2">
-                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                 <span className="break-words">{t(`initiatives.prideInLaw.${i}` as const)}</span>
-               </li>
-             ))}
-           </ul>
+            <p className="text-black text-lg leading-relaxed mb-4 text-justify">
+              {t('initiatives.prideInLawSupports')}
+            </p>
+            <ul className="mb-6">
+              {[1, 2, 3, 4].map((i) => (
+                <li key={i} className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                  <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                  <span className="break-words">{t(`initiatives.prideInLaw.${i}` as const)}</span>
+                </li>
+              ))}
+            </ul>
 
-           <p className="text-black leading-relaxed text-lg mb-4 break-words">
-             {t('initiatives.prideInLaw.origin')}
-           </p>
+            <p className="text-black leading-relaxed text-lg mb-4 break-words text-justify">
+              {t('initiatives.prideInLaw.origin')}
+            </p>
 
-           <p className="text-black leading-relaxed text-lg break-words">
-             {t('initiatives.prideInLawTrademark')}
-           </p>
+            <p className="text-black leading-relaxed text-lg break-words text-justify">
+              {t('initiatives.prideInLawTrademark')}
+            </p>
         </div>
       </section>
     </div>

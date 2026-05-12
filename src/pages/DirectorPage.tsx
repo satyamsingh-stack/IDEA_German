@@ -1,8 +1,4 @@
-import { useLanguage } from '../contexts/LanguageContext'
-
 export const DirectorPage = () => {
-  const { t } = useLanguage()
-
   return (
     <div className="min-h-screen bg-white">
       {/* Main Content */}
@@ -13,20 +9,17 @@ export const DirectorPage = () => {
             {/* Name & Role */}
             <div className="mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744] mb-3 leading-tight">
-                {t('director.name')}
+                Dr. Yeshwant Naik
               </h2>
-              <p className="text-black text-lg leading-relaxed">
-                {t('director.role')}
+              <p className="text-black text-lg leading-relaxed text-justify">
+                Comparative law and human rights scholar with prior experience as a Professor of Law in India.
               </p>
             </div>
 
             {/* Biography */}
             <div className="mb-12">
-              <p className="text-black text-lg leading-relaxed mb-4 break-words">
-                {t('director.bio1')}
-              </p>
-              <p className="text-black text-lg leading-relaxed break-words">
-                {t('director.bio2')}
+              <p className="text-black text-lg leading-relaxed break-words text-justify">
+                His work explores sexuality, gender identity, migration, asylum, and transnational legal systems, with a broader research focus on legal responses to vulnerability, minority protection, violence, and exclusion, particularly in the contexts of Europe and India.
               </p>
             </div>
 
@@ -34,20 +27,20 @@ export const DirectorPage = () => {
             <div className="mb-12">
               <h3 className="text-2xl font-bold text-[#1a2744] mb-6 flex items-center gap-3">
                 <span className="w-1.5 h-6 bg-brand-orange rounded-full"></span>
-                {t('director.researchInterests')}
+                Research Interests
               </h3>
               <ul>
                 {[
-                  'director.interest1',
-                  'director.interest2',
-                  'director.interest3',
-                  'director.interest4',
-                  'director.interest5',
-                  'director.interest6'
-                ].map((key) => (
-                  <li key={key} className="text-black leading-relaxed flex items-start gap-2">
+                  'comparative law',
+                  'human rights law',
+                  'LGBTQ+ rights',
+                  'migration and refugee law',
+                  'law and society',
+                  'legal pluralism'
+                ].map((item, index) => (
+                  <li key={index} className="text-black leading-relaxed flex items-start gap-2 text-justify">
                     <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="break-words">{t(key)}</span>
+                    <span className="break-words">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -57,21 +50,21 @@ export const DirectorPage = () => {
             <div className="mb-12">
               <h3 className="text-2xl font-bold text-[#1a2744] mb-6 flex items-center gap-3">
                 <span className="w-1.5 h-6 bg-brand-orange rounded-full"></span>
-                {t('director.methodology')}
+                Methodological Approach
               </h3>
-              <p className="text-black text-lg leading-relaxed mb-6 break-words">
-                {t('director.methodIntro')}
+              <p className="text-black text-lg leading-relaxed mb-6 break-words text-justify">
+                Dr. Naik's work adopts an interdisciplinary socio-legal approach combining:
               </p>
               <ul>
                 {[
-                  'director.method1',
-                  'director.method2',
-                  'director.method3',
-                  'director.method4'
-                ].map((key) => (
-                  <li key={key} className="text-black leading-relaxed flex items-start gap-2">
+                  'comparative constitutional analysis',
+                  'qualitative legal research',
+                  'socio-legal studies of migration, sexuality, and gender',
+                  'transnational and comparative legal analysis'
+                ].map((item, index) => (
+                  <li key={index} className="text-black leading-relaxed flex items-start gap-2 text-justify">
                     <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="break-words">{t(key)}</span>
+                    <span className="break-words">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -81,67 +74,44 @@ export const DirectorPage = () => {
             <div>
               <h3 className="text-2xl font-bold text-[#1a2744] mb-6 flex items-center gap-3">
                 <span className="w-1.5 h-6 bg-brand-orange rounded-full"></span>
-                {t('director.publications')}
+                Selected Publications
               </h3>
 
               {/* Books & Monographs */}
               <div className="mb-8">
                 <h4 className="text-xl font-bold text-[#1a2744] mb-4 relative pl-4 border-l-2 border-brand-orange">
-                  {t('director.booksTitle')}
+                  Books & Monographs
                 </h4>
-<ul>
-                   {['director.book1', 'director.book2', 'director.book3'].map((key) => (
-                     <li key={key} className="text-black leading-relaxed flex items-start gap-2">
-                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                       <span className="break-words">{t(key)}</span>
-                     </li>
-                   ))}
-                 </ul>
-                 <ul>
-                   {['director.chapter1', 'director.chapter2', 'director.chapter3', 'director.chapter4'].map((key) => (
-                     <li key={key} className="text-black leading-relaxed flex items-start gap-2">
-                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                       <span className="break-words">{t(key)}</span>
-                     </li>
-                   ))}
-                 </ul>
-                 <ul>
-                   {['director.report1'].map((key) => (
-                     <li key={key} className="text-black leading-relaxed flex items-start gap-2">
-                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                       <span className="break-words">{t(key)}</span>
-                     </li>
-                   ))}
-                 </ul>
-                 <ul>
-                   {['director.comment1', 'director.comment2'].map((key) => (
-                     <li key={key} className="text-black leading-relaxed flex items-start gap-2">
-                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                       <span className="break-words">{t(key)}</span>
-                     </li>
-                   ))}
-                 </ul>
-                 <ul>
-                   {['director.article1'].map((key) => (
-                     <li key={key} className="text-black leading-relaxed flex items-start gap-2">
-                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                       <span className="break-words">{t(key)}</span>
-                     </li>
-                   ))}
-                 </ul>
+                <ul>
+                  {[
+                    'The Legal Imaginary: Equality and Othering in Indian Law and Literature (forthcoming, Ethics Press, 2027)',
+                    'Domestic Violence Against Male Same-Sex Partners in the EU with Special Reference to Refugee and Migrant Gay Men in Germany (Springer, 2022)',
+                    'Homosexuality in the Jurisprudence of the Supreme Court of India (Springer, 2017)'
+                  ].map((item, index) => (
+                    <li key={index} className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                      <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                      <span className="break-words">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               {/* Edited Volumes & Book Chapters */}
               <div className="mb-8">
                 <h4 className="text-xl font-bold text-[#1a2744] mb-4 relative pl-4 border-l-2 border-brand-orange">
-                  {t('director.editedTitle')}
+                  Edited Volumes & Book Chapters
                 </h4>
                 <ul>
-                  {['director.chapter1', 'director.chapter2', 'director.chapter3', 'director.chapter4'].map((key) => (
-<li key={key} className="text-black leading-relaxed flex items-start gap-2">
-                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                       <span className="break-words">{t(key)}</span>
-                     </li>
+                  {[
+                    '"Homophobic Bullying, Hate Crime, and Migration in Switzerland and Germany," in Violence Against Sexual and Gender Minorities Around the World (Edward Elgar, forthcoming 2027)',
+                    '"The Complex Legal Landscape of LGBTQ+ Rights in India," in Avant-Garde Law: New Frontiers at the Crossroads of Global Family Law (Bloomsbury Academic, forthcoming 2027)',
+                    '"Transgender Family Rights Issues and Concerns: A Comparative Legal Analysis of Asia and Europe," in Exploring Norms and Families Across the Globe (Lexington Books, 2022)',
+                    'LGBTIQ+ Inclusive Curriculum in Higher Education: Issues and Challenges (co-edited volume, University of Münster, 2023)'
+                  ].map((item, index) => (
+                    <li key={index} className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                      <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                      <span className="break-words">{item}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -149,14 +119,16 @@ export const DirectorPage = () => {
               {/* Research Reports */}
               <div className="mb-8">
                 <h4 className="text-xl font-bold text-[#1a2744] mb-4 relative pl-4 border-l-2 border-brand-orange">
-                  {t('director.reportsTitle')}
+                  Research Reports
                 </h4>
                 <ul>
-                  {['director.report1'].map((key) => (
-<li key={key} className="text-black leading-relaxed flex items-start gap-2">
-                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                       <span className="break-words">{t(key)}</span>
-                     </li>
+                  {[
+                    'LGBTIQ in the Workplace: Injustice and Discrimination in Germany — Legal Analysis (University of Münster, 2023)'
+                  ].map((item, index) => (
+                    <li key={index} className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                      <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                      <span className="break-words">{item}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -164,14 +136,17 @@ export const DirectorPage = () => {
               {/* Commentary & Public Writing */}
               <div className="mb-8">
                 <h4 className="text-xl font-bold text-[#1a2744] mb-4 relative pl-4 border-l-2 border-brand-orange">
-                  {t('director.commentaryTitle')}
+                  Commentary & Public Writing
                 </h4>
                 <ul>
-                  {['director.comment1', 'director.comment2'].map((key) => (
-<li key={key} className="text-black leading-relaxed flex items-start gap-2">
-                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                       <span className="break-words">{t(key)}</span>
-                     </li>
+                  {[
+                    '"A Critical Analysis of the Indian Supreme Court\'s Ruling on Same-Sex Marriage" (Oxford Human Rights Hub, 2025)',
+                    '"Germany\'s New Gender Self-Determination Act: Advances and Challenges" (Oxford Human Rights Hub, 2024)'
+                  ].map((item, index) => (
+                    <li key={index} className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                      <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                      <span className="break-words">{item}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -179,14 +154,16 @@ export const DirectorPage = () => {
               {/* Journal Articles */}
               <div>
                 <h4 className="text-xl font-bold text-[#1a2744] mb-4 relative pl-4 border-l-2 border-brand-orange">
-                  {t('director.articlesTitle')}
+                  Journal Articles
                 </h4>
                 <ul>
-                  {['director.article1'].map((key) => (
-<li key={key} className="text-black leading-relaxed flex items-start gap-2">
-                       <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                       <span className="break-words">{t(key)}</span>
-                     </li>
+                  {[
+                    '"Regulations on Sex Toy Industry in Europe," Technium Social Sciences Journal (2021)'
+                  ].map((item, index) => (
+                    <li key={index} className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                      <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                      <span className="break-words">{item}</span>
+                    </li>
                   ))}
                 </ul>
               </div>

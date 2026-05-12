@@ -20,9 +20,9 @@ export const TermsAndConditionsPage = () => {
               </h2>
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
                 <h3 className="text-lg font-medium text-gray-600 mb-3">{t('terms.scopeTitle')}</h3>
-                <p className="text-gray-700 leading-relaxed">
-                  {t('terms.scopeText')}
-                </p>
+                 <p className="text-gray-700 leading-relaxed text-justify">
+                   {t('terms.scopeText')}
+                 </p>
               </div>
             </div>
 
@@ -32,9 +32,9 @@ export const TermsAndConditionsPage = () => {
                 {t('terms.contract')}
               </h2>
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <p className="text-gray-700 leading-relaxed">
-                  {t('terms.contractText')}
-                </p>
+                 <p className="text-gray-700 leading-relaxed text-justify">
+                   {t('terms.contractText')}
+                 </p>
               </div>
             </div>
 
@@ -44,9 +44,9 @@ export const TermsAndConditionsPage = () => {
                 {t('terms.digitalProducts')}
               </h2>
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <p className="text-gray-700 leading-relaxed">
-                  {t('terms.digitalProductsText')}
-                </p>
+                 <p className="text-gray-700 leading-relaxed text-justify">
+                   {t('terms.digitalProductsText')}
+                 </p>
               </div>
             </div>
 
@@ -56,9 +56,9 @@ export const TermsAndConditionsPage = () => {
                 {t('terms.usageRights')}
               </h2>
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <p className="text-gray-700 leading-relaxed">
-                  {t('terms.usageRightsText')}
-                </p>
+                 <p className="text-gray-700 leading-relaxed text-justify">
+                   {t('terms.usageRightsText')}
+                 </p>
               </div>
             </div>
 
@@ -68,9 +68,9 @@ export const TermsAndConditionsPage = () => {
                 {t('terms.disclaimer')}
               </h2>
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <p className="text-gray-700 leading-relaxed">
-                  {t('terms.disclaimerText')}
-                </p>
+                 <p className="text-gray-700 leading-relaxed text-justify">
+                   {t('terms.disclaimerText')}
+                 </p>
               </div>
             </div>
 
@@ -80,9 +80,9 @@ export const TermsAndConditionsPage = () => {
                 {t('terms.applicableLaw')}
               </h2>
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <p className="text-gray-700 leading-relaxed">
-                  {t('terms.applicableLawText')}
-                </p>
+                 <p className="text-gray-700 leading-relaxed text-justify">
+                   {t('terms.applicableLawText')}
+                 </p>
               </div>
             </div>
           </div>

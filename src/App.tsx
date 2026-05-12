@@ -34,6 +34,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path="about" element={<AboutPage />} />
+            <Route path="about/director" element={<DirectorPage />} />
             <Route path="standort" element={<LocationPage />} />
             <Route path="innovation-und-rechtsberatung" element={<InnovationPage />} />
             <Route path="forschung" element={<ResearchPage />} />

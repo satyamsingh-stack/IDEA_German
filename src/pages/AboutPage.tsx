@@ -1,4 +1,5 @@
 import { useLanguage } from '../contexts/LanguageContext'
+import { Link } from 'react-router-dom'
 
 export const AboutPage = () => {
   const { t } = useLanguage()
@@ -8,9 +9,9 @@ export const AboutPage = () => {
       {/* Intro Section */}
       <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-black leading-relaxed text-lg break-words">
-            {t('about.introDesc')}
-          </p>
+           <p className="text-black leading-relaxed text-lg break-words text-justify">
+             {t('about.introDesc')}
+           </p>
         </div>
       </section>
 
@@ -23,23 +24,23 @@ export const AboutPage = () => {
                {t('about.missionTitle')}
              </h2>
            </div>
-          <p className="text-black text-lg leading-relaxed mb-4 max-w-3xl break-words">
-            {t('about.missionIntro')}
-          </p>
-          <p className="text-black text-lg leading-relaxed mb-4">
-            {t('about.missionDesc')}
-          </p>
-          <ul className="mb-6">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <li key={i} className="text-black leading-relaxed flex items-start gap-2">
-                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                <span>{t(`about.mission.${i}` as const)}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-black leading-relaxed text-lg break-words">
-            {t('about.missionGoal')}
-          </p>
+           <p className="text-black text-lg leading-relaxed mb-4 max-w-3xl break-words text-justify">
+             {t('about.missionIntro')}
+           </p>
+           <p className="text-black text-lg leading-relaxed mb-4 text-justify">
+             {t('about.missionDesc')}
+           </p>
+           <ul className="mb-6">
+             {[1, 2, 3, 4, 5].map((i) => (
+               <li key={i} className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                 <span>{t(`about.mission.${i}` as const)}</span>
+               </li>
+             ))}
+           </ul>
+           <p className="text-black leading-relaxed text-lg break-words text-justify">
+             {t('about.missionGoal')}
+           </p>
         </div>
       </section>
 
@@ -52,20 +53,20 @@ export const AboutPage = () => {
                {t('about.approachTitle')}
              </h2>
            </div>
-          <p className="text-black text-lg leading-relaxed mb-4 max-w-3xl break-words">
-            {t('about.approachDesc')}
-          </p>
-          <ul className="mb-6">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <li key={i} className="text-black leading-relaxed flex items-start gap-2">
-                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                <span>{t(`about.approach.${i}` as const)}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-black leading-relaxed text-lg break-words">
-            {t('about.approachGoal')}
-          </p>
+           <p className="text-black text-lg leading-relaxed mb-4 max-w-3xl break-words text-justify">
+             {t('about.approachDesc')}
+           </p>
+           <ul className="mb-6">
+             {[1, 2, 3, 4, 5].map((i) => (
+               <li key={i} className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                 <span>{t(`about.approach.${i}` as const)}</span>
+               </li>
+             ))}
+           </ul>
+           <p className="text-black leading-relaxed text-lg break-words text-justify">
+             {t('about.approachGoal')}
+           </p>
         </div>
       </section>
 
@@ -78,20 +79,20 @@ export const AboutPage = () => {
                {t('about.perspectiveTitle')}
              </h2>
            </div>
-          <p className="text-black text-lg leading-relaxed mb-4 max-w-3xl break-words">
-            {t('about.perspectiveDesc')}
-          </p>
-          <ul className="mb-6">
-            {[1, 2, 3, 4].map((i) => (
-              <li key={i} className="text-black leading-relaxed flex items-start gap-2">
-                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                <span>{t(`about.perspective.${i}` as const)}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-black leading-relaxed text-lg break-words">
-            {t('about.perspectiveGoal')}
-          </p>
+           <p className="text-black text-lg leading-relaxed mb-4 max-w-3xl break-words text-justify">
+             {t('about.perspectiveDesc')}
+           </p>
+           <ul className="mb-6">
+             {[1, 2, 3, 4].map((i) => (
+               <li key={i} className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                 <span>{t(`about.perspective.${i}` as const)}</span>
+               </li>
+             ))}
+           </ul>
+           <p className="text-black leading-relaxed text-lg break-words text-justify">
+             {t('about.perspectiveGoal')}
+           </p>
         </div>
       </section>
 
@@ -113,64 +114,64 @@ export const AboutPage = () => {
             <div>
               <h3 className="text-xl font-bold text-[#1a2744] mb-1">{t('about.drNaik.title')}</h3>
               <p className="text-brand-orange font-semibold mb-3">{t('about.drNaik.role')}</p>
-              <p className="text-black leading-relaxed mb-4 break-words">
-                {t('about.drNaik.desc')}
-              </p>
-              <ul className="mb-4">
-                {[1, 2, 3].map((i) => (
-                  <li key={i} className="text-black leading-relaxed flex items-start gap-2">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="break-words">{t(`about.drNaik.${i}` as const)}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-black leading-relaxed break-words">
-                {t('about.drNaik.4')}
-              </p>
+               <p className="text-black leading-relaxed mb-4 break-words text-justify">
+                 {t('about.drNaik.desc')}
+               </p>
+               <ul className="mb-4">
+                 {[1, 2, 3].map((i) => (
+                   <li key={i} className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                     <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                     <span className="break-words">{t(`about.drNaik.${i}` as const)}</span>
+                   </li>
+                 ))}
+               </ul>
+               <p className="text-black leading-relaxed break-words text-justify">
+                 {t('about.drNaik.4')}
+               </p>
             </div>
 
             {/* Thomas Hornung */}
             <div>
               <h3 className="text-xl font-bold text-[#1a2744] mb-1">{t('about.thomasHornung.title')}</h3>
               <p className="text-brand-orange font-semibold mb-3">{t('about.thomasHornung.role')}</p>
-              <p className="text-black leading-relaxed mb-4 break-words">
-                {t('about.thomasHornung.desc')}
-              </p>
-              <ul>
-                {[1, 2, 3].map((i) => (
-                  <li key={i} className="text-black leading-relaxed flex items-start gap-2">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="break-words">{t(`about.thomasHornung.${i}` as const)}</span>
-                  </li>
-                ))}
-              </ul>
+               <p className="text-black leading-relaxed mb-4 break-words text-justify">
+                 {t('about.thomasHornung.desc')}
+               </p>
+               <ul>
+                 {[1, 2, 3].map((i) => (
+                   <li key={i} className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                     <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                     <span className="break-words">{t(`about.thomasHornung.${i}` as const)}</span>
+                   </li>
+                 ))}
+               </ul>
             </div>
 
             {/* Bettina Schwenker */}
             <div>
               <h3 className="text-xl font-bold text-[#1a2744] mb-1">{t('about.bettinaSchwenker.title')}</h3>
               <p className="text-brand-orange font-semibold mb-3">{t('about.bettinaSchwenker.role')}</p>
-              <p className="text-black leading-relaxed break-words">
-                {t('about.bettinaSchwenker.desc')}
-              </p>
+               <p className="text-black leading-relaxed break-words text-justify">
+                 {t('about.bettinaSchwenker.desc')}
+               </p>
             </div>
 
             {/* Mirko Knepper */}
             <div>
               <h3 className="text-xl font-bold text-[#1a2744] mb-1">{t('about.mirkoKnepper.title')}</h3>
               <p className="text-brand-orange font-semibold mb-3">{t('about.mirkoKnepper.role')}</p>
-              <p className="text-black leading-relaxed break-words">
-                {t('about.mirkoKnepper.desc')}
-              </p>
+               <p className="text-black leading-relaxed break-words text-justify">
+                 {t('about.mirkoKnepper.desc')}
+               </p>
             </div>
 
             {/* Herald Gronberg */}
             <div>
               <h3 className="text-xl font-bold text-[#1a2744] mb-1">{t('about.heraldGronberg.title')}</h3>
               <p className="text-brand-orange font-semibold mb-3">{t('about.heraldGronberg.role')}</p>
-              <p className="text-black leading-relaxed break-words">
-                {t('about.heraldGronberg.desc')}
-              </p>
+               <p className="text-black leading-relaxed break-words text-justify">
+                 {t('about.heraldGronberg.desc')}
+               </p>
             </div>
           </div>
         </div>
@@ -185,37 +186,61 @@ export const AboutPage = () => {
                {t('about.collabTitle')}
              </h2>
            </div>
-          <p className="text-black text-lg leading-relaxed mb-4 max-w-3xl break-words">
-            {t('about.collabDesc')}
-          </p>
-          <ul className="mb-6">
-            {[1, 2, 3].map((i) => (
-              <li key={i} className="text-black leading-relaxed flex items-start gap-2">
-                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                <span>{t(`about.collab.${i}` as const)}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-black leading-relaxed text-lg break-words">
-            {t('about.collabGoal')}
-          </p>
+           <p className="text-black text-lg leading-relaxed mb-4 max-w-3xl break-words text-justify">
+             {t('about.collabDesc')}
+           </p>
+           <ul className="mb-6">
+             {[1, 2, 3].map((i) => (
+               <li key={i} className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                 <span>{t(`about.collab.${i}` as const)}</span>
+               </li>
+             ))}
+           </ul>
+           <p className="text-black leading-relaxed text-lg break-words text-justify">
+             {t('about.collabGoal')}
+           </p>
         </div>
       </section>
 
-      {/* Research Positioning Section */}
-      <section className="relative py-8 md:py-12 bg-white">
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="flex items-center gap-3 mb-4">
-             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
-             <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
-               {t('about.researchTitle')}
-             </h2>
-           </div>
-          <p className="text-black leading-relaxed text-lg break-words">
-            {t('about.researchDesc')}
-          </p>
-        </div>
-      </section>
-    </div>
-  )
+       {/* Research Positioning Section */}
+       <section className="relative py-8 md:py-12 bg-white">
+         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
+                {t('about.researchTitle')}
+              </h2>
+            </div>
+            <p className="text-black leading-relaxed text-lg break-words text-justify">
+              {t('about.researchDesc')}
+            </p>
+         </div>
+       </section>
+
+       {/* Director Section */}
+       <section className="relative py-8 md:py-12 bg-white">
+         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
+                Director
+              </h2>
+            </div>
+            <p className="text-black text-lg leading-relaxed mb-6 max-w-3xl break-words text-justify">
+              Dr. Yeshwant Naik — Comparative law and human rights scholar with extensive experience as a Professor of Law in India. His work explores sexuality, gender identity, migration, asylum, and transnational legal systems.
+            </p>
+            <Link
+              to="/about/director"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-orange text-white font-semibold rounded-xl hover:bg-orange-600 transition-all duration-300 shadow-md hover:shadow-lg"
+            >
+              <span>View Full Profile</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+         </div>
+       </section>
+     </div>
+   )
 }

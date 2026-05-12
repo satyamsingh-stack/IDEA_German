@@ -24,9 +24,9 @@ export const ContactPage = () => {
                     <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">
                       {t('contact.address')}
                     </h4>
-                    <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line break-words">
-                      {t('contact.germanyAddress')}
-                    </p>
+                     <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line break-words text-justify">
+                       {t('contact.germanyAddress')}
+                     </p>
                   </div>
                   <div>
                     <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">
@@ -51,9 +51,9 @@ export const ContactPage = () => {
                     <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">
                       {t('contact.address')}
                     </h4>
-                    <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line break-words">
-                      {t('contact.switzerlandAddress')}
-                    </p>
+                     <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line break-words text-justify">
+                       {t('contact.switzerlandAddress')}
+                     </p>
                   </div>
                   <div>
                     <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">
