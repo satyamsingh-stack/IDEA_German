@@ -45,9 +45,9 @@ export const ImpressumPage = () => {
                 {t('impressum.textContent')}
               </h2>
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <p className="text-gray-700 leading-relaxed">
-                  {t('impressum.textContentDesc')}
-                </p>
+                 <p className="text-gray-700 leading-relaxed text-justify">
+                   {t('impressum.textContentDesc')}
+                 </p>
               </div>
             </div>
 
@@ -75,20 +75,20 @@ export const ImpressumPage = () => {
               </h2>
               <div className="space-y-4">
                 <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <p className="text-gray-700 leading-relaxed">
-                    {t('impressum.disclaimer1')}
-                  </p>
-                </div>
-                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <p className="text-gray-700 leading-relaxed">
-                    {t('impressum.disclaimer2')}
-                  </p>
-                </div>
-                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <p className="text-gray-700 leading-relaxed">
-                    {t('impressum.disclaimer3')}
-                  </p>
-                </div>
+                   <p className="text-gray-700 leading-relaxed text-justify">
+                     {t('impressum.disclaimer1')}
+                   </p>
+                 </div>
+                 <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                   <p className="text-gray-700 leading-relaxed text-justify">
+                     {t('impressum.disclaimer2')}
+                   </p>
+                 </div>
+                 <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                   <p className="text-gray-700 leading-relaxed text-justify">
+                     {t('impressum.disclaimer3')}
+                   </p>
+                 </div>
               </div>
             </div>
 
@@ -99,14 +99,14 @@ export const ImpressumPage = () => {
                 {t('impressum.copyright')}
               </h2>
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <div className="space-y-4 text-gray-700 leading-relaxed">
-                  <p>
-                    {t('impressum.copyrightText1')}
-                  </p>
-                  <p>
-                    {t('impressum.copyrightText2')}
-                  </p>
-                </div>
+                 <div className="space-y-4 text-gray-700 leading-relaxed">
+                   <p className="text-justify">
+                     {t('impressum.copyrightText1')}
+                   </p>
+                   <p className="text-justify">
+                     {t('impressum.copyrightText2')}
+                   </p>
+                 </div>
               </div>
             </div>
           </div>

@@ -14,9 +14,9 @@ export const PrivacyPolicyPage = () => {
 
           <div className="p-8 md:p-12">
             <div className="mb-8">
-              <p className="text-gray-600 leading-relaxed mb-6 bg-gray-50 rounded-xl p-6 border border-gray-100">
-                {t('privacy.intro')}
-              </p>
+               <p className="text-gray-600 leading-relaxed mb-6 bg-gray-50 rounded-xl p-6 border border-gray-100 text-justify">
+                 {t('privacy.intro')}
+               </p>
             </div>
 
             <div className="mb-8">
@@ -57,12 +57,12 @@ export const PrivacyPolicyPage = () => {
                 {t('privacy.dataCollection')}
               </h2>
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  {t('privacy.dataCollection1')}
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  {t('privacy.dataCollection2')}
-                </p>
+                 <p className="text-gray-700 leading-relaxed mb-4 text-justify">
+                   {t('privacy.dataCollection1')}
+                 </p>
+                 <p className="text-gray-700 leading-relaxed text-justify">
+                   {t('privacy.dataCollection2')}
+                 </p>
               </div>
             </div>
 
@@ -72,9 +72,9 @@ export const PrivacyPolicyPage = () => {
                 {t('privacy.dataUse')}
               </h2>
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <p className="text-gray-700 leading-relaxed">
-                  {t('privacy.dataUseText')}
-                </p>
+                 <p className="text-gray-700 leading-relaxed text-justify">
+                   {t('privacy.dataUseText')}
+                 </p>
               </div>
             </div>
 
@@ -84,9 +84,9 @@ export const PrivacyPolicyPage = () => {
                 {t('privacy.storage')}
               </h2>
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <p className="text-gray-700 leading-relaxed">
-                  {t('privacy.storageText')}
-                </p>
+                 <p className="text-gray-700 leading-relaxed text-justify">
+                   {t('privacy.storageText')}
+                 </p>
               </div>
             </div>
 
@@ -96,9 +96,9 @@ export const PrivacyPolicyPage = () => {
                 {t('privacy.rights')}
               </h2>
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <p className="text-gray-700 leading-relaxed">
-                  {t('privacy.rightsText')}
-                </p>
+                 <p className="text-gray-700 leading-relaxed text-justify">
+                   {t('privacy.rightsText')}
+                 </p>
               </div>
             </div>
           </div>

@@ -60,7 +60,7 @@ export const ProjectsSection = () => {
                     {project.status}
                   </span>
                 </div>
-                <p className="text-gray-700 leading-relaxed text-base md:text-lg">
+                <p className="text-gray-700 leading-relaxed text-base md:text-lg text-justify">
                   {project.title}
                 </p>
               </div>
