@@ -112,7 +112,7 @@ export const Navbar = () => {
                  className={`${
                    isMobile
                      ? 'bg-gradient-to-b from-gray-50/80 to-white rounded-2xl mx-2 mb-2 shadow-sm border border-gray-100'
-                     : 'min-w-[220px] bg-white/98 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100/50 py-2 z-50 transform origin-top transition-all duration-200'
+                     : 'min-w-[220px] bg-white rounded-2xl shadow-2xl border border-gray-100/50 py-2 z-50 transform origin-top transition-all duration-200'
                  }`}
                >
                  {item.children!.map(child => (
