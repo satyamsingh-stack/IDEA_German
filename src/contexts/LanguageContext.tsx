@@ -215,10 +215,10 @@ const translations: Translation = {
     de: 'Häufige Fragen',
     en: 'FAQ'
   },
-  'nav.programsEvents': {
-    de: 'Programme & Veranstaltungen',
-    en: 'Programs & Events'
-  },
+   'nav.programsEvents': {
+     de: 'Programme & Veranstaltungen',
+     en: 'Programmes & Events'
+   },
   'nav.initiatives': {
     de: 'Initiativen',
     en: 'Initiatives'
