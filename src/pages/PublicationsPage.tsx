@@ -1,4 +1,4 @@
-export const PublicationsPage = () => {
+﻿export const PublicationsPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <section className="relative py-8 md:py-12 bg-white">
@@ -107,13 +107,13 @@ export const PublicationsPage = () => {
                   </li>
                   <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
                     <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Migration, Asylum & Transnational Law/Evolving Dynamics of Stockholm's LGBTQ+ Scene.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                    <a href="/images/Publications/Migration, Asylum &amp; Transnational Law/Evolving Dynamics of Stockholm’s LGBTQ+ Scene.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
                       Evolving Dynamics of Stockholm's LGBTQ+ Scene: Observations and Insights
                     </a>
                   </li>
                   <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
                     <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Migration, Asylum & Transnational Law/UNPACKING PLANET ROMEO'S LGBTQ+.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                    <a href="/images/Publications/Migration, Asylum & Transnational Law/UNPACKING PLANET ROMEO’S LGBTQ+.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
                       Unpacking Planet Romeo's LGBTQ+ U.S. Presidential Election Survey Findings
                     </a>
                   </li>
@@ -173,13 +173,13 @@ export const PublicationsPage = () => {
                   </li>
                   <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
                     <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Violence, Protection & Legal Gaps/Navigating the Stigma Tim Kr�ger's Death.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                    <a href="/images/Publications/Violence, Protection & Legal Gaps/Navigating the Stigma Tim Krüger's Death.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
                       Navigating the Stigma: Tim Krüger's Death and Its Broader Implications
                     </a>
                   </li>
                   <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
                     <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Violence, Protection & Legal Gaps/Austria's Constitutional Court Recognizes Non-Binary People.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                    <a href="/images/Publications/Violence, Protection & Legal Gaps/Austria’s Constitutional Court Recognizes Non-Binary People.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
                       Austria's Constitutional Court Recognises Non-Binary People as a Matter of Human Rights
                     </a>
                   </li>
@@ -197,7 +197,7 @@ export const PublicationsPage = () => {
                 <ul>
                   <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
                     <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Policy and Commentary/Review of the EU LGBTIQ+ Equality Strategy 2020-2025 and 2026-2030.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                    <a href="/images/Publications/Policy and Commentary/Review of the EU LGBTIQ+ Equality Strategy 2020-2025 and 2026 -2030.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
                       Review of the EU LGBTIQ+ Equality Strategy 2020–2025 and 2026–2030
                     </a>
                   </li>
@@ -215,7 +215,7 @@ export const PublicationsPage = () => {
                 <ul>
                   <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
                     <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/German Publications/Ablehnung einer �berpr�fung Entscheidung des Obersten Gerichtshofs zum Same-Sex-.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                    <a href="/images/Publications/German Publications/Ablehnung einer Überprüfung Entscheidung des Obersten Gerichtshofs zum Same-Sex-.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
                       Ablehnung einer Überprüfung: Entscheidung des Obersten Gerichtshofs zum Same-Sex-Marriage in Indien
                     </a>
                   </li>
@@ -227,7 +227,7 @@ export const PublicationsPage = () => {
                   </li>
                   <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
                     <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/German Publications/Navigating the Stigma Tim Kr�ger's Death.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                    <a href="/images/Publications/German Publications/Navigating the Stigma Tim Krüger's Death.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
                       Navigieren des Stigmas: Der Tod von Tim Krüger und seine umfassenderen Implikationen
                     </a>
                   </li>

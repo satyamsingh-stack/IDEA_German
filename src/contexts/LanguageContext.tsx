@@ -851,10 +851,10 @@ const translations: Translation = {
      de: 'KONTAKT',
      en: 'CONTACT'
    },
-   'contact.germanyTitle': {
-     de: 'Deutschland',
-     en: 'Germany'
-   },
+'contact.germanyTitle': {
+      de: 'Deutscher Partner',
+      en: 'German Affiliate'
+    },
    'contact.germanyAddress': {
      de: 'Ernst-Reuter-Str. 12\n79618 Rheinfelden (Baden)',
      en: 'Ernst-Reuter-Str. 12\n79618 Rheinfelden (Baden)'

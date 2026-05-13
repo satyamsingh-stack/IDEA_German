@@ -12,7 +12,7 @@ export const DirectorPage = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744] mb-3 leading-tight">
                   Dr. Yeshwant Naik
                 </h2>
-                <p className="text-black text-lg leading-relaxed text-justify">
+                <p className="text-black text-xs leading-relaxed italic text-justify">
                   Comparative law and human rights scholar with prior experience as a Professor of Law in India.
                 </p>
                 <p className="text-black text-lg leading-relaxed text-justify">
@@ -20,7 +20,7 @@ export const DirectorPage = () => {
                 </p>
               </div>
               <div className="flex-shrink-0">
-                <img src="/images/yashwant.png" alt="Portrait of Dr. Yeshwant Naik, Director of IDEA Institute" className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg shadow-md" />
+                <img src="/images/yashwant.png" alt="Portrait of Dr. Yeshwant Naik, Director of IDEA Institute" className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-lg shadow-md" />
               </div>
             </div>
 
