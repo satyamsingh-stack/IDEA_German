@@ -9,35 +9,43 @@ export const NewsletterPage = () => {
               IDEA Insights
             </h1>
           </div>
- <p className="text-black text-lg leading-relaxed mb-4 break-words text-justify">
-              IDEA Insights is the monthly newsletter of the Institute, featuring accessible updates on comparative LGBTQ+ law, migration, asylum, and transnational legal developments.
-            </p>
-            <p className="text-black text-lg leading-relaxed mb-4 text-justify">
-              The newsletter includes:
-            </p>
-            <ul className="mb-6">
-              <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                <span>key research insights</span>
-              </li>
-              <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                <span>comparative legal and policy developments</span>
-              </li>
-              <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                <span>short explainers and commentary</span>
-              </li>
-              <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                <span>research publications and institutional updates</span>
-              </li>
-            </ul>
-            <p className="text-black text-lg leading-relaxed break-words text-justify">
-              Subscribe to receive accessible legal insights, research updates, and news from the Institute.
-            </p>
-        </div>
-      </section>
-    </div>
-  )
+       <p className="text-black text-lg leading-relaxed mb-4 break-words text-justify">
+               IDEA Insights is the monthly newsletter of the Institute, featuring accessible updates on comparative LGBTQ+ law, migration, asylum, and transnational legal developments.
+             </p>
+             <p className="text-black text-lg leading-relaxed mb-4 text-justify">
+               The newsletter includes:
+             </p>
+             <ul className="mb-6">
+               <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                 <span>key research insights</span>
+               </li>
+               <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                 <span>comparative legal and policy developments</span>
+               </li>
+               <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                 <span>short explainers and commentary</span>
+               </li>
+               <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                 <span>research publications and institutional updates</span>
+               </li>
+             </ul>
+             <p className="text-black text-lg leading-relaxed break-words text-justify">
+               Subscribe to receive accessible legal insights, research updates, and news from the Institute.
+             </p>
+             {/* Newsletter IDEA Image */}
+             <div className="mt-8 flex justify-center">
+               <img 
+                 src="/images/Newsletter IDEA .png" 
+                 alt="IDEA Newsletter" 
+                 className="max-w-full h-auto rounded-lg shadow-md"
+               />
+             </div>
+         </div>
+       </section>
+     </div>
+   )
 }
