@@ -48,157 +48,197 @@ export const PublicationsPage = () => {
                The IDEA Institute produces academic and analytical work across its core research areas.
              </p>
 
-             {/* Comparative Legal Analysis */}
-             <div className="mb-8">
-               <h3 className="text-xl font-bold text-[#1a2744] mb-2">
-                 Comparative Legal Analysis
-               </h3>
-               <p className="text-black leading-relaxed mb-4 text-justify">
-                 Research examining legal developments across jurisdictions and comparative legal systems.
-               </p>
-               <ul>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>A Critique of Germany's Prostitution Legislation</span>
-                 </li>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Comparative and Transnational LGBTIQ+ Legal Studies: Toward a South Asia–Anchored Global Research Framework</span>
-                 </li>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Jane Kaushik Judgment: A Paradigm Shift Towards Substantive Equality for Transgender Persons in India</span>
-                 </li>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Why Are Heterosexuals Guilty Toward Homosexuals?</span>
-                 </li>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>LGBTQ Rights and the Anti-LGBTQ Propaganda Law in Kazakhstan: Legal, Social, and Human Rights Analysis</span>
-                 </li>
-               </ul>
-             </div>
+              {/* Comparative Legal Analysis */}
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-[#1a2744] mb-2">
+                  Comparative Legal Analysis
+                </h3>
+                <p className="text-black leading-relaxed mb-4 text-justify">
+                  Research examining legal developments across jurisdictions and comparative legal systems.
+                </p>
+                <ul>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/Comparative Legal Analysis/A critique of Germany Prostitution.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      A Critique of Germany's Prostitution Legislation
+                    </a>
+                  </li>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/Comparative Legal Analysis/Comparative and Transnational LGBTQ+ Legal Studies.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Comparative and Transnational LGBTIQ+ Legal Studies: Toward a South Asia–Anchored Global Research Framework
+                    </a>
+                  </li>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/Comparative Legal Analysis/Jane Kaushik Judgment.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Jane Kaushik Judgment: A Paradigm Shift Towards Substantive Equality for Transgender Persons in India
+                    </a>
+                  </li>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/Comparative Legal Analysis/Why are heterosexuals guilty toward homosexuals.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Why Are Heterosexuals Guilty Toward Homosexuals?
+                    </a>
+                  </li>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/Comparative Legal Analysis/LGBTQ Rights and the Anti-LGBTQ Propaganda Law in Kazakhstan.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      LGBTQ Rights and the Anti-LGBTQ Propaganda Law in Kazakhstan: Legal, Social, and Human Rights Analysis
+                    </a>
+                  </li>
+                </ul>
+              </div>
 
-             {/* Migration, Asylum & Transnational Law */}
-             <div className="mb-8">
-               <h3 className="text-xl font-bold text-[#1a2744] mb-2">
-                 Migration, Asylum &amp; Transnational Law
-               </h3>
-               <p className="text-black leading-relaxed mb-4 text-justify">
-                 Research exploring migration, mobility, asylum systems, and cross-border legal developments.
-               </p>
-               <ul>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Review Article: Markus Lanz TV Discussion on Migration Issues (26.03.2024)</span>
-                 </li>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Evolving Dynamics of Stockholm's LGBTQ+ Scene: Observations and Insights</span>
-                 </li>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Unpacking Planet Romeo's LGBTQ+ U.S. Presidential Election Survey Findings</span>
-                 </li>
-               </ul>
-             </div>
+              {/* Migration, Asylum & Transnational Law */}
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-[#1a2744] mb-2">
+                  Migration, Asylum &amp; Transnational Law
+                </h3>
+                <p className="text-black leading-relaxed mb-4 text-justify">
+                  Research exploring migration, mobility, asylum systems, and cross-border legal developments.
+                </p>
+                <ul>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/Migration, Asylum & Transnational Law/Review Artikel TV Show.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Review Article: Markus Lanz TV Discussion on Migration Issues (26.03.2024)
+                    </a>
+                  </li>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/Migration, Asylum & Transnational Law/Evolving Dynamics of Stockholm's LGBTQ+ Scene.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Evolving Dynamics of Stockholm's LGBTQ+ Scene: Observations and Insights
+                    </a>
+                  </li>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/Migration, Asylum & Transnational Law/UNPACKING PLANET ROMEO'S LGBTQ+.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Unpacking Planet Romeo's LGBTQ+ U.S. Presidential Election Survey Findings
+                    </a>
+                  </li>
+                </ul>
+              </div>
 
-             {/* Law & Lived Experience */}
-             <div className="mb-8">
-               <h3 className="text-xl font-bold text-[#1a2744] mb-2">
-                 Law &amp; Lived Experience
-               </h3>
-               <p className="text-black leading-relaxed mb-4 text-justify">
-                 Socio-legal research examining the relationship between formal legal protections and everyday realities.
-               </p>
-               <ul>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Invisible Lives: Male Sex Workers in India</span>
-                 </li>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Why Does Homosexuality Remain Stigmatised Despite Legalisation in Germany and Other Developed Countries?</span>
-                 </li>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Against Heterosexist Arrogance: Supporting the Identity Formation of LGBTIQA+ Children and Young People</span>
-                 </li>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Identity in Focus: Why Some Gay Voters Support Far-Right Parties in Germany</span>
-                 </li>
-               </ul>
-             </div>
+              {/* Law & Lived Experience */}
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-[#1a2744] mb-2">
+                  Law &amp; Lived Experience
+                </h3>
+                <p className="text-black leading-relaxed mb-4 text-justify">
+                  Socio-legal research examining the relationship between formal legal protections and everyday realities.
+                </p>
+                <ul>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/Law & Lived Experience/Invisible Lives Male Sex Worker.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Invisible Lives: Male Sex Workers in India
+                    </a>
+                  </li>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/Law & Lived Experience/Why Is Homosexuality Still Stigmatized Despite Legalization in Germany.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Why Does Homosexuality Remain Stigmatised Despite Legalisation in Germany and Other Developed Countries?
+                    </a>
+                  </li>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/Law & Lived Experience/Against Heterosexist Arrogance.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Against Heterosexist Arrogance: Supporting the Identity Formation of LGBTIQA+ Children and Young People
+                    </a>
+                  </li>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/Law & Lived Experience/Identity in Focus.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Identity in Focus: Why Some Gay Voters Support Far-Right Parties in Germany
+                    </a>
+                  </li>
+                </ul>
+              </div>
 
-             {/* Violence, Protection & Legal Gaps */}
-             <div className="mb-8">
-               <h3 className="text-xl font-bold text-[#1a2744] mb-2">
-                 Violence, Protection &amp; Legal Gaps
-               </h3>
-               <p className="text-black leading-relaxed mb-4 text-justify">
-                 Research analysing violence, exclusion, and institutional protection failures affecting sexual and gender minorities.
-               </p>
-               <ul>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Human Rights Violations Against the LGBTQ+ Community in Iran</span>
-                 </li>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Navigating the Stigma: Tim Krüger's Death and Its Broader Implications</span>
-                 </li>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Austria's Constitutional Court Recognises Non-Binary People as a Matter of Human Rights</span>
-                 </li>
-               </ul>
-             </div>
+              {/* Violence, Protection & Legal Gaps */}
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-[#1a2744] mb-2">
+                  Violence, Protection &amp; Legal Gaps
+                </h3>
+                <p className="text-black leading-relaxed mb-4 text-justify">
+                  Research analysing violence, exclusion, and institutional protection failures affecting sexual and gender minorities.
+                </p>
+                <ul>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/Violence, Protection & Legal Gaps/Human Rights Violations Against the LGBTQ+ Community in Iran.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Human Rights Violations Against the LGBTQ+ Community in Iran
+                    </a>
+                  </li>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/Violence, Protection & Legal Gaps/Navigating the Stigma Tim Kr�ger's Death.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Navigating the Stigma: Tim Krüger's Death and Its Broader Implications
+                    </a>
+                  </li>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/Violence, Protection & Legal Gaps/Austria's Constitutional Court Recognizes Non-Binary People.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Austria's Constitutional Court Recognises Non-Binary People as a Matter of Human Rights
+                    </a>
+                  </li>
+                </ul>
+              </div>
 
-             {/* Policy & Commentary */}
-             <div className="mb-8">
-               <h3 className="text-xl font-bold text-[#1a2744] mb-2">
-                 Policy &amp; Commentary
-               </h3>
-               <p className="text-black leading-relaxed mb-4 text-justify">
-                 Critical legal and social commentary on contemporary developments in law, policy, and public discourse.
-               </p>
-               <ul>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Review of the EU LGBTIQ+ Equality Strategy 2020–2025 and 2026–2030</span>
-                 </li>
-               </ul>
-             </div>
+              {/* Policy & Commentary */}
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-[#1a2744] mb-2">
+                  Policy &amp; Commentary
+                </h3>
+                <p className="text-black leading-relaxed mb-4 text-justify">
+                  Critical legal and social commentary on contemporary developments in law, policy, and public discourse.
+                </p>
+                <ul>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/Policy and Commentary/Review of the EU LGBTIQ+ Equality Strategy 2020-2025 and 2026-2030.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Review of the EU LGBTIQ+ Equality Strategy 2020–2025 and 2026–2030
+                    </a>
+                  </li>
+                </ul>
+              </div>
 
-             {/* German Publications */}
-             <div>
-               <h3 className="text-xl font-bold text-[#1a2744] mb-2">
-                 German Publications
-               </h3>
-               <p className="text-black leading-relaxed mb-4 text-justify">
-                 Selected German-language research and commentary.
-               </p>
-               <ul>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Ablehnung einer Überprüfung: Entscheidung des Obersten Gerichtshofs zum Same-Sex-Marriage in Indien</span>
-                 </li>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Entwickelt sich Deutschland zu einem hybriden Regime vor dem Hintergrund politischer und sozialer Veränderungen?</span>
-                 </li>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Navigieren des Stigmas: Der Tod von Tim Krüger und seine umfassenderen Implikationen</span>
-                 </li>
-                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                   <span>Wider der heterosexistischen Arroganz</span>
-                 </li>
-               </ul>
-             </div>
+              {/* German Publications */}
+              <div>
+                <h3 className="text-xl font-bold text-[#1a2744] mb-2">
+                  German Publications
+                </h3>
+                <p className="text-black leading-relaxed mb-4 text-justify">
+                  Selected German-language research and commentary.
+                </p>
+                <ul>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/German Publications/Ablehnung einer �berpr�fung Entscheidung des Obersten Gerichtshofs zum Same-Sex-.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Ablehnung einer Überprüfung: Entscheidung des Obersten Gerichtshofs zum Same-Sex-Marriage in Indien
+                    </a>
+                  </li>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/German Publications/Entwickelt sich Deutschland zu einem hybriden Regime.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Entwickelt sich Deutschland zu einem hybriden Regime vor dem Hintergrund politischer und sozialer Veränderungen?
+                    </a>
+                  </li>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/German Publications/Navigating the Stigma Tim Kr�ger's Death.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Navigieren des Stigmas: Der Tod von Tim Krüger und seine umfassenderen Implikationen
+                    </a>
+                  </li>
+                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                    <a href="/images/Publications/German Publications/Wider der heterosexistischen Arroganz.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                      Wider der heterosexistischen Arroganz
+                    </a>
+                  </li>
+                </ul>
+              </div>
           </div>
 
           {/* Accessing Publications */}
