@@ -7,20 +7,21 @@ export const DirectorPage = () => {
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             {/* Name & Role */}
-            <div className="mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744] mb-3 leading-tight">
-                Dr. Yeshwant Naik
-              </h2>
-              <p className="text-black text-lg leading-relaxed text-justify">
-                Comparative law and human rights scholar with prior experience as a Professor of Law in India.
-              </p>
-            </div>
-
-            {/* Biography */}
-            <div className="mb-12">
-              <p className="text-black text-lg leading-relaxed break-words text-justify">
-                His work explores sexuality, gender identity, migration, asylum, and transnational legal systems, with a broader research focus on legal responses to vulnerability, minority protection, violence, and exclusion, particularly in the contexts of Europe and India.
-              </p>
+            <div className="flex flex-col items-center md:flex-row md:items-start md:justify-between gap-6 mb-8">
+              <div className="flex-1">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744] mb-3 leading-tight">
+                  Dr. Yeshwant Naik
+                </h2>
+                <p className="text-black text-lg leading-relaxed text-justify">
+                  Comparative law and human rights scholar with prior experience as a Professor of Law in India.
+                </p>
+                <p className="text-black text-lg leading-relaxed text-justify">
+                  His work explores sexuality, gender identity, migration, asylum, and transnational legal systems, with a broader research focus on legal responses to vulnerability, minority protection, violence, and exclusion, particularly in the contexts of Europe and India.
+                </p>
+              </div>
+              <div className="flex-shrink-0">
+                <img src="/images/yashwant.png" alt="Portrait of Dr. Yeshwant Naik, Director of IDEA Institute" className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg shadow-md" />
+              </div>
             </div>
 
             {/* Research Interests */}
@@ -114,24 +115,7 @@ export const DirectorPage = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              {/* Research Reports */}
-              <div className="mb-8">
-                <h4 className="text-xl font-bold text-[#1a2744] mb-4 relative pl-4 border-l-2 border-brand-orange">
-                  Research Reports
-                </h4>
-                <ul>
-                  {[
-                    'LGBTIQ in the Workplace: Injustice and Discrimination in Germany — Legal Analysis (University of Münster, 2023)'
-                  ].map((item, index) => (
-                    <li key={index} className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                      <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                      <span className="break-words">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            </div>
 
               {/* Commentary & Public Writing */}
               <div className="mb-8">

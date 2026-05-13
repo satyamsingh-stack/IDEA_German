@@ -4,118 +4,90 @@ export const ImpressumPage = () => {
   const { t } = useLanguage()
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100 py-12">
-      <div className="max-w-4xl mx-auto px-4 py-10">
-        {/* Header Section */}
-        <div className="bg-white rounded-2xl shadow-lg shadow-gray-200/50 border border-gray-100 overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-900 to-indigo-900 px-8 py-6">
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">{t('footer.imprint')}</h1>
-            <div className="w-20 h-1 bg-orange-400 rounded-full"></div>
-          </div>
-
-          <div className="p-8 md:p-12">
-            {/* Legal Notice */}
-            <div className="mb-8">
-              <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                <span className="w-8 h-8 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center text-sm font-bold">1</span>
-                {t('impressum.legalNotice')}
-              </h2>
-
-              <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <h3 className="text-lg font-medium text-gray-600 mb-3">{t('impressum.publishedBy')}</h3>
-                <div className="space-y-2 text-gray-700 leading-relaxed">
-                  <p className="font-medium text-gray-900">Inclusion Diversity Equality Action (IDEA) gGmbH,</p>
-                  <p className="font-medium text-gray-900">{t('impressum.institute')}</p>
-                  <p>Sinserstrasse 67,</p>
-                  <p>CH – 6330 Cham, Zug,</p>
-                  <p>
-                    Email:{" "}
-                    <a href="mailto:kontakt@ideainstitute.ch" className="text-blue-600 hover:text-blue-700 font-medium hover:underline transition">
-                      kontakt@ideainstitute.ch
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Text & Content */}
-            <div className="mb-8">
-              <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                <span className="w-8 h-8 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center text-sm font-bold">2</span>
-                {t('impressum.textContent')}
-              </h2>
-              <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                 <p className="text-gray-700 leading-relaxed text-justify">
-                   {t('impressum.textContentDesc')}
-                 </p>
-              </div>
-            </div>
-
-            {/* Concept & Implementation */}
-            <div className="mb-8">
-              <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                <span className="w-8 h-8 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center text-sm font-bold">3</span>
-                {t('impressum.concept')}
-              </h2>
-              <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <div className="text-gray-700 leading-relaxed">
-                  <p className="font-medium text-gray-900 mb-1">Inclusion Diversity Equality Action (IDEA) gGmbH</p>
-                  <p className="font-medium text-gray-900 mb-1">{t('impressum.institute')}</p>
-                  <p>Sinserstrasse 67</p>
-                  <p>CH – 6330 Cham, Zug</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Warranty and Disclaimer */}
-            <div className="mb-8">
-              <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                <span className="w-8 h-8 bg-orange-100 text-orange-700 rounded-lg flex items-center justify-center text-sm font-bold">4</span>
-                {t('impressum.disclaimer')}
-              </h2>
-              <div className="space-y-4">
-                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                   <p className="text-gray-700 leading-relaxed text-justify">
-                     {t('impressum.disclaimer1')}
-                   </p>
-                 </div>
-                 <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                   <p className="text-gray-700 leading-relaxed text-justify">
-                     {t('impressum.disclaimer2')}
-                   </p>
-                 </div>
-                 <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                   <p className="text-gray-700 leading-relaxed text-justify">
-                     {t('impressum.disclaimer3')}
-                   </p>
-                 </div>
-              </div>
-            </div>
-
-            {/* Copyright */}
-            <div>
-              <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                <span className="w-8 h-8 bg-gray-100 text-gray-700 rounded-lg flex items-center justify-center text-sm font-bold">5</span>
-                {t('impressum.copyright')}
-              </h2>
-              <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                 <div className="space-y-4 text-gray-700 leading-relaxed">
-                   <p className="text-justify">
-                     {t('impressum.copyrightText1')}
-                   </p>
-                   <p className="text-justify">
-                     {t('impressum.copyrightText2')}
-                   </p>
-                 </div>
-              </div>
-            </div>
+    <div className="min-h-screen bg-white">
+      <div className="max-w-4xl mx-auto px-4 py-12">
+        <div className="mb-8">
+          <h2 className="text-xl font-bold text-[#1a2744] mb-2">{t('impressum.publisher')}</h2>
+          <div className="space-y-2">
+            <p className="text-gray-700">{t('impressum.publisherInstitute')}</p>
+            <p className="text-gray-700">{t('impressum.publisherStreet')}</p>
+            <p className="text-gray-700">{t('impressum.publisherPostal')}</p>
+            <p className="text-gray-700">{t('impressum.publisherCountry')}</p>
           </div>
         </div>
 
-        {/* Footer Note */}
-        <div className="text-center mt-8">
-          <p className="text-gray-500 text-sm">
-            © 2026 Institute of Legal Research. {t('footer.allRights')}
+        <div className="mb-8">
+          <h2 className="text-xl font-bold text-[#1a2744] mb-2">{t('impressum.germanAffiliate')}</h2>
+          <div className="space-y-2">
+            <p className="text-gray-700">{t('impressum.germanAffiliateName')}</p>
+            <p className="text-gray-700">{t('impressum.germanAffiliateStreet')}</p>
+            <p className="text-gray-700">{t('impressum.germanAffiliatePostal')}</p>
+            <p className="text-gray-700">{t('impressum.germanAffiliateCountry')}</p>
+          </div>
+        </div>
+
+        <div className="mb-8">
+          <h2 className="text-xl font-bold text-[#1a2744] mb-2">{t('impressum.textsContent')}</h2>
+          <p className="text-gray-700">{t('impressum.contentResponsibility')}</p>
+          <p className="text-gray-700">{t('impressum.contactDirector')}</p>
+        </div>
+
+        <div className="mb-8">
+          <h2 className="text-xl font-bold text-[#1a2744] mb-2">{t('impressum.conceptRealization')}</h2>
+          <div className="space-y-2">
+            <p className="text-gray-700">{t('impressum.publisherInstitute')}</p>
+            <p className="text-gray-700">{t('impressum.publisherStreet')}</p>
+            <p className="text-gray-700">{t('impressum.publisherPostal')}</p>
+            <p className="text-gray-700">{t('impressum.publisherCountry')}</p>
+          </div>
+          <p className="text-gray-700 mt-2">{t('impressum.inCooperationWith')}{' '}
+            <a href="https://trendzomedia.com/" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">Trendzo Media</a>
+            {' '}and{' '}
+            <a href="https://www.instagram.com/thissatyamsingh?igsh=a200b200ZnhuY3Bi" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">Satyam Singh</a>
+          </p>
+        </div>
+
+        <div className="mb-8">
+          <h2 className="text-xl font-bold text-[#1a2744] mb-2">{t('impressum.warrantyDisclaimer')}</h2>
+          <p className="text-gray-700">
+            The IDEA Institute makes every effort to ensure that the information published on this
+            website is accurate and up to date. However, it accepts no liability for the accuracy,
+            completeness, reliability, or timeliness of the information provided.
+          </p>
+          <p className="text-gray-700">
+            The IDEA Institute reserves the right to modify, supplement, or remove content at any time
+            without prior notice. Any liability claims arising from the use of this website are excluded.
+          </p>
+          <p className="text-gray-700">
+            The IDEA Institute shall not be liable for any material or immaterial damages resulting from
+            access to, use or non-use of the published information, misuse of the connection, or technical
+            malfunctions.
+          </p>
+          <p className="text-gray-700">
+            The IDEA Institute has not reviewed third-party websites linked to this website via
+            hyperlinks and assumes no responsibility for their content.
+          </p>
+        </div>
+
+        <div className="mb-8">
+          <h2 className="text-xl font-bold text-[#1a2744] mb-2">{t('impressum.copyright')}</h2>
+          <p className="text-gray-700">
+            All online content (documents, webpages, and parts thereof) published on the IDEA Institute
+            website is protected by copyright and may only be copied or printed for private, scientific,
+            and non-commercial use.
+          </p>
+          <p className="text-gray-700">
+            Any reproduction, distribution, transmission, or other use of the information on this website
+            for commercial purposes is prohibited without prior written permission. This also applies to
+            the IDEA Institute logo.
+          </p>
+          <p className="text-gray-700">
+            Requests for authorization must be submitted in writing to the IDEA Institute, Basel, at
+            info@ideainstitute.ch.
+          </p>
+          <p className="text-gray-700 mt-2">
+            Where individual content is published under an open license or a Creative Commons license,
+            such content may be used in accordance with the respective license terms.
           </p>
         </div>
       </div>

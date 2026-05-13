@@ -859,27 +859,65 @@ const translations: Translation = {
      de: 'Ernst-Reuter-Str. 12\n79618 Rheinfelden (Baden)',
      en: 'Ernst-Reuter-Str. 12\n79618 Rheinfelden (Baden)'
    },
-   'contact.switzerlandAddress': {
-     de: 'Hybrid Address – Sinserstr. 67\nCH-6330 Cham',
-     en: 'Hybrid Address – Sinserstr. 67\nCH-6330 Cham'
-   },
-   'contact.germanyEmail': {
-     de: 'info@ideainstitute.de',
-     en: 'info@ideainstitute.de'
-   },
+'contact.switzerlandAddress': {
+      de: 'Hybrid Address – Sinserstr. 67\nCH-6330 Cham',
+      en: 'Hybrid Address – Sinserstr. 67\nCH-6330 Cham'
+    },
     'contact.switzerlandTitle': {
       de: 'Schweiz',
       en: 'Switzerland'
-    },
-    'contact.switzerlandEmail': {
-      de: 'info@ideainstitute.ch',
-      en: 'info@ideainstitute.ch'
     },
     'contact.address': {
       de: 'Adresse',
       en: 'Address'
     },
    'contact.email': {
+     de: 'E-Mail',
+     en: 'Email'
+   },
+   // Switzerland contact details
+   'contact.switzerlandInstitute': {
+     de: 'IDEA Institute',
+     en: 'IDEA Institute'
+   },
+   'contact.switzerlandStreet': {
+     de: 'Missionsstrasse 24',
+     en: 'Missionsstrasse 24'
+   },
+   'contact.switzerlandPostal': {
+     de: '4055 Basel',
+     en: '4055 Basel'
+   },
+   'contact.switzerlandCountry': {
+     de: 'Schweiz',
+     en: 'Switzerland'
+   },
+   'contact.switzerlandEmail': {
+     de: 'info@ideainstitute.ch',
+     en: 'info@ideainstitute.ch'
+   },
+   // German Affiliate contact details
+   'contact.germanyInstitute': {
+     de: 'IDEA gGmbH',
+     en: 'IDEA gGmbH'
+   },
+   'contact.germanyStreet': {
+     de: 'Rheinstraße 57',
+     en: 'Rheinstraße 57'
+   },
+   'contact.germanyPostal': {
+     de: '79639 Grenzach-Wyhlen',
+     en: '79639 Grenzach-Wyhlen'
+   },
+   'contact.germanyCountry': {
+     de: 'Deutschland',
+     en: 'Germany'
+   },
+   'contact.germanyEmail': {
+     de: 'info@ideainstitute.de',
+     en: 'info@ideainstitute.de'
+   },
+   'contact.emailLabel': {
      de: 'E-Mail',
      en: 'Email'
    },
@@ -1450,8 +1488,8 @@ const translations: Translation = {
     en: 'Text & Content'
   },
   'impressum.textContentDesc': {
-    de: 'IDEA ist für den Inhalt dieser Website verantwortlich. Fragen zum Inhalt richten Sie bitte an IDEA.',
-    en: 'IDEA is responsible for the content of this website. Please direct any questions regarding the content to IDEA.'
+    de: 'Das IDEA Institut ist für den Inhalt dieser Website verantwortlich. Bei Fragen zum Inhalt wenden Sie sich bitte an den Direktor des Instituts.',
+    en: 'The IDEA Institute is responsible for the content of this website. If you have any questions regarding the content, please contact the Director of the Institute.'
   },
   'impressum.concept': {
     de: 'Konzept & Umsetzung',
@@ -1473,17 +1511,82 @@ const translations: Translation = {
     de: 'IDEA hat keine externen Websites (die sich nicht auf ihren Servern oder in ihrem Einflussbereich befinden), die über Hyperlinks mit dieser Website verbunden sind, überprüft und übernimmt keine Verantwortung für deren Inhalt.',
     en: 'IDEA has not reviewed any external websites (that are not on its servers or within its sphere of influence) that may be linked to this website via hyperlinks and accepts no responsibility for their content.'
   },
-  'impressum.copyright': {
-    de: 'Urheberrecht',
-    en: 'Copyright'
-  },
   'impressum.copyrightText1': {
     de: 'Alle Online-Inhalte (Dokumente, Webseiten und deren Komponenten) auf der IDEA-Website sind urheberrechtlich geschützt und dürfen nur für private, akademische und nichtkommerzielle Zwecke kopiert und ausgedruckt werden. Jede Vervielfältigung, Reproduktion, Übertragung oder sonstige Nutzung von Informationen auf dieser Website für kommerzielle Zwecke ist strikt untersagt. Dies gilt insbesondere für das IDEA-Logo.',
     en: 'All online content (documents, web pages and their components) on the IDEA website is protected by copyright and may only be copied and printed for private, academic and non-commercial purposes. Any duplication, reproduction, transmission or other use of information on this website for commercial purposes is strictly prohibited. This applies in particular to the IDEA logo.'
   },
   'impressum.copyrightText2': {
-    de: 'Alle Genehmigungsanträge sind schriftlich per E-Mail an IDEA zu richten.',
+    de: 'Alle GenehmigungsantrAge sind schriftlich per E-Mail an IDEA zu richten.',
     en: 'All approval applications must be submitted in writing via email to IDEA.'
+  },
+  // Specific publisher information for imprint page
+  'impressum.publisher': {
+    de: 'Herausgeber',
+    en: 'Publisher'
+  },
+  'impressum.publisherInstitute': {
+    de: 'IDEA Institute',
+    en: 'IDEA Institute'
+  },
+  'impressum.publisherStreet': {
+    de: 'Missionsstrasse 24',
+    en: 'Missionsstrasse 24'
+  },
+  'impressum.publisherPostal': {
+    de: '4055 Basel',
+    en: '4055 Basel'
+  },
+  'impressum.publisherCountry': {
+    de: 'Schweiz',
+    en: 'Switzerland'
+  },
+  'impressum.germanAffiliate': {
+    de: 'Deutscher Tochtergesellschaft',
+    en: 'German Affiliate'
+  },
+  'impressum.germanAffiliateName': {
+    de: 'IDEA gGmbH – Deutscher Ableger des IDEA Institute Basel, Schweiz',
+    en: 'IDEA gGmbH – German affiliate of IDEA Institute Basel, Switzerland'
+  },
+  'impressum.germanAffiliateStreet': {
+    de: 'Rheinstraße 57',
+    en: 'Rheinstraße 57'
+  },
+  'impressum.germanAffiliatePostal': {
+    de: '79639 Grenzach-Wyhlen',
+    en: '79639 Grenzach-Wyhlen'
+  },
+  'impressum.germanAffiliateCountry': {
+    de: 'Deutschland',
+    en: 'Germany'
+  },
+  'impressum.textsContent': {
+    de: 'Texte & Inhalt',
+    en: 'Texts & Content'
+  },
+  'impressum.contentResponsibility': {
+    de: 'Das IDEA Institut ist für den Inhalt dieser Website verantwortlich.',
+    en: 'The IDEA Institute is responsible for the content of this website.'
+  },
+  'impressum.contactDirector': {
+    de: 'Bei Fragen zum Inhalt wenden Sie sich bitte an den Direktor des Instituts.',
+    en: 'If you have any questions regarding the content, please contact the Director of the Institute.'
+  },
+  'impressum.conceptRealization': {
+    de: 'Konzept & Umsetzung',
+    en: 'Concept & Realization'
+  },
+  'impressum.inCooperationWith': {
+    de: 'in Zusammenarbeit mit',
+    en: 'in cooperation with'
+  },
+  'impressum.warrantyDisclaimer': {
+    de: 'Gewährleistung & Haftungsausschluss',
+    en: 'Warranty & Disclaimer'
+  },
+'impressum.copyright': {
+    de: 'Urheberrecht',
+    en: 'Copyright'
   },
   'footer.allRights': {
     de: 'Alle Rechte vorbehalten.',
