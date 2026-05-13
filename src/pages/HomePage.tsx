@@ -8,17 +8,17 @@ export const HomePage = () => {
       {/* Hero Section */}
       <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-center gap-6">
-            <div className="flex-1">
+          <div className="flex flex-col gap-6">
+            <div className="w-full">
+              <img src="/images/secondPage.webp" alt="IDEA Institute" className="w-full h-auto object-cover rounded-lg" />
+            </div>
+            <div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a2744] leading-tight mb-4 tracking-tight">
                 {t('home.subtitle')}
               </h1>
-               <p className="text-black text-lg leading-relaxed break-words text-justify">
-                 {t('home.description')}
-               </p>
-            </div>
-            <div className="flex-shrink-0">
-              <img src="/images/secondPage.webp" alt="IDEA Institute" className="w-56 h-auto md:w-72 object-cover rounded-lg" />
+              <p className="text-black text-lg leading-relaxed break-words text-justify">
+                {t('home.description')}
+              </p>
             </div>
           </div>
         </div>
