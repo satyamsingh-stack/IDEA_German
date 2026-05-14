@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
-import { LanguageSwitcher } from './LanguageSwitcher'
 
 interface NavItem {
   label: string
@@ -167,30 +166,25 @@ export const Navbar = () => {
        <div className="border-b border-gray-100/80 bg-gradient-to-r from-white via-white to-gray-50/50">
         <div className="max-w-full mx-auto px-3 lg:px-8">
             <div className="flex items-center justify-between h-14 lg:h-20 relative">
-              {/* Logo and Title Section */}
-              <div className="flex items-center flex-shrink-0 space-x-3">
-                <Link to="/" onClick={closeMenu} className="flex items-center flex-shrink-0">
-                  <img
-                    src="/images/logo.png"
-                    alt="IDEA"
-                    className="w-[80px] h-[28px] object-contain lg:w-[200px] lg:h-[68px] transition-all duration-300 group-hover:opacity-90 flex-shrink-0"
-                  />
-                </Link>
-                <div className="relative">
-                  <h1 className="text-[10px] lg:text-2xl font-bold text-gray-900 tracking-[0.15em] uppercase leading-tight whitespace-nowrap">
-                    {t('nav.institute')}
-                  </h1>
-                  <div className="absolute -bottom-1 lg:-bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-brand-orange via-orange-400 to-transparent opacity-70"></div>
-                </div>
+              {/* Logo Section */}
+              <Link to="/" onClick={closeMenu} className="flex items-center flex-shrink-0">
+                <img
+                  src="/images/logo.png"
+                  alt="IDEA"
+                  className="w-[80px] h-[28px] object-contain lg:w-[200px] lg:h-[68px] transition-all duration-300 group-hover:opacity-90 flex-shrink-0"
+                />
+              </Link>
+
+              {/* Centered Title */}
+              <div className="absolute left-1/2 -translate-x-1/2">
+                <h1 className="text-xs lg:text-2xl font-bold text-gray-900 tracking-[0.15em] uppercase leading-tight whitespace-nowrap">
+                  IDEA INSTITUTE
+                </h1>
+                <div className="absolute -bottom-1 lg:-bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-brand-orange via-orange-400 to-transparent opacity-70"></div>
               </div>
 
               {/* Desktop Actions */}
               <div className="flex items-center gap-2 lg:gap-5 flex-shrink-0">
-                <LanguageSwitcher />
-                <div className="flex items-center gap-1.5 px-2 py-1 lg:px-4 lg:py-2 rounded-full bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100 shadow-sm">
-                  <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_6px_rgba(34,197,94,0.6)]"></span>
-                  <span className="text-[8px] lg:text-xs text-gray-600 font-semibold tracking-wide">{t('nav.activeResearch')}</span>
-                </div>
               </div>
             </div>
           </div>
