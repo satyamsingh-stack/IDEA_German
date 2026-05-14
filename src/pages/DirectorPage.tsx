@@ -20,7 +20,7 @@ export const DirectorPage = () => {
                 </p>
               </div>
               <div className="flex-shrink-0">
-                <img src="/images/yashwant.png" alt="Portrait of Dr. Yeshwant Naik, Director of IDEA Institute" className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-lg shadow-md" />
+                <img src="/images/yashwant.png" alt="Portrait of Dr. Yeshwant Naik, Director of IDEA Institute" className="w-40 h-40 md:w-52 md:h-52 object-contain rounded-lg shadow-md" />
               </div>
             </div>
 

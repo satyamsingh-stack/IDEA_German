@@ -108,9 +108,26 @@ export const AboutPage = () => {
             {t('about.whoWeAreDesc')}
           </p>
 
-           <div className="space-y-10">
+<div className="space-y-10">
 
-            {/* Thomas Hornung */}
+             {/* Dr. Yeshwant Naik */}
+             <div>
+               <h3 className="text-xl font-bold text-[#1a2744] mb-1">{t('about.drNaik.title')}</h3>
+               <p className="text-brand-orange font-semibold mb-3">{t('about.drNaik.role')}</p>
+                <p className="text-black leading-relaxed mb-4 break-words text-justify">
+                  {t('about.drNaik.desc')}
+                </p>
+                <ul>
+                  {[1, 2, 3, 4].map((i) => (
+                    <li key={i} className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                      <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                      <span className="break-words">{t(`about.drNaik.${i}` as const)}</span>
+                    </li>
+                  ))}
+                </ul>
+             </div>
+
+             {/* Thomas Hornung */}
             <div>
               <h3 className="text-xl font-bold text-[#1a2744] mb-1">{t('about.thomasHornung.title')}</h3>
               <p className="text-brand-orange font-semibold mb-3">{t('about.thomasHornung.role')}</p>
