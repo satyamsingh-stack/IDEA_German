@@ -138,21 +138,17 @@ export const HomePage = () => {
            <ul>
              <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-               <span>{t('home.getInvolvedDesc')}</span>
-             </li>
-             <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+<span>Follow us on <a href="https://www.linkedin.com/in/idea-institute-of-legal-research-5158062b7/" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline font-medium">LinkedIn</a></span>
+              </li>
+              <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
                <span>Subscribe to our newsletter <Link to="/newsletter" className="text-brand-orange hover:underline font-medium">IDEA Insights</Link></span>
              </li>
              <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-               <span><Link to="/contact" className="text-brand-orange hover:underline font-medium">Contact us for collaboration, research, or events</Link></span>
-              </li>
-              <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                <span>Follow us on <a href="https://www.linkedin.com/in/idea-institute-of-legal-research-5158062b7/" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline font-medium">LinkedIn</a></span>
-             </li>
-           </ul>
+<span><Link to="/contact" className="text-brand-orange hover:underline font-medium">Contact us for collaboration, research, or events</Link></span>
+               </li>
+            </ul>
         </div>
       </section>
     </div>
