@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../contexts/LanguageContext'
 
 export const HomePage = () => {
@@ -111,15 +112,15 @@ export const HomePage = () => {
            <ul>
              <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-               <span>{t('home.startResearch')}</span>
+               <span>Explore our <Link to="/forschung" className="text-brand-orange hover:underline font-medium">Research Areas</Link></span>
              </li>
              <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-               <span>{t('home.startInsights')}</span>
+               <span>Read our <Link to="/insights" className="text-brand-orange hover:underline font-medium">Insights & Blog</Link></span>
              </li>
              <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-               <span>{t('home.startPublications')}</span>
+               <span>Browse our <Link to="/publikationen" className="text-brand-orange hover:underline font-medium">Publications</Link></span>
              </li>
            </ul>
         </div>
@@ -141,11 +142,15 @@ export const HomePage = () => {
              </li>
              <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-               <span>{t('home.newsletter')}</span>
+               <span>Subscribe to our newsletter <Link to="/newsletter" className="text-brand-orange hover:underline font-medium">IDEA Insights</Link></span>
              </li>
              <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-               <span>{t('home.contact')}</span>
+               <span><Link to="/contact" className="text-brand-orange hover:underline font-medium">Contact us for collaboration, research, or events</Link></span>
+              </li>
+              <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                <span>Follow us on <a href="https://www.linkedin.com/in/idea-institute-of-legal-research-5158062b7/" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline font-medium">LinkedIn</a></span>
              </li>
            </ul>
         </div>

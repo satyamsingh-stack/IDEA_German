@@ -178,7 +178,7 @@ export const Navbar = () => {
               {/* Centered Title */}
               <div className="absolute left-1/2 -translate-x-1/2">
                 <h1 className="text-xs lg:text-2xl font-bold text-gray-900 tracking-[0.15em] uppercase leading-tight whitespace-nowrap">
-                  IDEA INSTITUTE
+                  INSTITUTE
                 </h1>
                 <div className="absolute -bottom-1 lg:-bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-brand-orange via-orange-400 to-transparent opacity-70"></div>
               </div>
