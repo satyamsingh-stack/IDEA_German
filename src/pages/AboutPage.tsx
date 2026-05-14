@@ -200,6 +200,48 @@ export const AboutPage = () => {
         </div>
       </section>
 
+      {/* Collaborators / Partners Section */}
+      <section className="relative py-8 md:py-12 bg-white">
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+           <div className="flex items-center gap-3 mb-4">
+             <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
+             <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
+               Collaborators / Partners
+             </h2>
+           </div>
+           <ul className="mb-6">
+             <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+               <span>Prof. Nolan Kline, University of Central Florida (2023-2024)</span>
+             </li>
+             <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+               <span>Prof. Melissa Breger, Albany Law School, New York (2023-present)</span>
+             </li>
+             <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+               <span>Prof. Somnath Pai, Amity University, Delhi (2023-present)</span>
+             </li>
+             <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+               <span>Lilith Raza, LSVD, Köln (2023-2024)</span>
+             </li>
+             <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+               <span>Marta Ramos, Former Executive Director, ILGA Portugal (2023-2024)</span>
+             </li>
+             <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+               <span>Moritz-Alexander Harraß, Fundraising Partner (2025-2026)</span>
+             </li>
+             <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+               <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+               <span>Felix Scheffel, Fundraising Partner (2025-2026)</span>
+             </li>
+           </ul>
+        </div>
+      </section>
+
        {/* Research Positioning Section */}
        <section className="relative py-8 md:py-12 bg-white">
          <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
