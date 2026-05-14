@@ -166,20 +166,19 @@ export const Navbar = () => {
        <div className="border-b border-gray-100/80 bg-gradient-to-r from-white via-white to-gray-50/50">
         <div className="max-w-full mx-auto px-3 lg:px-8">
             <div className="flex items-center justify-between h-14 lg:h-20">
-              {/* Logo and Title */}
-              <Link to="/" onClick={closeMenu} className="flex items-center gap-3 flex-shrink-0">
-                <img
-                  src="/images/logo.png"
-                  alt="IDEA"
-                  className="w-[80px] h-[28px] object-contain lg:w-[200px] lg:h-[68px] transition-all duration-300 hover:opacity-90 flex-shrink-0"
-                />
-                <div>
-                  <h1 className="text-xs lg:text-2xl font-bold text-gray-900 tracking-[0.15em] uppercase leading-tight whitespace-nowrap">
-                    INSTITUTE
-                  </h1>
-                  <div className="h-[2px] w-full bg-gradient-to-r from-brand-orange via-orange-400 to-transparent opacity-70 mt-0.5 lg:mt-1"></div>
-                </div>
-              </Link>
+           {/* Logo and Title */}
+               <Link to="/" onClick={closeMenu} className="flex items-baseline gap-3 flex-shrink-0">
+                 <img
+                   src="/images/logo.png"
+                   alt="IDEA"
+                   className="w-[80px] h-[28px] object-contain lg:w-[200px] lg:h-[68px] transition-all duration-300 hover:opacity-90 flex-shrink-0"
+                 />
+                 <div className="relative">
+                   <h1 className="text-[1.75rem] lg:text-[4.25rem] font-bold text-gray-900 tracking-[0.15em] uppercase leading-none whitespace-nowrap">
+                     INSTITUTE
+                   </h1>
+                 </div>
+               </Link>
 
               {/* Desktop Actions */}
               <div className="flex items-center gap-2 lg:gap-5 flex-shrink-0">
