@@ -1,0 +1,88 @@
+backend:
+  name: git-gateway
+  branch: admin
+  commit_messages:
+    create: 'Create {{collection}} "{{slug}}"'
+    update: 'Update {{collection}} "{{slug}}"'
+    delete: 'Delete {{collection}} "{{slug}}"'
+    uploadMedia: 'Upload "{{path}}"'
+    deleteMedia: 'Delete "{{path}}"'
+    openAuthoring: 'Create {{collection}} "{{slug}}" {{authoringDate}}'
+
+local_backend: true
+
+media_folder: 'public/uploads'
+public_folder: '/uploads'
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: blogs
+    label: Blogs
+    folder: content/blogs
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Description', name: 'description', widget: 'text', required: true }
+      - { label: 'Author', name: 'author', widget: 'string', required: false }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD' }
+      - {
+          label: 'Category',
+          name: 'category',
+          widget: 'select',
+          options:
+            [
+              'Gender & Sexuality',
+              'Migration & Asylum',
+              'Comparative Law',
+              'Equality & Non-Discrimination',
+              'Legal Commentary',
+              'Research Insights',
+            ],
+          required: false,
+        }
+      - { label: 'Featured Image', name: 'featured_image', widget: 'image', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: true }
+
+  - name: publications
+    label: Publications
+    folder: content/publications
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Description', name: 'description', widget: 'text', required: true }
+      - { label: 'Author', name: 'author', widget: 'string', required: false }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD' }
+      - {
+          label: 'Category',
+          name: 'category',
+          widget: 'select',
+          options:
+            [
+              'Research Papers',
+              'Comparative Legal Analysis',
+              'Migration & Asylum Law',
+              'Gender & Sexuality Law',
+              'Policy Commentary',
+              'Legal Analyses',
+            ],
+          required: false,
+        }
+      - { label: 'Featured Image', name: 'featured_image', widget: 'image', required: false }
+      - { label: 'PDF File', name: 'pdf_file', widget: 'file', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: true }
+
+  - name: newsletter
+    label: Newsletter
+    folder: content/newsletter
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Description', name: 'description', widget: 'text', required: true }
+      - { label: 'Issue Number', name: 'issue_number', widget: 'number', required: true }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD' }
+      - { label: 'Featured Image', name: 'featured_image', widget: 'image', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: true }
