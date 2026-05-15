@@ -3,7 +3,7 @@ import { useLanguage } from '../contexts/LanguageContext'
 export const ImpressumPage = () => {
   const { t } = useLanguage()
 
-  return (
+  return ( 
     <div className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-8">
