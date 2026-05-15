@@ -48,8 +48,8 @@ const translations: Translation = {
     en: 'Dr. Yeshwant Naik'
   },
   'director.role': {
-    de: 'Direktor | Rechtsforschung & Akademische Leitung',
-    en: 'Director | Legal Research & Academic Lead'
+    de: 'Vergleichender Rechtswissenschaftler mit vorheriger Erfahrung als Professor of Law in Indien.',
+    en: 'Comparative law scholar with prior experience as Professor of Law in India.'
   },
   'director.bio1': {
     de: 'Dr. Yeshwant Naik ist ein Rechtswissenschaftler für vergleichendes Recht und Menschenrechte, dessen Arbeit sich auf Sexualität, Geschlechtsidentität, Migration, Asyl und transnationale Rechtssysteme konzentriert.',
@@ -215,10 +215,10 @@ const translations: Translation = {
     de: 'Häufige Fragen',
     en: 'FAQ'
   },
-  'nav.programsEvents': {
-    de: 'Programme & Veranstaltungen',
-    en: 'Programs & Events'
-  },
+   'nav.programsEvents': {
+     de: 'Programme & Veranstaltungen',
+     en: 'Programmes & Events'
+   },
   'nav.initiatives': {
     de: 'Initiativen',
     en: 'Initiatives'
@@ -851,35 +851,73 @@ const translations: Translation = {
      de: 'KONTAKT',
      en: 'CONTACT'
    },
-   'contact.germanyTitle': {
-     de: 'Deutschland',
-     en: 'Germany'
-   },
+'contact.germanyTitle': {
+      de: 'Deutscher Partner',
+      en: 'German Affiliate'
+    },
    'contact.germanyAddress': {
      de: 'Ernst-Reuter-Str. 12\n79618 Rheinfelden (Baden)',
      en: 'Ernst-Reuter-Str. 12\n79618 Rheinfelden (Baden)'
    },
-   'contact.switzerlandAddress': {
-     de: 'Hybrid Address – Sinserstr. 67\nCH-6330 Cham',
-     en: 'Hybrid Address – Sinserstr. 67\nCH-6330 Cham'
-   },
-   'contact.germanyEmail': {
-     de: 'info@ideainstitute.de',
-     en: 'info@ideainstitute.de'
-   },
+'contact.switzerlandAddress': {
+      de: 'Hybrid Address – Sinserstr. 67\nCH-6330 Cham',
+      en: 'Hybrid Address – Sinserstr. 67\nCH-6330 Cham'
+    },
     'contact.switzerlandTitle': {
       de: 'Schweiz',
       en: 'Switzerland'
-    },
-    'contact.switzerlandEmail': {
-      de: 'info@ideainstitute.ch',
-      en: 'info@ideainstitute.ch'
     },
     'contact.address': {
       de: 'Adresse',
       en: 'Address'
     },
    'contact.email': {
+     de: 'E-Mail',
+     en: 'Email'
+   },
+   // Switzerland contact details
+   'contact.switzerlandInstitute': {
+     de: 'IDEA Institute',
+     en: 'IDEA Institute'
+   },
+   'contact.switzerlandStreet': {
+     de: 'Missionsstrasse 24',
+     en: 'Missionsstrasse 24'
+   },
+   'contact.switzerlandPostal': {
+     de: '4055 Basel',
+     en: '4055 Basel'
+   },
+   'contact.switzerlandCountry': {
+     de: 'Schweiz',
+     en: 'Switzerland'
+   },
+   'contact.switzerlandEmail': {
+     de: 'info@ideainstitute.ch',
+     en: 'info@ideainstitute.ch'
+   },
+   // German Affiliate contact details
+   'contact.germanyInstitute': {
+     de: 'IDEA gGmbH',
+     en: 'IDEA gGmbH'
+   },
+   'contact.germanyStreet': {
+     de: 'Rheinstraße 57',
+     en: 'Rheinstraße 57'
+   },
+   'contact.germanyPostal': {
+     de: '79639 Grenzach-Wyhlen',
+     en: '79639 Grenzach-Wyhlen'
+   },
+   'contact.germanyCountry': {
+     de: 'Deutschland',
+     en: 'Germany'
+   },
+   'contact.germanyEmail': {
+     de: 'info@ideainstitute.de',
+     en: 'info@ideainstitute.de'
+   },
+   'contact.emailLabel': {
      de: 'E-Mail',
      en: 'Email'
    },
@@ -911,15 +949,11 @@ const translations: Translation = {
      de: 'Gleichheit und Antidiskriminierungsrecht',
      en: 'equality and non-discrimination law'
    },
-   'blog.comingSoon': {
-     de: 'Blog-Artikel und Kommentare – in Kürze.',
-     en: 'Blog articles and commentary – coming soon.'
-   },
-   'nav.subtitle': {
-     de: 'Rechtsforschung · Gleichheit · Inklusion',
-     en: 'Legal Research · Equality · Inclusion'
-   },
-   'newsletter.title': {
+    'blog.comingSoon': {
+      de: 'Blog-Artikel und Kommentare – in Kürze.',
+      en: 'Blog articles and commentary – coming soon.'
+    },
+    'newsletter.title': {
      de: 'NEWSLETTER',
      en: 'NEWSLETTER'
    },
@@ -983,20 +1017,12 @@ const translations: Translation = {
      de: 'Ihr Name',
      en: 'Your name'
    },
-   'newsletter.placeholderEmail': {
-     de: 'ihre@email.de',
-     en: 'your@email.com'
-   },
-   'nav.subtitle': {
-     de: 'Rechtsforschung · Gleichheit · Inklusion',
-     en: 'Legal Research · Equality · Inclusion'
-   },
-   'nav.subtitle': {
-     de: 'Rechtsforschung · Gleichheit · Inklusion',
-     en: 'Legal Research · Equality · Inclusion'
-   },
+    'newsletter.placeholderEmail': {
+      de: 'ihre@email.de',
+      en: 'your@email.com'
+    },
 
-  // Page Titles
+   // Page Titles
   'page.innovation': {
     de: 'Forschung, Entwicklung und Innovation',
     en: 'Research, Development and Innovation'
@@ -1146,38 +1172,8 @@ const translations: Translation = {
     en: 'Workplace Discrimination in Germany, December 2021 – September 2023'
   },
 
-  // Director Page
-  'director.title': {
-    de: 'DIREKTOR',
-    en: 'DIRECTOR'
-  },
-  'director.teachingResearch': {
-    de: 'Lehr- und Forschungsgebiete',
-    en: 'Teaching & Research Areas'
-  },
-  'director.publications': {
-    de: 'Publikationen',
-    en: 'Publications'
-  },
-  'director.books': {
-    de: 'Bücher',
-    en: 'Books'
-  },
-  'director.readMore': {
-    de: 'Mehr lesen →',
-    en: 'Read more →'
-  },
-  'director.showAll': {
-    de: 'Alle Publikationen anzeigen',
-    en: 'Show all publications'
-  },
-  'director.forthcoming': {
-    de: 'Erscheint',
-    en: 'Forthcoming'
-  },
-
-  // Publications Page
-  'publications.title': {
+   // Publications Page
+   'publications.title': {
     de: 'Publikationen',
     en: 'Publications'
   },
@@ -1357,15 +1353,15 @@ const translations: Translation = {
   },
   'home.whatWeDo.1': {
     de: 'LGBTQ+-Rechte definieren',
-    en: 'Define LGBTQ+ rights'
+    en: 'define LGBTQ+ rights'
   },
   'home.whatWeDo.2': {
     de: 'Auf Migration und Asyl reagieren',
-    en: 'Respond to migration and asylum issues'
+    en: 'respond to migration and asylum issues'
   },
   'home.whatWeDo.3': {
     de: 'Die gelebte Praxis gestalten',
-    en: 'Shape lived experiences in practice'
+    en: 'shape lived experiences in practice'
   },
   'home.whatWeDoBottom': {
     de: 'Unsere Arbeit verbindet Rechtsforschung mit sozialen Realitäten und hilft, besser zu verstehen, wie Rechte über Grenzen hinweg funktionieren.',
@@ -1385,15 +1381,15 @@ const translations: Translation = {
   },
   'home.why1': {
     de: 'Schutz in einem Land und Kriminalisierung in einem anderen',
-    en: 'Protection in one country and criminalisation in another'
+    en: 'protection in one country and criminalisation in another'
   },
   'home.why2': {
     de: 'Anerkennung im Gesetz, aber Diskriminierung im Alltag',
-    en: 'Recognition in law, but discrimination in everyday life'
+    en: 'recognition in law, but discrimination in everyday life'
   },
   'home.why3': {
     de: 'Unsicherheit bei Migrations- und Asylverfahren',
-    en: 'Uncertainty in migration and asylum processes'
+    en: 'uncertainty in migration and asylum processes'
   },
   'home.whyBottom': {
     de: 'Das Institut zielt darauf ab, zu einem besseren rechtlichen Verständnis, einer informierten politischen Diskussion und inklusiveren Rechtssystemen beizutragen.',
@@ -1405,19 +1401,19 @@ const translations: Translation = {
   },
   'home.ourWork1': {
     de: 'Vergleichende Rechtsforschung',
-    en: 'Comparative legal research'
+    en: 'comparative legal research'
   },
   'home.ourWork2': {
     de: 'Politikanalyse und Berichte',
-    en: 'Policy analysis and reports'
+    en: 'policy analysis and reports'
   },
   'home.ourWork3': {
     de: 'Akademische Veröffentlichungen',
-    en: 'Academic publications'
+    en: 'academic publications'
   },
   'home.ourWork4': {
     de: 'Zugängliche rechtliche Einblicke und Erklärungen',
-    en: 'Accessible legal insights and explainers'
+    en: 'accessible legal insights and explainers'
   },
   'home.startHere': {
     de: 'Hier beginnen',
@@ -1492,8 +1488,8 @@ const translations: Translation = {
     en: 'Text & Content'
   },
   'impressum.textContentDesc': {
-    de: 'IDEA ist für den Inhalt dieser Website verantwortlich. Fragen zum Inhalt richten Sie bitte an IDEA.',
-    en: 'IDEA is responsible for the content of this website. Please direct any questions regarding the content to IDEA.'
+    de: 'Das IDEA Institut ist für den Inhalt dieser Website verantwortlich. Bei Fragen zum Inhalt wenden Sie sich bitte an den Direktor des Instituts.',
+    en: 'The IDEA Institute is responsible for the content of this website. If you have any questions regarding the content, please contact the Director of the Institute.'
   },
   'impressum.concept': {
     de: 'Konzept & Umsetzung',
@@ -1515,17 +1511,82 @@ const translations: Translation = {
     de: 'IDEA hat keine externen Websites (die sich nicht auf ihren Servern oder in ihrem Einflussbereich befinden), die über Hyperlinks mit dieser Website verbunden sind, überprüft und übernimmt keine Verantwortung für deren Inhalt.',
     en: 'IDEA has not reviewed any external websites (that are not on its servers or within its sphere of influence) that may be linked to this website via hyperlinks and accepts no responsibility for their content.'
   },
-  'impressum.copyright': {
-    de: 'Urheberrecht',
-    en: 'Copyright'
-  },
   'impressum.copyrightText1': {
     de: 'Alle Online-Inhalte (Dokumente, Webseiten und deren Komponenten) auf der IDEA-Website sind urheberrechtlich geschützt und dürfen nur für private, akademische und nichtkommerzielle Zwecke kopiert und ausgedruckt werden. Jede Vervielfältigung, Reproduktion, Übertragung oder sonstige Nutzung von Informationen auf dieser Website für kommerzielle Zwecke ist strikt untersagt. Dies gilt insbesondere für das IDEA-Logo.',
     en: 'All online content (documents, web pages and their components) on the IDEA website is protected by copyright and may only be copied and printed for private, academic and non-commercial purposes. Any duplication, reproduction, transmission or other use of information on this website for commercial purposes is strictly prohibited. This applies in particular to the IDEA logo.'
   },
   'impressum.copyrightText2': {
-    de: 'Alle Genehmigungsanträge sind schriftlich per E-Mail an IDEA zu richten.',
+    de: 'Alle GenehmigungsantrAge sind schriftlich per E-Mail an IDEA zu richten.',
     en: 'All approval applications must be submitted in writing via email to IDEA.'
+  },
+  // Specific publisher information for imprint page
+  'impressum.publisher': {
+    de: 'Herausgeber',
+    en: 'Publisher'
+  },
+  'impressum.publisherInstitute': {
+    de: 'IDEA Institute',
+    en: 'IDEA Institute'
+  },
+  'impressum.publisherStreet': {
+    de: 'Missionsstrasse 24',
+    en: 'Missionsstrasse 24'
+  },
+  'impressum.publisherPostal': {
+    de: '4055 Basel',
+    en: '4055 Basel'
+  },
+  'impressum.publisherCountry': {
+    de: 'Schweiz',
+    en: 'Switzerland'
+  },
+  'impressum.germanAffiliate': {
+    de: 'Deutscher Tochtergesellschaft',
+    en: 'German Affiliate'
+  },
+  'impressum.germanAffiliateName': {
+    de: 'IDEA gGmbH – Deutscher Ableger des IDEA Institute Basel, Schweiz',
+    en: 'IDEA gGmbH – German affiliate of IDEA Institute Basel, Switzerland'
+  },
+  'impressum.germanAffiliateStreet': {
+    de: 'Rheinstraße 57',
+    en: 'Rheinstraße 57'
+  },
+  'impressum.germanAffiliatePostal': {
+    de: '79639 Grenzach-Wyhlen',
+    en: '79639 Grenzach-Wyhlen'
+  },
+  'impressum.germanAffiliateCountry': {
+    de: 'Deutschland',
+    en: 'Germany'
+  },
+  'impressum.textsContent': {
+    de: 'Texte & Inhalt',
+    en: 'Texts & Content'
+  },
+  'impressum.contentResponsibility': {
+    de: 'Das IDEA Institut ist für den Inhalt dieser Website verantwortlich.',
+    en: 'The IDEA Institute is responsible for the content of this website.'
+  },
+  'impressum.contactDirector': {
+    de: 'Bei Fragen zum Inhalt wenden Sie sich bitte an den Direktor des Instituts.',
+    en: 'If you have any questions regarding the content, please contact the Director of the Institute.'
+  },
+  'impressum.conceptRealization': {
+    de: 'Konzept & Umsetzung',
+    en: 'Concept & Realization'
+  },
+  'impressum.inCooperationWith': {
+    de: 'in Zusammenarbeit mit',
+    en: 'in cooperation with'
+  },
+  'impressum.warrantyDisclaimer': {
+    de: 'Gewährleistung & Haftungsausschluss',
+    en: 'Warranty & Disclaimer'
+  },
+'impressum.copyright': {
+    de: 'Urheberrecht',
+    en: 'Copyright'
   },
   'footer.allRights': {
     de: 'Alle Rechte vorbehalten.',
@@ -1698,16 +1759,16 @@ const translations: Translation = {
     en: 'The IDEA Institute is an independent legal research institute based in Germany and Switzerland.'
   },
   'about.introDesc': {
-    de: 'Das Institut konzentriert sich auf vergleichende und transnationale Rechtsforschung zu Fragen der Sexualit\u00e4t, Geschlechtsidentit\u00e4t, Gleichheit und Nichtdiskriminierung, mit besonderem Fokus auf Migration, Asyl und grenz\u00fcberschreitende Rechtsprozesse. Die Arbeit vereint rechtliche Analyse mit sozialwissenschaftlichen Perspektiven, um besser zu verstehen, wie Gesetze in verschiedenen Rechtsordnungen und sozialen Kontexten in der Praxis funktionieren.',
-    en: 'The Institute focuses on comparative and transnational legal research on sexuality, gender identity, equality, and non-discrimination, with particular attention to migration, asylum, and cross-border legal processes. Its work brings together legal analysis and socio-legal perspectives to better understand how laws operate in practice across different jurisdictions and social contexts.'
+    de: 'Das Institut ist ein unabh\u00e4ngiges Rechtsforschungsinstitut mit Sitz in Deutschland und der Schweiz. Es konzentriert sich auf vergleichende und transnationale Rechtsforschung zu Fragen der Sexualit\u00e4t, Geschlechtsidentit\u00e4t, Gleichheit und Nichtdiskriminierung, mit besonderem Fokus auf Migration, Asyl und grenz\u00fcberschreitende Rechtsprozesse. Die Arbeit vereint rechtliche Analyse mit sozialwissenschaftlichen Perspektiven, um besser zu verstehen, wie Gesetze in verschiedenen Rechtsordnungen und sozialen Kontexten in der Praxis funktionieren.',
+    en: 'The Institute is an independent legal research institute based in Germany and Switzerland. It focuses on comparative and transnational legal research on sexuality, gender identity, equality, and non-discrimination, with particular attention to migration, asylum, and cross-border legal processes. Its work brings together legal analysis and socio-legal perspectives to better understand how laws operate in practice across different jurisdictions and social contexts.'
   },
   'about.missionTitle': {
     de: 'Unsere Mission',
     en: 'Our Mission'
   },
   'about.missionIntro': {
-    de: 'Das IDEA Institut zielt darauf ab, eine rigorose, interdisziplin\u00e4re Rechtsforschung zu Sexualit\u00e4t, Geschlechtsidentit\u00e4t und Gleichheit voranzutreiben.',
-    en: 'The IDEA Institute aims to advance rigorous, interdisciplinary legal research on sexuality, gender identity, and equality.'
+    de: 'Das Institut zielt darauf ab, eine rigorose, interdisziplin\u00e4re Rechtsforschung zu Sexualit\u00e4t, Geschlechtsidentit\u00e4t und Gleichheit voranzutreiben.',
+    en: 'The Institute aims to advance rigorous, interdisciplinary legal research on sexuality, gender identity, and equality.'
   },
   'about.missionDesc': {
     de: 'Es verfolgt dieses Ziel durch:',
@@ -1715,23 +1776,23 @@ const translations: Translation = {
   },
   'about.mission.1': {
     de: 'Entwicklung vergleichender Rechtsanalysen mit Anker in S\u00fcdostasien',
-    en: 'Developing comparative legal analysis anchored in South Asia'
+    en: 'developing comparative legal analysis anchored in South Asia'
   },
   'about.mission.2': {
     de: 'Untersuchung rechtlicher Entwicklungen in der Globalen S\u00fcdhalbkugel und in Europa',
-    en: 'Examining legal developments across the Global South and Europe'
+    en: 'examining legal developments across the Global South and Europe'
   },
   'about.mission.3': {
     de: 'Analyse transnationaler Rechtsprozesse, insbesondere Migration und Asyl',
-    en: 'Analysing transnational legal processes, particularly migration and asylum'
+    en: 'analysing transnational legal processes, particularly migration and asylum'
   },
   'about.mission.4': {
     de: 'Verkn\u00fcpfung rechtlicher Rahmenbedingungen mit gelebten sozialen Realit\u00e4ten',
-    en: 'Connecting legal frameworks with lived social realities'
+    en: 'connecting legal frameworks with lived social realities'
   },
   'about.mission.5': {
     de: 'Beitrag zu bislang wenig erschlossenen Bereichen der globalen Rechtswissenschaft',
-    en: 'Contributing to underexplored areas of global legal scholarship'
+    en: 'contributing to underexplored areas of global legal scholarship'
   },
   'about.missionGoal': {
     de: 'Das Institut m\u00f6chte zu einem besseren rechtlichen Verst\u00e4ndnis, einer informierten politischen Reflexion und der Entwicklung inklusiverer Rechtssysteme beitragen.',
@@ -1747,23 +1808,23 @@ const translations: Translation = {
   },
   'about.approach.1': {
     de: 'Dogmatische Rechtsanalyse',
-    en: 'Doctrinal legal analysis'
+    en: 'doctrinal legal analysis'
   },
   'about.approach.2': {
     de: 'Vergleichende Rechtswissenschaft',
-    en: 'Comparative legal studies'
+    en: 'comparative legal studies'
   },
   'about.approach.3': {
     de: 'Forschung zu Migration und Asyl',
-    en: 'Migration and asylum research'
+    en: 'migration and asylum research'
   },
   'about.approach.4': {
     de: 'Menschenrechtsrahmen',
-    en: 'Human rights frameworks'
+    en: 'human rights frameworks'
   },
   'about.approach.5': {
     de: 'Interdisziplin\u00e4re Perspektiven',
-    en: 'Interdisciplinary perspectives'
+    en: 'interdisciplinary perspectives'
   },
   'about.approachGoal': {
     de: 'Dieser Ansatz erm\u00f6glicht die Untersuchung sowohl formaler Rechtsstrukturen als auch ihrer praktischen sozialen Auswirkungen.',
@@ -1802,16 +1863,16 @@ const translations: Translation = {
     en: 'Who We Are'
   },
   'about.whoWeAreDesc': {
-    de: 'Das IDEA Institut agiert als forschungsgeleitete Initiative, die von einem Kernteam getragen wird, das f\u00fcr akademische, administrative und strategische Funktionen verantwortlich ist.',
-    en: 'The IDEA Institute operates as a research-led initiative supported by a core team responsible for its academic, administrative, and strategic functions.'
+    de: 'Das Institut agiert als forschungsgeleitete Initiative, die von einem Kernteam getragen wird, das f\u00fcr akademische, administrative und strategische Funktionen verantwortlich ist.',
+    en: 'The Institute operates as a research-led initiative supported by a core team responsible for its academic, administrative, and strategic functions.'
   },
   'about.drNaik.title': {
     de: 'Dr. Yeshwant Naik',
     en: 'Dr. Yeshwant Naik'
   },
   'about.drNaik.role': {
-    de: 'Direktor | Akademische Leitung',
-    en: 'Director | Legal Research & Academic Lead'
+    de: 'Forschungsprofessor | Wissenschaftlicher Direktor',
+    en: 'Research Professor | Scientific Director'
   },
   'about.drNaik.desc': {
     de: 'Dr. Naik leitet die Forschungsrichtung und akademische Arbeit des Instituts. Seine Arbeit konzentriert sich auf vergleichende und transnationale Studien zum LGBTQ+-Recht, mit besonderem Schwerpunkt auf S\u00fcdostasien, Migration, Asyl und globale Rechtssysteme. Er ist verantwortlich f\u00fcr:',
@@ -1932,8 +1993,8 @@ const translations: Translation = {
     en: 'Initiatives'
   },
   'initiatives.intro': {
-    de: 'Das IDEA Institut entwickelt gezielte Initiativen, die Forschung, Bildung und \u00f6ffentliche Einbindung in den Bereichen Recht, Gleichheit und soziale Inklusion unterst\u00fctzen.',
-    en: 'The IDEA Institute develops targeted initiatives that support research, education, and public engagement in the areas of law, equality, and social inclusion.'
+    de: 'Das Institut entwickelt gezielte Initiativen, die Forschung, Bildung und \u00f6ffentliche Einbindung in den Bereichen Recht, Gleichheit und soziale Inklusion unterst\u00fctzen.',
+    en: 'The Institute develops targeted initiatives that support research, education, and public engagement in the areas of law, equality, and social inclusion.'
   },
   'initiatives.prideInLawTitle': {
     de: 'PRIDE IN LAW',
@@ -1949,19 +2010,19 @@ const translations: Translation = {
   },
   'initiatives.prideInLaw.1': {
     de: 'Akademische Workshops und Seminare',
-    en: 'Academic workshops and seminars'
+    en: 'academic workshops and seminars'
   },
   'initiatives.prideInLaw.2': {
     de: 'Interdisziplin\u00e4rer Dialog \u00fcber Gleichheits- und Antidiskriminierungsrecht',
-    en: 'Interdisciplinary dialogue on equality and non-discrimination law'
+    en: 'interdisciplinary dialogue on equality and non-discrimination law'
   },
   'initiatives.prideInLaw.3': {
     de: 'Bildungsprogramme zu Sexualit\u00e4t, Geschlecht und Recht',
-    en: 'Educational programmes on sexuality, gender, and law'
+    en: 'educational programmes on sexuality, gender, and law'
   },
   'initiatives.prideInLaw.4': {
     de: 'Kritische Auseinandersetzung mit rechtlichen Rahmenbedingungen, die sexuelle und geschlechtliche Minderheiten betreffen',
-    en: 'Critical engagement with legal frameworks affecting sexual and gender minorities'
+    en: 'critical engagement with legal frameworks affecting sexual and gender minorities'
   },
   'initiatives.prideInLaw.origin': {
     de: 'PRIDE IN LAW wurde von Thomas Hornung ins Leben gerufen und agiert innerhalb des breiteren akademischen und institutionellen Rahmens des IDEA Instituts.',

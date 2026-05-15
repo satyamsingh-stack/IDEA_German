@@ -1,172 +1,156 @@
-import { useLanguage } from '../contexts/LanguageContext'
-
 export const ResearchPage = () => {
-  const { t } = useLanguage()
-
   return (
-    <div className="pt-20 md:pt-28">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 md:mb-8">
-        <div className="flex flex-col items-start">
-          <p className="text-sm md:text-base font-bold text-brand-black uppercase tracking-wider">
-            {t('nav.research')}
-          </p>
-          <div className="w-12 h-0.5 bg-brand-orange mt-2"></div>
-        </div>
-      </div>
-
-      <section className="py-12 md:py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Research Focus */}
-          <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-black mb-6">
-              {t('research.focusTitle')}
-            </h2>
-
-            <p className="text-gray-700 text-lg leading-relaxed mb-10 max-w-4xl">
-              {t('research.focusDesc')}
-            </p>
-
-            {/* Research Areas Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Comparative Legal Systems */}
-              <div className="bg-gray-50 rounded-xl p-6">
-                <h3 className="text-xl font-bold text-brand-black mb-3">
-                  {t('research.category1')}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {t('research.category1Desc')}
-                </p>
-              </div>
-
-              {/* Migration, Asylum & Transnational Law */}
-              <div className="bg-gray-50 rounded-xl p-6">
-                <h3 className="text-xl font-bold text-brand-black mb-3">
-                  {t('research.category2')}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {t('research.category2Desc')}
-                </p>
-              </div>
-
-              {/* Law and Lived Experience */}
-              <div className="bg-gray-50 rounded-xl p-6">
-                <h3 className="text-xl font-bold text-brand-black mb-3">
-                  {t('research.category3')}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {t('research.category3Desc')}
-                </p>
-              </div>
-
-              {/* Violence and Legal Protection */}
-              <div className="bg-gray-50 rounded-xl p-6">
-                <h3 className="text-xl font-bold text-brand-black mb-3">
-                  {t('research.category4')}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {t('research.category4Desc')}
-                </p>
-              </div>
+          <div className="mb-12">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
+                Research Focus
+              </h2>
             </div>
+             <p className="text-black text-lg leading-relaxed mb-8 break-words text-justify">
+               The Institute's research is organised around interconnected thematic areas examining sexuality, gender identity, equality, migration, and transnational legal developments across different jurisdictions and social contexts.
+             </p>
+
+             {/* Comparative Legal Systems */}
+             <div className="mb-6">
+               <h3 className="text-xl font-bold text-[#1a2744] mb-2">
+                 Comparative Legal Systems
+               </h3>
+               <p className="text-black leading-relaxed text-lg text-justify">
+                 Research examining how sexuality and gender identity are regulated across selected jurisdictions in South Asia, the Global South, and Europe, including their interaction with international legal frameworks.
+               </p>
+             </div>
+
+             {/* Migration, Asylum & Transnational Law */}
+             <div className="mb-6">
+               <h3 className="text-xl font-bold text-[#1a2744] mb-2">
+                 Migration, Asylum &amp; Transnational Law
+               </h3>
+               <p className="text-black leading-relaxed text-lg text-justify">
+                 Research on LGBTQ+ asylum systems, migration pathways, cross-border legal recognition, and the treatment of sexual and gender minorities within transnational legal contexts.
+               </p>
+             </div>
+
+             {/* Law and Lived Experience */}
+             <div className="mb-6">
+               <h3 className="text-xl font-bold text-[#1a2744] mb-2">
+                 Law and Lived Experience
+               </h3>
+               <p className="text-black leading-relaxed text-lg text-justify">
+                 Examination of the relationship between formal legal protections and lived realities, with attention to the cultural, institutional, and socio-economic conditions shaping access to rights and justice.
+               </p>
+             </div>
+
+             {/* Violence and Legal Protection */}
+             <div>
+               <h3 className="text-xl font-bold text-[#1a2744] mb-2">
+                 Violence and Legal Protection
+               </h3>
+               <p className="text-black leading-relaxed text-lg text-justify">
+                 Research exploring domestic and intimate partner violence in same-sex and gender-diverse contexts, including legal recognition, institutional responses, and protection gaps across jurisdictions.
+               </p>
+             </div>
           </div>
 
           {/* Research Approach */}
-          <div className="mb-16 border-t border-gray-200 pt-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-black mb-6">
-              {t('research.approachTitle')}
-            </h2>
-
-            <div className="mb-8 max-w-4xl">
-              <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                {t('research.approachDesc')}
-              </p>
-
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-brand-orange rounded-full mt-2.5 flex-shrink-0"></span>
-                  <span className="text-gray-700 leading-relaxed">{t('research.approach1')}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-brand-orange rounded-full mt-2.5 flex-shrink-0"></span>
-                  <span className="text-gray-700 leading-relaxed">{t('research.approach2')}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-brand-orange rounded-full mt-2.5 flex-shrink-0"></span>
-                  <span className="text-gray-700 leading-relaxed">{t('research.approach3')}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-brand-orange rounded-full mt-2.5 flex-shrink-0"></span>
-                  <span className="text-gray-700 leading-relaxed">{t('research.approach4')}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-brand-orange rounded-full mt-2.5 flex-shrink-0"></span>
-                  <span className="text-gray-700 leading-relaxed">{t('research.approach5')}</span>
-                </li>
-              </ul>
+          <div className="mb-12">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
+                Research Approach
+              </h2>
             </div>
-
-            <div className="bg-gray-50 rounded-xl p-6 max-w-4xl border-l-4 border-brand-orange">
-              <p className="text-gray-700 text-lg leading-relaxed">
-                {t('research.approachDesc2')}
-              </p>
-            </div>
+             <p className="text-black text-lg leading-relaxed mb-4 break-words text-justify">
+               The Institute adopts a comparative socio-legal methodology combining:
+             </p>
+             <ul className="mb-6">
+               <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                 <span>doctrinal legal analysis</span>
+               </li>
+               <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                 <span>comparative legal studies</span>
+               </li>
+               <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                 <span>migration and asylum research</span>
+               </li>
+               <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                 <span>human rights frameworks</span>
+               </li>
+               <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                 <span>interdisciplinary socio-legal perspectives</span>
+               </li>
+             </ul>
+             <p className="text-black text-lg leading-relaxed break-words text-justify">
+               Its work emphasises cross-jurisdictional comparison and focuses on areas where legal scholarship remains fragmented, emerging, or underdeveloped.
+             </p>
           </div>
 
           {/* Research Projects */}
-          <div className="border-t border-gray-200 pt-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-black mb-6">
-              {t('research.projectsTitle')}
-            </h2>
-
-            <p className="text-gray-700 text-lg leading-relaxed mb-10 max-w-4xl">
-              {t('research.projectsDesc')}
-            </p>
-
-            {/* Ongoing Projects */}
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold text-brand-black mb-6">
-                {t('research.ongoingTitle')}
-              </h3>
-              <ul className="space-y-4 max-w-4xl">
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-brand-orange rounded-full mt-2.5 flex-shrink-0"></span>
-                  <span className="text-gray-700 leading-relaxed">{t('research.project1')}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-brand-orange rounded-full mt-2.5 flex-shrink-0"></span>
-                  <span className="text-gray-700 leading-relaxed">{t('research.project2')}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-brand-orange rounded-full mt-2.5 flex-shrink-0"></span>
-                  <span className="text-gray-700 leading-relaxed">{t('research.project3')}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-brand-orange rounded-full mt-2.5 flex-shrink-0"></span>
-                  <span className="text-gray-700 leading-relaxed">{t('research.project4')}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-brand-orange rounded-full mt-2.5 flex-shrink-0"></span>
-                  <span className="text-gray-700 leading-relaxed">{t('research.project5')}</span>
-                </li>
-              </ul>
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
+                Research Projects
+              </h2>
             </div>
+             <p className="text-black text-lg leading-relaxed mb-8 break-words text-justify">
+               The Institute undertakes both ongoing and completed research projects across its core thematic areas.
+             </p>
 
-            {/* Completed Projects */}
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold text-brand-black mb-6">
-                {t('research.completedTitle')}
-              </h3>
-              <ul className="space-y-4 max-w-4xl">
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-brand-orange rounded-full mt-2.5 flex-shrink-0"></span>
-                  <span className="text-gray-700 leading-relaxed">{t('research.project6')}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-brand-orange rounded-full mt-2.5 flex-shrink-0"></span>
-                  <span className="text-gray-700 leading-relaxed">{t('research.project7')}</span>
-                </li>
-              </ul>
-            </div>
+             {/* Ongoing Projects */}
+             <div className="mb-8">
+               <h3 className="text-xl font-bold text-[#1a2744] mb-4">
+                 Ongoing Projects
+               </h3>
+               <ul>
+                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                   <span>Violence Against Sexual and Gender Minorities: Comparative Perspectives</span>
+                 </li>
+                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                   <span>Evolving Conceptions of Family, Marriage, and LGBTQ+ Rights in Contemporary India</span>
+                 </li>
+                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                   <span>Honour Killings in Germany: Legal Frameworks and Implications</span>
+                 </li>
+                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                   <span>Diversity, Inclusion, and Equal Opportunity in German Universities</span>
+                 </li>
+                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                   <span>Narratives of Equality and Otherness in Indian Law and Literature</span>
+                 </li>
+               </ul>
+             </div>
+
+             {/* Completed Projects */}
+             <div>
+               <h3 className="text-xl font-bold text-[#1a2744] mb-4">
+                 Completed Projects
+               </h3>
+               <ul>
+                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                   <span>Higher Education Curriculums: Issues, Concerns and Challenges (2018–2023)</span>
+                 </li>
+                 <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                   <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                   <span>Workplace Discrimination in Germany (2021–2023)</span>
+                 </li>
+               </ul>
+             </div>
           </div>
         </div>
       </section>
