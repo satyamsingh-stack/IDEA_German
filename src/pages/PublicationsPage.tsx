@@ -1,4 +1,29 @@
-﻿export const PublicationsPage = () => {
+﻿import { useState, useEffect } from 'react'
+import { getAdminPublications, AdminPublication } from '../utils/adminStorage'
+
+export const PublicationsPage = () => {
+  const [adminPubs, setAdminPubs] = useState<AdminPublication[]>([])
+
+  useEffect(() => {
+    setAdminPubs(getAdminPublications())
+  }, [])
+
+  const getAdminPubsForCategory = (cat: string) =>
+    adminPubs.filter(p => p.category === cat)
+
+  const renderAdminPublications = (category: string) => {
+    const pubs = getAdminPubsForCategory(category)
+    if (pubs.length === 0) return null
+    return pubs.map(pub => (
+      <li key={pub.id} className="text-black leading-relaxed flex items-start gap-2 text-justify">
+        <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+        <a href={pub.dataUrl} target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+          {pub.title}
+        </a>
+      </li>
+    ))
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <section className="relative py-8 md:py-12 bg-white">
@@ -87,6 +112,7 @@
                       LGBTQ Rights and the Anti-LGBTQ Propaganda Law in Kazakhstan: Legal, Social, and Human Rights Analysis
                     </a>
                   </li>
+                  {renderAdminPublications('Comparative Legal Analysis')}
                 </ul>
               </div>
 
@@ -111,12 +137,13 @@
                       Evolving Dynamics of Stockholm's LGBTQ+ Scene: Observations and Insights
                     </a>
                   </li>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+<li className="text-black leading-relaxed flex items-start gap-2 text-justify">
                     <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Migration, Asylum & Transnational Law/UNPACKING PLANET ROMEO’S LGBTQ+.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                    <a href="/images/Publications/Migration, Asylum &amp; Transnational Law/UNPACKING PLANET ROMEO'S LGBTQ+.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
                       Unpacking Planet Romeo's LGBTQ+ U.S. Presidential Election Survey Findings
                     </a>
                   </li>
+                  {renderAdminPublications('Migration, Asylum & Transnational Law')}
                 </ul>
               </div>
 
@@ -153,6 +180,7 @@
                       Identity in Focus: Why Some Gay Voters Support Far-Right Parties in Germany
                     </a>
                   </li>
+                  {renderAdminPublications('Law & Lived Experience')}
                 </ul>
               </div>
 
@@ -177,12 +205,13 @@
                       Navigating the Stigma: Tim Krüger's Death and Its Broader Implications
                     </a>
                   </li>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+<li className="text-black leading-relaxed flex items-start gap-2 text-justify">
                     <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Violence, Protection & Legal Gaps/Austria’s Constitutional Court Recognizes Non-Binary People.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+                    <a href="/images/Publications/Violence, Protection & Legal Gaps/Austria's Constitutional Court Recognizes Non-Binary People.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
                       Austria's Constitutional Court Recognises Non-Binary People as a Matter of Human Rights
                     </a>
                   </li>
+                  {renderAdminPublications('Violence, Protection & Legal Gaps')}
                 </ul>
               </div>
 
@@ -201,6 +230,7 @@
                       Review of the EU LGBTIQ+ Equality Strategy 2020–2025 and 2026–2030
                     </a>
                   </li>
+                  {renderAdminPublications('Policy & Commentary')}
                 </ul>
               </div>
 
@@ -237,6 +267,7 @@
                       Wider der heterosexistischen Arroganz
                     </a>
                   </li>
+                  {renderAdminPublications('German Publications')}
                 </ul>
               </div>
           </div>

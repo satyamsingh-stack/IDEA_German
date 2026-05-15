@@ -1,3 +1,6 @@
+import { useState, useEffect } from 'react'
+import { getAdminNewsletters, AdminNewsletter } from '../utils/adminStorage'
+
 const newsletters = [
   {
     title: 'IDEA Insights — Issue 1',
@@ -6,6 +9,11 @@ const newsletters = [
 ]
 
 export const NewsletterPage = () => {
+  const [adminNewsletters, setAdminNewsletters] = useState<AdminNewsletter[]>([])
+
+  useEffect(() => {
+    setAdminNewsletters(getAdminNewsletters())
+  }, [])
   return (
     <div className="min-h-screen bg-white">
       <section className="relative py-8 md:py-12 bg-white">
@@ -57,6 +65,19 @@ export const NewsletterPage = () => {
                 <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
                 <a
                   href={nl.image}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand-orange hover:underline"
+                >
+                  {nl.title}
+                </a>
+              </li>
+            ))}
+            {adminNewsletters.map(nl => (
+              <li key={nl.id} className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                <a
+                  href={nl.dataUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-brand-orange hover:underline"
