@@ -1,8 +1,25 @@
 [build]
   publish = "dist"
   command = "npm run build"
+  functions = "netlify/functions"
 
+# Netlify Identity configuration
+[identity]
+  provider = "netlify"
+
+# Git Gateway configuration for CMS
+[[context.branch]]
+  command = "npm run build"
+  environment = { GIT_AUTHOR_NAME = "CMS User", GIT_AUTHOR_EMAIL = "cms@netlify.com" }
+
+# Redirect rules
 [[redirects]]
   from = "/*"
   to = "/index.html"
+  status = 200
+
+# Allow admin panel access
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
   status = 200

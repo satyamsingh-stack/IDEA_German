@@ -1,6 +1,50 @@
-﻿export const PublicationsPage = () => {
+﻿import { useState, useEffect } from 'react';
+import { Calendar, Tag, FileDown } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import { loadContent, formatDate, getExcerpt, getCategories } from '../utils/contentLoader';
+
+interface Publication {
+  title: string;
+  description: string;
+  date: string;
+  author?: string;
+  category?: string;
+  featured_image?: string;
+  pdf_file?: string;
+  slug: string;
+  content: string;
+}
+
+export const PublicationsPage = () => {
+  const [publications, setPublications] = useState<Publication[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>('');
+  const [categories, setCategories] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadPubs = async () => {
+      try {
+        const pubs = await loadContent('publications');
+        setPublications(pubs);
+        const cats = getCategories(pubs);
+        setCategories(cats);
+      } catch (error) {
+        console.error('Error loading publications:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadPubs();
+  }, []);
+
+  const filteredPublications = selectedCategory
+    ? publications.filter(pub => pub.category === selectedCategory)
+    : publications;
+
   return (
     <div className="min-h-screen bg-white">
+      {/* Intro Section */}
       <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* IDEA Legal Research Paper Series */}
@@ -44,220 +88,137 @@
                 Research Publications
               </h2>
             </div>
-             <p className="text-black text-lg leading-relaxed mb-8 break-words text-justify">
-               The IDEA Institute produces academic and analytical work across its core research areas.
-             </p>
-
-              {/* Comparative Legal Analysis */}
-              <div className="mb-8">
-                <h3 className="text-xl font-bold text-[#1a2744] mb-2">
-                  Comparative Legal Analysis
-                </h3>
-                <p className="text-black leading-relaxed mb-4 text-justify">
-                  Research examining legal developments across jurisdictions and comparative legal systems.
-                </p>
-                <ul>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Comparative Legal Analysis/A critique of Germany Prostitution.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      A Critique of Germany's Prostitution Legislation
-                    </a>
-                  </li>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Comparative Legal Analysis/Comparative and Transnational LGBTQ+ Legal Studies.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Comparative and Transnational LGBTIQ+ Legal Studies: Toward a South Asia–Anchored Global Research Framework
-                    </a>
-                  </li>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Comparative Legal Analysis/Jane Kaushik Judgment.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Jane Kaushik Judgment: A Paradigm Shift Towards Substantive Equality for Transgender Persons in India
-                    </a>
-                  </li>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Comparative Legal Analysis/Why are heterosexuals guilty toward homosexuals.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Why Are Heterosexuals Guilty Toward Homosexuals?
-                    </a>
-                  </li>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Comparative Legal Analysis/LGBTQ Rights and the Anti-LGBTQ Propaganda Law in Kazakhstan.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      LGBTQ Rights and the Anti-LGBTQ Propaganda Law in Kazakhstan: Legal, Social, and Human Rights Analysis
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Migration, Asylum & Transnational Law */}
-              <div className="mb-8">
-                <h3 className="text-xl font-bold text-[#1a2744] mb-2">
-                  Migration, Asylum &amp; Transnational Law
-                </h3>
-                <p className="text-black leading-relaxed mb-4 text-justify">
-                  Research exploring migration, mobility, asylum systems, and cross-border legal developments.
-                </p>
-                <ul>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Migration, Asylum & Transnational Law/Review Artikel TV Show.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Review Article: Markus Lanz TV Discussion on Migration Issues (26.03.2024)
-                    </a>
-                  </li>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Migration, Asylum &amp; Transnational Law/Evolving Dynamics of Stockholm’s LGBTQ+ Scene.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Evolving Dynamics of Stockholm's LGBTQ+ Scene: Observations and Insights
-                    </a>
-                  </li>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Migration, Asylum & Transnational Law/UNPACKING PLANET ROMEO’S LGBTQ+.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Unpacking Planet Romeo's LGBTQ+ U.S. Presidential Election Survey Findings
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Law & Lived Experience */}
-              <div className="mb-8">
-                <h3 className="text-xl font-bold text-[#1a2744] mb-2">
-                  Law &amp; Lived Experience
-                </h3>
-                <p className="text-black leading-relaxed mb-4 text-justify">
-                  Socio-legal research examining the relationship between formal legal protections and everyday realities.
-                </p>
-                <ul>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Law & Lived Experience/Invisible Lives Male Sex Worker.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Invisible Lives: Male Sex Workers in India
-                    </a>
-                  </li>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Law & Lived Experience/Why Is Homosexuality Still Stigmatized Despite Legalization in Germany.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Why Does Homosexuality Remain Stigmatised Despite Legalisation in Germany and Other Developed Countries?
-                    </a>
-                  </li>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Law & Lived Experience/Against Heterosexist Arrogance.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Against Heterosexist Arrogance: Supporting the Identity Formation of LGBTIQA+ Children and Young People
-                    </a>
-                  </li>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Law & Lived Experience/Identity in Focus.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Identity in Focus: Why Some Gay Voters Support Far-Right Parties in Germany
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Violence, Protection & Legal Gaps */}
-              <div className="mb-8">
-                <h3 className="text-xl font-bold text-[#1a2744] mb-2">
-                  Violence, Protection &amp; Legal Gaps
-                </h3>
-                <p className="text-black leading-relaxed mb-4 text-justify">
-                  Research analysing violence, exclusion, and institutional protection failures affecting sexual and gender minorities.
-                </p>
-                <ul>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Violence, Protection & Legal Gaps/Human Rights Violations Against the LGBTQ+ Community in Iran.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Human Rights Violations Against the LGBTQ+ Community in Iran
-                    </a>
-                  </li>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Violence, Protection & Legal Gaps/Navigating the Stigma Tim Krüger's Death.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Navigating the Stigma: Tim Krüger's Death and Its Broader Implications
-                    </a>
-                  </li>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Violence, Protection & Legal Gaps/Austria’s Constitutional Court Recognizes Non-Binary People.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Austria's Constitutional Court Recognises Non-Binary People as a Matter of Human Rights
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Policy & Commentary */}
-              <div className="mb-8">
-                <h3 className="text-xl font-bold text-[#1a2744] mb-2">
-                  Policy &amp; Commentary
-                </h3>
-                <p className="text-black leading-relaxed mb-4 text-justify">
-                  Critical legal and social commentary on contemporary developments in law, policy, and public discourse.
-                </p>
-                <ul>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/Policy and Commentary/Review of the EU LGBTIQ+ Equality Strategy 2020-2025 and 2026 -2030.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Review of the EU LGBTIQ+ Equality Strategy 2020–2025 and 2026–2030
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* German Publications */}
-              <div>
-                <h3 className="text-xl font-bold text-[#1a2744] mb-2">
-                  German Publications
-                </h3>
-                <p className="text-black leading-relaxed mb-4 text-justify">
-                  Selected German-language research and commentary.
-                </p>
-                <ul>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/German Publications/Ablehnung einer Überprüfung Entscheidung des Obersten Gerichtshofs zum Same-Sex-.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Ablehnung einer Überprüfung: Entscheidung des Obersten Gerichtshofs zum Same-Sex-Marriage in Indien
-                    </a>
-                  </li>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/German Publications/Entwickelt sich Deutschland zu einem hybriden Regime.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Entwickelt sich Deutschland zu einem hybriden Regime vor dem Hintergrund politischer und sozialer Veränderungen?
-                    </a>
-                  </li>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/German Publications/Navigating the Stigma Tim Krüger's Death.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Navigieren des Stigmas: Der Tod von Tim Krüger und seine umfassenderen Implikationen
-                    </a>
-                  </li>
-                  <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
-                    <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                    <a href="/images/Publications/German Publications/Wider der heterosexistischen Arroganz.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
-                      Wider der heterosexistischen Arroganz
-                    </a>
-                  </li>
-                </ul>
-              </div>
-          </div>
-
-          {/* Accessing Publications */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
-                Accessing Publications
-              </h2>
-            </div>
-            <p className="text-black text-lg leading-relaxed break-words text-justify">
-              Publications are available through the Institute's publication platform and are organised according to thematic research areas.
-            </p>
-            <p className="text-black text-lg leading-relaxed break-words mt-4 text-justify">
-              Additional publication details, abstracts, and downloadable versions will be made available progressively through the website.
+            <p className="text-black text-lg leading-relaxed mb-8 break-words text-justify">
+              The IDEA Institute produces academic and analytical work across its core research areas.
             </p>
           </div>
         </div>
       </section>
+
+      {/* Dynamic Publications */}
+      <section className="py-8 md:py-12 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Category Filter */}
+          {categories.length > 0 && (
+            <div className="mb-8">
+              <p className="text-black font-medium mb-3">Filter by Category:</p>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  onClick={() => setSelectedCategory('')}
+                  className={`px-4 py-2 rounded-lg font-medium transition ${
+                    selectedCategory === ''
+                      ? 'bg-brand-orange text-white'
+                      : 'bg-gray-200 text-black hover:bg-gray-300'
+                  }`}
+                >
+                  All
+                </button>
+                {categories.map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setSelectedCategory(cat)}
+                    className={`px-4 py-2 rounded-lg font-medium transition ${
+                      selectedCategory === cat
+                        ? 'bg-brand-orange text-white'
+                        : 'bg-gray-200 text-black hover:bg-gray-300'
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Loading State */}
+          {loading && (
+            <div className="text-center py-12">
+              <p className="text-black text-lg">Loading publications...</p>
+            </div>
+          )}
+
+          {/* No Publications */}
+          {!loading && filteredPublications.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-black text-lg">
+                {publications.length === 0
+                  ? 'No publications yet. Check back soon!'
+                  : 'No publications in this category.'}
+              </p>
+            </div>
+          )}
+
+          {/* Publications List */}
+          {!loading && filteredPublications.length > 0 && (
+            <div className="space-y-8">
+              {filteredPublications.map((pub) => (
+                <article
+                  key={pub.slug}
+                  className="border-b border-gray-200 pb-8 last:border-b-0"
+                >
+                  {pub.featured_image && (
+                    <img
+                      src={pub.featured_image}
+                      alt={pub.title}
+                      className="w-full h-64 object-cover rounded-lg mb-4"
+                    />
+                  )}
+
+                  <h2 className="text-2xl md:text-3xl font-bold text-[#1a2744] mb-2">
+                    {pub.title}
+                  </h2>
+
+                  <div className="flex flex-wrap items-center gap-4 mb-4 text-sm text-gray-600">
+                    <div className="flex items-center gap-1">
+                      <Calendar size={16} />
+                      <span>{formatDate(pub.date)}</span>
+                    </div>
+                    {pub.author && (
+                      <span className="text-gray-700">By {pub.author}</span>
+                    )}
+                    {pub.category && (
+                      <div className="flex items-center gap-1">
+                        <Tag size={16} />
+                        <span className="bg-gray-100 px-2 py-1 rounded text-xs font-medium">
+                          {pub.category}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  <p className="text-black text-lg leading-relaxed mb-4 text-justify">
+                    {pub.description}
+                  </p>
+
+                  <div className="prose prose-sm max-w-none text-gray-700 line-clamp-3">
+                    <ReactMarkdown>{getExcerpt(pub.content, 300)}</ReactMarkdown>
+                  </div>
+
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    <a
+                      href={`/publications/${pub.slug}`}
+                      className="inline-block text-brand-orange hover:underline font-medium"
+                    >
+                      View full publication →
+                    </a>
+                    {pub.pdf_file && (
+                      <a
+                        href={pub.pdf_file}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-brand-orange text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition font-medium"
+                      >
+                        <FileDown size={16} />
+                        Download PDF
+                      </a>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
     </div>
-  )
-}
+  );
+};
