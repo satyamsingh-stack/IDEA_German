@@ -27,7 +27,7 @@ export const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="py-12 md:py-20 bg-white">
+    <section id="projects" className="py-8 md:py-12 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Two-column layout: Image left, Projects list right */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
@@ -60,7 +60,7 @@ export const ProjectsSection = () => {
                     {project.status}
                   </span>
                 </div>
-                <p className="text-gray-700 leading-relaxed text-base md:text-lg">
+                <p className="text-gray-700 leading-relaxed text-base md:text-lg text-justify">
                   {project.title}
                 </p>
               </div>

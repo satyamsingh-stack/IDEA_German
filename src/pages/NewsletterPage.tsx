@@ -1,59 +1,71 @@
-import { useLanguage } from '../contexts/LanguageContext'
+const newsletters = [
+  {
+    title: 'IDEA Insights — Issue 1',
+    image: '/images/Newsletter IDEA .png',
+  },
+]
 
 export const NewsletterPage = () => {
-  const { t } = useLanguage()
-
   return (
-    <div className="pt-20 md:pt-28">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 md:mb-8">
-        <div className="flex flex-col items-start">
-          <p className="text-sm md:text-base font-bold text-brand-black uppercase tracking-wider">
-            {t('nav.newsletter')}
-          </p>
-          <div className="w-12 h-0.5 bg-brand-orange mt-2"></div>
-        </div>
-      </div>
-
-      <section className="py-12 md:py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-black mb-6">
-              {t('newsletter.headline')}
-            </h2>
-
-            <p className="text-gray-700 text-lg leading-relaxed mb-8">
-              {t('newsletter.description1')}
-            </p>
-
-            <h3 className="text-xl font-bold text-brand-black mb-4">
-              {t('newsletter.description2')}
-            </h3>
-
-            <ul className="space-y-3 mb-10">
-              <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                <span className="text-gray-700">{t('newsletter.item1')}</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                <span className="text-gray-700">{t('newsletter.item2')}</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                <span className="text-gray-700">{t('newsletter.item3')}</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                <span className="text-gray-700">{t('newsletter.item4')}</span>
-              </li>
-            </ul>
-
-            <div className="bg-gray-50 rounded-xl p-6 border-l-4 border-brand-orange">
-              <p className="text-gray-700 text-lg leading-relaxed">
-                {t('newsletter.subscribe')}
-              </p>
-            </div>
+    <div className="min-h-screen bg-white">
+      <section className="relative py-8 md:py-12 bg-white">
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
+            <h1 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
+              IDEA Insights
+            </h1>
           </div>
+          <p className="text-black text-lg leading-relaxed mb-4 break-words text-justify">
+            IDEA Insights is the monthly newsletter of the Institute, featuring accessible updates on comparative LGBTQ+ law, migration, asylum, and transnational legal developments.
+          </p>
+          <p className="text-black text-lg leading-relaxed mb-4 text-justify">
+            The newsletter includes:
+          </p>
+          <ul className="mb-6">
+            <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+              <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+              <span>key research insights</span>
+            </li>
+            <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+              <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+              <span>comparative legal and policy developments</span>
+            </li>
+            <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+              <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+              <span>short explainers and commentary</span>
+            </li>
+            <li className="text-black leading-relaxed flex items-start gap-2 text-justify">
+              <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+              <span>research publications and institutional updates</span>
+            </li>
+          </ul>
+          <p className="text-black text-lg leading-relaxed break-words text-justify mb-8">
+            Subscribe to receive accessible legal insights, research updates, and news from the Institute.
+          </p>
+
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1a2744]">
+              Newsletter Archive
+            </h2>
+          </div>
+
+          <ul>
+            {newsletters.map((nl, index) => (
+              <li key={index} className="text-black leading-relaxed flex items-start gap-2 text-justify">
+                <span className="w-2 h-2 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+                <a
+                  href={nl.image}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand-orange hover:underline"
+                >
+                  {nl.title}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </div>

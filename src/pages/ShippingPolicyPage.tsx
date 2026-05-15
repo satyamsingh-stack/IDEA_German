@@ -19,9 +19,9 @@ export const ShippingPolicyPage = () => {
                 {t('shipping.digitalDelivery')}
               </h2>
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <p className="text-gray-700 leading-relaxed">
-                  {t('shipping.digitalDeliveryText')}
-                </p>
+                 <p className="text-gray-700 leading-relaxed text-justify">
+                   {t('shipping.digitalDeliveryText')}
+                 </p>
               </div>
             </div>
 
@@ -31,9 +31,9 @@ export const ShippingPolicyPage = () => {
                 {t('shipping.noPhysical')}
               </h2>
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <p className="text-gray-700 leading-relaxed">
-                  {t('shipping.noPhysicalText')}
-                </p>
+                 <p className="text-gray-700 leading-relaxed text-justify">
+                   {t('shipping.noPhysicalText')}
+                 </p>
               </div>
             </div>
 
@@ -43,9 +43,9 @@ export const ShippingPolicyPage = () => {
                 {t('shipping.deliveryTime')}
               </h2>
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <div className="text-gray-700 leading-relaxed mb-4">
-                  {t('shipping.deliveryTimeText')}
-                </div>
+                 <div className="text-gray-700 leading-relaxed mb-4 text-justify">
+                   {t('shipping.deliveryTimeText')}
+                 </div>
                 <div className="space-y-2">
                   <p>
                     <a href="mailto:info@ideainstitute.de" className="text-blue-600 hover:text-blue-700 font-medium hover:underline transition">

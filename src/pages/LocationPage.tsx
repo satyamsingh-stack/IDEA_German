@@ -21,18 +21,18 @@ export const LocationPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10">
             {/* Left: Text Content */}
             <div className="leading-relaxed">
-              <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                {t('location.intro1')}
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                {t('location.intro2')}
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                {t('location.intro3')}
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                {t('location.intro4')}
-              </p>
+               <p className="text-gray-700 text-lg leading-relaxed mb-4 text-justify">
+                 {t('location.intro1')}
+               </p>
+               <p className="text-gray-700 text-lg leading-relaxed mb-4 text-justify">
+                 {t('location.intro2')}
+               </p>
+               <p className="text-gray-700 text-lg leading-relaxed mb-4 text-justify">
+                 {t('location.intro3')}
+               </p>
+               <p className="text-gray-700 text-lg leading-relaxed text-justify">
+                 {t('location.intro4')}
+               </p>
 
               {/* Address Section */}
               <div className="mt-6 p-5 bg-gray-50 border-l-4 border-brand-orange">

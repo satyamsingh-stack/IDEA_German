@@ -16,6 +16,7 @@ import {
   TermsAndConditionsPage,
   RefundPolicyPage,
   ShippingPolicyPage,
+  InsightsPage,
   BlogPage,
   ExplainersPage,
   FAQPage,
@@ -33,6 +34,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path="about" element={<AboutPage />} />
+            <Route path="about/director" element={<DirectorPage />} />
             <Route path="standort" element={<LocationPage />} />
             <Route path="innovation-und-rechtsberatung" element={<InnovationPage />} />
             <Route path="forschung" element={<ResearchPage />} />
@@ -40,6 +42,7 @@ function App() {
             <Route path="staff" element={<StaffPage />} />
             <Route path="staff-direktor" element={<DirectorPage />} />
             <Route path="publikationen" element={<PublicationsPage />} />
+            <Route path="insights" element={<InsightsPage />} />
             <Route path="blog" element={<BlogPage />} />
             <Route path="explainers" element={<ExplainersPage />} />
             <Route path="faq" element={<FAQPage />} />

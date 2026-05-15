@@ -35,7 +35,7 @@ export const HeroSection = () => {
 
             {/* H1 Section */}
             <div className="animate-fadeIn">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-brand-black leading-[1.1] mb-6 font-sans">
+               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-brand-black leading-[1.1] mb-6 font-serif">
                 {t('hero.welcome')}
               </h1>
               <p className="text-gray-700 leading-relaxed mb-6 text-sm sm:text-base font-normal">
