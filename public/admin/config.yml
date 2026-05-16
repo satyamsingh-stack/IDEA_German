@@ -49,7 +49,7 @@ collections:
     create: true
     slug: '{{slug}}'
     fields:
-      - { label: 'Link Label Text', name: 'label_text', widget: 'string', required: true }
+      - { label: 'Link Label Text', name: 'label_text', widget: 'text', required: true }
       - { label: 'PDF URL', name: 'pdf_link', widget: 'string', required: false }
       - { label: 'PDF File Upload', name: 'pdf_file', widget: 'file', required: true }
       - { label: 'Category', name: 'category', widget: 'select', required: true, options:

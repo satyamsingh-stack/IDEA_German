@@ -146,12 +146,11 @@ export const PublicationsPage = () => {
                      // Defence-in-depth: strip any stray quote characters the CMS
                      // may inject on re-publish (e.g. stray leading " char)
                       const label = pub.label_text
-                        // Strip YAML quote artefacts from broken CMS double-publish cycles
+                        // Strip YAML quote artefacts from CMS double-publish cycles
                         .replace(/^"+|"+$/g, '')          // strip outer double-quotes
                         .replace(/^'+|'+$/g, '')          // strip outer single-quotes
-                        .replace(/^\s*'+/, '')            // strip leading stray apostrophe
-                        .replace(/"+$/, '')               // strip trailing double-quote fragment
-                        .replace(/^'+/, '')               // strip final leading stray apostrophe pass
+                        .replace(/^[\s\r\n]+/, '')        // strip leading newlines/whitespace from text widget
+                        .replace(/[\s\r\n]+$/, '')        // strip trailing newlines/whitespace
                         .trim();
                      const href       = pub.pdf_link || pub.pdf_file || `/publications/${pub.slug}`;
                      const isExternal = !!pub.pdf_link || !!pub.pdf_file;
@@ -170,11 +169,12 @@ export const PublicationsPage = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-brand-orange hover:underline font-medium break-words"
+                                style={{ overflowWrap: 'anywhere', wordBreak: 'normal' }}
                               >
                                 {label}
                               </a>
                             ) : (
-                              <Link to={href} className="text-brand-orange hover:underline font-medium break-words">
+                              <Link to={href} className="text-brand-orange hover:underline font-medium break-words" style={{ overflowWrap: 'anywhere', wordBreak: 'normal' }}>
                                 {label}
                               </Link>
                             )}
