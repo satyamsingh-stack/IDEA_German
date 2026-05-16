@@ -131,11 +131,7 @@ export const PublicationsPage = () => {
           {!loading &&
             groupedByCategory.map(({ category, items }) => (
               <div key={category} className="mb-12 last:mb-0">
-                {/* Category heading with orange rule */}
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#1a2744]">{category}</h3>
-                </div>
+                <h3 className="text-xl font-bold text-[#1a2744] mb-2">{category}</h3>
 
                 {/* Subtitle */}
                 {CATEGORY_SUBTITLES[category] && (
@@ -192,7 +188,10 @@ export const PublicationsPage = () => {
       <section className="relative py-8 md:py-12 bg-white">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-200 pt-8">
           <div className="mb-6">
-            <h3 className="text-2xl md:text-3xl font-bold text-[#1a2744] mb-4">Accessing Publications</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#1a2744]">Accessing Publications</h3>
+            </div>
             <p className="text-black text-lg leading-relaxed mb-4 break-words text-justify">
               Publications are available through the Institute's publication platform and are organised
               according to thematic research areas.
