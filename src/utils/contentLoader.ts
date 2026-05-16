@@ -23,7 +23,13 @@ export const loadContent = async (
           const { frontmatter, content: markdown } = parseFrontmatter(content);
 
           // Populate label_text from title when a legacy markdown file has no label_text
-          const label_text = frontmatter.label_text || frontmatter.title || '';
+          // Also aggressively strip any stray quote characters the CMS may inject on re-publish
+          const label_text = (
+            (frontmatter.label_text || frontmatter.title || '')
+            .replace(/^"+|"+$/g, '')   // strip leading/trailing double-quote artefacts
+            .replace(/^'+|'+$/g, '')   // strip leading/trailing single-quote artefacts
+            .trim()
+          );
 
           const slug = path.split('/').pop()?.replace('.md', '') || '';
 
