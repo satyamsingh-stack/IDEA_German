@@ -10,6 +10,7 @@ import {
   StaffPage,
   DirectorPage,
   PublicationsPage,
+  PublicationDetailPage,
   LocationPage,
   ImpressumPage,
   PrivacyPolicyPage,
@@ -18,11 +19,13 @@ import {
   ShippingPolicyPage,
   InsightsPage,
   BlogPage,
+  BlogPostPage,
   ExplainersPage,
   FAQPage,
   ProgramsEventsPage,
   InitiativesPage,
   NewsletterPage,
+  NewsletterDetailPage,
   ContactPage,
 } from './pages'
 
@@ -42,13 +45,16 @@ function App() {
             <Route path="staff" element={<StaffPage />} />
             <Route path="staff-direktor" element={<DirectorPage />} />
             <Route path="publikationen" element={<PublicationsPage />} />
+            <Route path="publications/:slug" element={<PublicationDetailPage />} />
             <Route path="insights" element={<InsightsPage />} />
             <Route path="blog" element={<BlogPage />} />
+            <Route path="blog/:slug" element={<BlogPostPage />} />
             <Route path="explainers" element={<ExplainersPage />} />
             <Route path="faq" element={<FAQPage />} />
             <Route path="programs-events" element={<ProgramsEventsPage />} />
             <Route path="initiatives" element={<InitiativesPage />} />
             <Route path="newsletter" element={<NewsletterPage />} />
+            <Route path="newsletter/:slug" element={<NewsletterDetailPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="impressum" element={<ImpressumPage />} />
             <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
