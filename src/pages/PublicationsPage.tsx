@@ -96,9 +96,20 @@ export const PublicationsPage = () => {
         </div>
       </section>
 
-      {/* ── Category-grouped Publications Listing ── */}
+      {/* ── Publications Listing — grouped by category ── */}
       <section className="py-8 md:py-12 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Research Publications subheading */}
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1a2744]">
+              Research Publications
+            </h2>
+          </div>
+          <p className="text-black text-lg leading-relaxed mb-8 break-words text-justify">
+            The IDEA Institute produces academic and analytical work across its core research areas.
+          </p>
+
           {loading && (
             <div className="text-center py-12">
               <p className="text-black text-lg">Loading publications…</p>
