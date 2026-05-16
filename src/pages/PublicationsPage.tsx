@@ -1,6 +1,6 @@
 ﻿import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { loadContent, getCategories } from '../utils/contentLoader';
+import { loadContent } from '../utils/contentLoader';
 import { Publication } from '../types/content';
 
 /** Category order — only sections with publications are rendered. */
@@ -32,8 +32,6 @@ const CATEGORY_SUBTITLES: Record<string, string> = {
 
 export const PublicationsPage = () => {
   const [publications, setPublications] = useState<Publication[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string>('');
-  const [categories, setCategories] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -41,7 +39,6 @@ export const PublicationsPage = () => {
       try {
         const pubs = await loadContent('publications');
         setPublications(pubs);
-        setCategories(getCategories(pubs));
       } catch (error) {
         console.error('Error loading publications:', error);
       } finally {
@@ -51,13 +48,9 @@ export const PublicationsPage = () => {
     loadPubs();
   }, []);
 
-  const filteredPublications = selectedCategory
-    ? publications.filter(pub => pub.category === selectedCategory)
-    : publications;
-
   const groupedByCategory = CATEGORIES.map(cat => ({
     category: cat,
-    items: filteredPublications.filter(pub => pub.category === cat),
+    items: publications.filter(pub => pub.category === cat),
   })).filter(g => g.items.length > 0);
 
   return (
@@ -100,54 +93,23 @@ export const PublicationsPage = () => {
               </a>
             </p>
           </div>
-
-          <div className="mb-12">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">
-                Research Publications
-              </h2>
-            </div>
-            <p className="text-black text-lg leading-relaxed mb-8 break-words text-justify">
-              The IDEA Institute produces academic and analytical work across its core research areas.
-            </p>
-            {categories.length > 0 && (
-              <div className="mb-8">
-                <p className="text-black font-medium mb-3">Filter by Category:</p>
-                <div className="flex flex-wrap gap-2">
-                  <button
-                    onClick={() => setSelectedCategory('')}
-                    className={`px-4 py-2 rounded-lg font-medium transition ${
-                      selectedCategory === ''
-                        ? 'bg-brand-orange text-white'
-                        : 'bg-gray-200 text-black hover:bg-gray-300'
-                    }`}
-                  >
-                    All
-                  </button>
-                  {categories.map(cat => (
-                    <button
-                      key={cat}
-                      onClick={() => setSelectedCategory(cat)}
-                      className={`px-4 py-2 rounded-lg font-medium transition ${
-                        selectedCategory === cat
-                          ? 'bg-brand-orange text-white'
-                          : 'bg-gray-200 text-black hover:bg-gray-300'
-                      }`}
-                    >
-                      {cat}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
         </div>
       </section>
 
-      {/* ── Category-grouped Publications Listing ── */}
+      {/* ── Publications Listing — grouped by category ── */}
       <section className="py-8 md:py-12 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Research Publications subheading */}
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-2 h-8 bg-brand-orange rounded-full"></div>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1a2744]">
+              Research Publications
+            </h2>
+          </div>
+          <p className="text-black text-lg leading-relaxed mb-8 break-words text-justify">
+            The IDEA Institute produces academic and analytical work across its core research areas.
+          </p>
+
           {loading && (
             <div className="text-center py-12">
               <p className="text-black text-lg">Loading publications…</p>
@@ -194,28 +156,30 @@ export const PublicationsPage = () => {
                      const href       = pub.pdf_link || pub.pdf_file || `/publications/${pub.slug}`;
                      const isExternal = !!pub.pdf_link || !!pub.pdf_file;
 
-                     return (
-                       <li key={pub.slug} className="flex items-start gap-3">
-                         {/* Round bullet */}
-                         <span
-                           className="mt-1.5 inline-block w-2 h-2 rounded-full bg-brand-orange flex-shrink-0"
-                           aria-hidden="true"
-                         />
-                        {isExternal ? (
-                          <a
-                            href={href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-brand-orange hover:underline font-medium break-words"
-                          >
-                            {label}
-                          </a>
-                        ) : (
-                          <Link to={href} className="text-brand-orange hover:underline font-medium break-words">
-                            {label}
-                          </Link>
-                        )}
-                      </li>
+                      return (
+                        <li key={pub.slug} className="flex items-start gap-3">
+                          {/* Round bullet */}
+                          <span
+                            className="mt-1.5 inline-block w-2 h-2 rounded-full bg-brand-orange flex-shrink-0"
+                            aria-hidden="true"
+                          />
+                          <span className="min-w-0 flex-1">
+                            {isExternal ? (
+                              <a
+                                href={href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-brand-orange hover:underline font-medium break-words"
+                              >
+                                {label}
+                              </a>
+                            ) : (
+                              <Link to={href} className="text-brand-orange hover:underline font-medium break-words">
+                                {label}
+                              </Link>
+                            )}
+                          </span>
+                        </li>
                     );
                   })}
                 </ol>
