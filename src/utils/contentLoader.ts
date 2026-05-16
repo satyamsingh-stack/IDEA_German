@@ -10,34 +10,28 @@ export const loadContent = async (
   contentType: 'blogs' | 'publications' | 'newsletter'
 ): Promise<any[]> => {
   try {
-    // In production with Decap CMS, files are committed to git/GitHub
-    // They will be available in the build output
+    // Use relative paths - Vite's import.meta.glob needs relative paths from the current file
     const modules = import.meta.glob('../../content/**/*.md', { query: '?raw', import: 'default' }) as Record<string, () => Promise<string>>;
-    
-    // Debug: Log what paths are available
-    const allPaths = Object.keys(modules);
-    console.log(`[ContentLoader] Total markdown files found: ${allPaths.length}`);
-    console.log(`[ContentLoader] Available paths:`, allPaths);
-    console.log(`[ContentLoader] Looking for contentType: "${contentType}"`);
-    
     const contentItems: any[] = [];
 
+    const allPaths = Object.keys(modules);
+    console.log(`[ContentLoader] Total markdown files found: ${allPaths.length}`);
+    console.log(`[ContentLoader] Looking for contentType: "${contentType}"`);
+
     for (const path in modules) {
-      // Match content by checking if the path contains the content type directory
-      // The actual paths from Vite look like: ../../content/blogs/file.md
-      const matchesContent = path.includes(`/content/${contentType}/`);
-      
-      console.log(`[ContentLoader] Checking path "${path}" matches "${contentType}"?`, matchesContent);
-      
-      if (matchesContent) {
+      // Check if path contains the content type directory
+      if (path.includes(`/content/${contentType}/`)) {
         try {
+          console.log(`[ContentLoader] Loading: ${path}`);
           const content = await modules[path]();
+          console.log(`[ContentLoader] Content fetched, parsing...`);
+          
           const { frontmatter, content: markdown } = parseFrontmatter(content);
           
           // Extract slug from filename
           const slug = path.split('/').pop()?.replace('.md', '') || '';
           
-          console.log(`[ContentLoader] Successfully loaded: ${slug}`);
+          console.log(`[ContentLoader] ✓ Loaded: ${slug}`);
           
           contentItems.push({
             ...frontmatter,
@@ -45,12 +39,12 @@ export const loadContent = async (
             content: markdown,
           });
         } catch (itemError) {
-          console.warn(`[ContentLoader] Error parsing ${path}:`, itemError);
+          console.error(`[ContentLoader] ✗ Error with ${path}:`, itemError);
         }
       }
     }
 
-    console.log(`[ContentLoader] Loaded ${contentItems.length} items for "${contentType}"`);
+    console.log(`[ContentLoader] ✓ Loaded ${contentItems.length} items for "${contentType}"`);
 
     // Sort by date (newest first)
     contentItems.sort((a, b) => {
@@ -61,7 +55,7 @@ export const loadContent = async (
 
     return contentItems;
   } catch (error) {
-    console.error(`Error loading ${contentType}:`, error);
+    console.error(`[ContentLoader] ✗ Fatal error loading ${contentType}:`, error);
     return [];
   }
 };
