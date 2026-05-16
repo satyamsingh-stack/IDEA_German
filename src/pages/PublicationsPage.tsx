@@ -1,19 +1,7 @@
 ﻿import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { loadContent, getCategories } from '../utils/contentLoader';
-
-interface Publication {
-  title: string;
-  description: string;
-  date: string;
-  category?: string;
-  pdf_file?: string;
-  featured_image?: string;
-  label_text?: string;
-  pdf_link?: string;
-  slug: string;
-  content: string;
-}
+import { Publication } from '../types/content';
 
 /** Category order — only sections with publications are rendered. */
 const CATEGORIES = [
@@ -52,7 +40,6 @@ export const PublicationsPage = () => {
     const loadPubs = async () => {
       try {
         const pubs = await loadContent('publications');
-        pubs.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
         setPublications(pubs);
         setCategories(getCategories(pubs));
       } catch (error) {
@@ -198,36 +185,26 @@ export const PublicationsPage = () => {
                 {/* Numbered publication list */}
                 <ol className="space-y-2 pl-5" start={1}>
                   {items.map(pub => {
-                    const label = (pub.label_text || pub.title || '').trim();
+                    const label = pub.label_text.trim();
                     const href = pub.pdf_link || pub.pdf_file || `/publications/${pub.slug}`;
                     const isExternal = !!pub.pdf_link || !!pub.pdf_file;
 
                     return (
                       <li key={pub.slug} className="flex items-start gap-3">
-                        {/* Thumbnail (optional) */}
-                        {pub.featured_image && (
-                          <img
-                            src={pub.featured_image}
-                            alt=""
-                            className="mt-1 w-12 h-12 object-cover rounded flex-shrink-0"
-                          />
+                        {isExternal ? (
+                          <a
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-brand-orange hover:underline font-medium break-words"
+                          >
+                            {label}
+                          </a>
+                        ) : (
+                          <Link to={href} className="text-brand-orange hover:underline font-medium break-words">
+                            {label}
+                          </Link>
                         )}
-                        <span className="flex-1">
-                          {isExternal ? (
-                            <a
-                              href={href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-brand-orange hover:underline font-medium break-words"
-                            >
-                              {label}
-                            </a>
-                          ) : (
-                            <Link to={href} className="text-brand-orange hover:underline font-medium break-words">
-                              {label}
-                            </Link>
-                          )}
-                        </span>
                       </li>
                     );
                   })}
