@@ -12,25 +12,41 @@ export const loadContent = async (
   try {
     // In production with Decap CMS, files are committed to git/GitHub
     // They will be available in the build output
-    // For now, return empty array if content doesn't exist
     const modules = import.meta.glob('../../content/**/*.md', { query: '?raw', import: 'default' }) as Record<string, () => Promise<string>>;
+    
+    // Debug: Log what paths are available
+    const allPaths = Object.keys(modules);
+    console.log(`[ContentLoader] Total markdown files found: ${allPaths.length}`);
+    console.log(`[ContentLoader] Available paths:`, allPaths);
+    console.log(`[ContentLoader] Looking for: /content/${contentType}/`);
+    
     const contentItems: any[] = [];
 
     for (const path in modules) {
-      if (path.includes(`/content/${contentType}/`)) {
-        const content = await modules[path]();
-        const { frontmatter, content: markdown } = parseFrontmatter(content);
-        
-        // Extract slug from filename
-        const slug = path.split('/').pop()?.replace('.md', '') || '';
-        
-        contentItems.push({
-          ...frontmatter,
-          slug,
-          content: markdown,
-        });
+      // Match content by checking for the directory structure in the path
+      // Handles both: relative paths (../../content/blogs/...) and absolute paths (/content/blogs/...)
+      const matchesContent = path.includes(`content/${contentType}/`) || path.includes(`/content/${contentType}/`);
+      
+      if (matchesContent) {
+        try {
+          const content = await modules[path]();
+          const { frontmatter, content: markdown } = parseFrontmatter(content);
+          
+          // Extract slug from filename
+          const slug = path.split('/').pop()?.replace('.md', '') || '';
+          
+          contentItems.push({
+            ...frontmatter,
+            slug,
+            content: markdown,
+          });
+        } catch (itemError) {
+          console.warn(`[ContentLoader] Error parsing ${path}:`, itemError);
+        }
       }
     }
+
+    console.log(`[ContentLoader] Loaded ${contentItems.length} items for "${contentType}"`);
 
     // Sort by date (newest first)
     contentItems.sort((a, b) => {
@@ -54,7 +70,7 @@ export const loadBlogPost = async (slug: string): Promise<BlogPost | null> => {
     const modules = import.meta.glob('../../content/blogs/*.md', { query: '?raw', import: 'default' }) as Record<string, () => Promise<string>>;
     
     for (const path in modules) {
-      if (path.includes(`/${slug}.md`)) {
+      if (path.includes(`blogs/`) && path.includes(`${slug}.md`)) {
         const content = await modules[path]();
         const { frontmatter, content: markdown } = parseFrontmatter(content);
         
@@ -81,7 +97,7 @@ export const loadPublication = async (slug: string): Promise<Publication | null>
     const modules = import.meta.glob('../../content/publications/*.md', { query: '?raw', import: 'default' }) as Record<string, () => Promise<string>>;
     
     for (const path in modules) {
-      if (path.includes(`/${slug}.md`)) {
+      if (path.includes(`publications/`) && path.includes(`${slug}.md`)) {
         const content = await modules[path]();
         const { frontmatter, content: markdown } = parseFrontmatter(content);
         
@@ -108,7 +124,7 @@ export const loadNewsletter = async (slug: string): Promise<Newsletter | null> =
     const modules = import.meta.glob('../../content/newsletter/*.md', { query: '?raw', import: 'default' }) as Record<string, () => Promise<string>>;
     
     for (const path in modules) {
-      if (path.includes(`/${slug}.md`)) {
+      if (path.includes(`newsletter/`) && path.includes(`${slug}.md`)) {
         const content = await modules[path]();
         const { frontmatter, content: markdown } = parseFrontmatter(content);
         
