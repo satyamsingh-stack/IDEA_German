@@ -9,5 +9,11 @@ export default defineConfig({
     allowedHosts: [
       'paragogic-grant-noninternational.ngrok-free.dev'
     ]
+  },
+  // Ensure markdown files are properly handled during build
+  assetsInclude: ['**/*.md'],
+  // Support raw markdown imports
+  optimizeDeps: {
+    exclude: ['@vueuse/core']
   }
 })

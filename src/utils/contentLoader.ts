@@ -13,7 +13,7 @@ export const loadContent = async (
     // In production with Decap CMS, files are committed to git/GitHub
     // They will be available in the build output
     // For now, return empty array if content doesn't exist
-    const modules = import.meta.glob('/content/**/*.md', { query: '?raw', import: 'default' }) as Record<string, () => Promise<string>>;
+    const modules = import.meta.glob('../../content/**/*.md', { query: '?raw', import: 'default' }) as Record<string, () => Promise<string>>;
     const contentItems: any[] = [];
 
     for (const path in modules) {
@@ -51,7 +51,7 @@ export const loadContent = async (
  */
 export const loadBlogPost = async (slug: string): Promise<BlogPost | null> => {
   try {
-    const modules = import.meta.glob('/content/blogs/*.md', { query: '?raw', import: 'default' }) as Record<string, () => Promise<string>>;
+    const modules = import.meta.glob('../../content/blogs/*.md', { query: '?raw', import: 'default' }) as Record<string, () => Promise<string>>;
     
     for (const path in modules) {
       if (path.includes(`/${slug}.md`)) {
@@ -78,7 +78,7 @@ export const loadBlogPost = async (slug: string): Promise<BlogPost | null> => {
  */
 export const loadPublication = async (slug: string): Promise<Publication | null> => {
   try {
-    const modules = import.meta.glob('/content/publications/*.md', { query: '?raw', import: 'default' }) as Record<string, () => Promise<string>>;
+    const modules = import.meta.glob('../../content/publications/*.md', { query: '?raw', import: 'default' }) as Record<string, () => Promise<string>>;
     
     for (const path in modules) {
       if (path.includes(`/${slug}.md`)) {
@@ -105,7 +105,7 @@ export const loadPublication = async (slug: string): Promise<Publication | null>
  */
 export const loadNewsletter = async (slug: string): Promise<Newsletter | null> => {
   try {
-    const modules = import.meta.glob('/content/newsletter/*.md', { query: '?raw', import: 'default' }) as Record<string, () => Promise<string>>;
+    const modules = import.meta.glob('../../content/newsletter/*.md', { query: '?raw', import: 'default' }) as Record<string, () => Promise<string>>;
     
     for (const path in modules) {
       if (path.includes(`/${slug}.md`)) {
