@@ -10,10 +10,6 @@ export default defineConfig({
       'paragogic-grant-noninternational.ngrok-free.dev'
     ]
   },
-  // Ensure markdown files are properly handled during build
-  assetsInclude: ['**/*.md'],
-  // Support raw markdown imports
-  optimizeDeps: {
-    exclude: ['@vueuse/core']
-  }
+  // Ensure markdown files are properly included in the build
+  assetsInclude: ['**/*.md']
 })
