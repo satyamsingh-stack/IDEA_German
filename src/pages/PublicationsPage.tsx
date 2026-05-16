@@ -145,15 +145,19 @@ export const PublicationsPage = () => {
                    {items.map(pub => {
                      // Defence-in-depth: strip any stray quote characters the CMS
                      // may inject on re-publish (e.g. stray leading " char)
-                     const label = pub.label_text
-                       .replace(/^"+|"+$/g, '')
-                       .replace(/^'+|'+$/g, '')
-                       .trim();
+                      const label = pub.label_text
+                        // Strip YAML quote artefacts from broken CMS double-publish cycles
+                        .replace(/^"+|"+$/g, '')          // strip outer double-quotes
+                        .replace(/^'+|'+$/g, '')          // strip outer single-quotes
+                        .replace(/^\s*'+/, '')            // strip leading stray apostrophe
+                        .replace(/"+$/, '')               // strip trailing double-quote fragment
+                        .replace(/^'+/, '')               // strip final leading stray apostrophe pass
+                        .trim();
                      const href       = pub.pdf_link || pub.pdf_file || `/publications/${pub.slug}`;
                      const isExternal = !!pub.pdf_link || !!pub.pdf_file;
 
                       return (
-                        <li key={pub.slug} className="flex items-start gap-3">
+                        <li key={pub.slug} className="flex items-start gap-3 min-w-0 w-full">
                           {/* Round bullet */}
                           <span
                             className="mt-1.5 inline-block w-2 h-2 rounded-full bg-brand-orange flex-shrink-0"
