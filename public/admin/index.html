@@ -1,40 +1,158 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex" />
-    <title>Content Manager</title>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-          Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      }
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Content Manager</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
+    #nc-root { min-height: 100vh; }
+    .recovery-overlay {
+      display: none;
+      position: fixed; inset: 0; background: #f3f4f6;
+      z-index: 99999; align-items: center; justify-content: center;
+    }
+    .recovery-overlay.active { display: flex; }
+    .recovery-box {
+      background: #fff; padding: 2.5rem; border-radius: 0.75rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12); max-width: 420px; width: 100%;
+    }
+    .recovery-box h2 { margin: 0 0 0.75rem; font-size: 1.25rem; color: #111827; }
+    .recovery-box p { margin: 0 0 1.25rem; color: #6b7280; font-size: 0.875rem; }
+    .recovery-box input {
+      width: 100%; padding: 0.625rem 0.75rem; border: 1px solid #d1d5db;
+      border-radius: 0.375rem; font-size: 0.875rem; box-sizing: border-box;
+    }
+    .recovery-box input:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,0.1); }
+    .recovery-box button {
+      width: 100%; margin-top: 1rem; padding: 0.625rem; background: #3b82f6;
+      color: #fff; border: none; border-radius: 0.375rem; font-size: 0.875rem;
+      font-weight: 600; cursor: pointer;
+    }
+    .recovery-box button:hover { background: #2563eb; }
+    .recovery-box button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .recovery-box .error {
+      color: #dc2626; font-size: 0.8rem; margin-top: 0.5rem; display: none;
+    }
+    .recovery-box .error.visible { display: block; }
+    .auth-loading {
+      position: fixed; inset: 0; background: rgba(255,255,255,0.9);
+      z-index: 9999; display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 1rem;
+    }
+    .spinner {
+      width: 2.5rem; height: 2.5rem; border: 3px solid #e5e7eb;
+      border-top-color: #3b82f6; border-radius: 50%; animation: spin 0.6s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div id="auth-loading" class="auth-loading">
+    <div class="spinner"></div>
+    <p style="color:#374151;font-size:0.875rem;">Initializing authentication&hellip;</p>
+  </div>
+  <div id="recovery-form" class="recovery-overlay">
+    <div class="recovery-box">
+      <h2>Set New Password</h2>
+      <p>Enter your new password to complete the recovery process.</p>
+      <input id="recovery-password" type="password" placeholder="New password (min 8 characters)" minlength="8" />
+      <p id="recovery-error" class="error"></p>
+      <button id="recovery-submit" disabled>Set Password &amp; Log In</button>
+    </div>
+  </div>
+  <div id="nc-root"></div>
+  <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    (function() {
+      var recoveryOverlay = document.getElementById('recovery-form');
+      var recoveryPassword = document.getElementById('recovery-password');
+      var recoveryError = document.getElementById('recovery-error');
+      var recoverySubmit = document.getElementById('recovery-submit');
+      var authLoading = document.getElementById('auth-loading');
+      var recoveryInProgress = false;
 
-      #nc-root {
-        min-height: 100vh;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="nc-root"></div>
-    <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-    <script>
-      window.addEventListener('load', () => {
-        // Handle Netlify Identity widget
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.on('init', (user) => {
-            if (!user) {
-              window.netlifyIdentity.on('login', () => {
-                document.location.href = '/admin/';
-              });
-            }
-          });
+      recoveryPassword.addEventListener('input', function() {
+        recoverySubmit.disabled = recoveryPassword.value.length < 8;
+        recoveryError.classList.remove('visible');
+      });
+
+      recoverySubmit.addEventListener('click', function() {
+        if (recoveryInProgress) return;
+        recoveryInProgress = true;
+        recoverySubmit.disabled = true;
+        recoverySubmit.textContent = 'Setting password\u2026';
+        recoveryError.classList.remove('visible');
+
+        if (window.netlifyIdentity && window.netlifyIdentity.currentUser) {
+          window.netlifyIdentity.currentUser().update({ password: recoveryPassword.value })
+            .then(function() {
+              recoveryOverlay.classList.remove('active');
+              recoveryInProgress = false;
+              recoverySubmit.textContent = 'Set Password & Log In';
+              document.location.reload();
+            })
+            .catch(function(err) {
+              recoveryError.textContent = err && err.message ? err.message : 'Failed to set password. Please try again.';
+              recoveryError.classList.add('visible');
+              recoveryInProgress = false;
+              recoverySubmit.disabled = false;
+              recoverySubmit.textContent = 'Set Password & Log In';
+            });
         }
       });
-    </script>
-  </body>
+
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', function(user) {
+          authLoading.style.display = 'none';
+
+          if (user) {
+            window.netlifyIdentity.on('logout', function() {
+              window.netlifyIdentity.open('login');
+            });
+          } else {
+            if (window.location.hash && window.location.hash.indexOf('recovery_token=') !== -1) {
+              recoveryOverlay.classList.add('active');
+
+              var token = window.location.hash.split('recovery_token=')[1];
+              if (token.indexOf('&') !== -1) { token = token.split('&')[0]; }
+
+              window.netlifyIdentity.on('open', function() {
+                document.querySelectorAll('[data-netlify-identity-menu]').forEach(function(el) {
+                  el.style.display = 'none';
+                });
+              });
+
+              window.netlifyIdentity.on('recover', function() {
+                authLoading.style.display = 'flex';
+                window.netlifyIdentity.currentUser().jwt(true).then(function() {
+                  authLoading.style.display = 'none';
+                  recoveryOverlay.classList.remove('active');
+                  document.location.href = '/admin/';
+                });
+              });
+            }
+
+            window.netlifyIdentity.on('login', function() {
+              recoveryOverlay.classList.remove('active');
+              document.location.reload();
+            });
+
+            window.location.hash = '';
+            window.netlifyIdentity.open('login');
+          }
+        });
+
+        window.netlifyIdentity.init({
+          APIUrl: 'https://' + window.location.hostname + '/.netlify/identity',
+        });
+      } else {
+        authLoading.style.display = 'none';
+        console.error('Netlify Identity widget failed to load');
+      }
+    })();
+  </script>
+</body>
 </html>
