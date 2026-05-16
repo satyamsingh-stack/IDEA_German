@@ -46,11 +46,11 @@ export const loadContent = async (
 
     console.log(`[ContentLoader] ✓ Loaded ${contentItems.length} items for "${contentType}"`);
 
-    // Sort by date (newest first)
+    // Sort by date (newest first); items without a date sort last
     contentItems.sort((a, b) => {
-      const dateA = new Date(a.date).getTime();
-      const dateB = new Date(b.date).getTime();
-      return dateB - dateA;
+      const timeA = new Date(a.date || '').getTime();
+      const timeB = new Date(b.date || '').getTime();
+      return timeB - timeA;
     });
 
     return contentItems;
