@@ -182,15 +182,25 @@ export const PublicationsPage = () => {
                   </p>
                 )}
 
-                {/* Numbered publication list */}
-                <ol className="space-y-2 pl-5" start={1}>
-                  {items.map(pub => {
-                    const label = pub.label_text.trim();
-                    const href = pub.pdf_link || pub.pdf_file || `/publications/${pub.slug}`;
-                    const isExternal = !!pub.pdf_link || !!pub.pdf_file;
+                 {/* Numbered publication list */}
+                 <ol className="space-y-2 pl-5" start={1}>
+                   {items.map(pub => {
+                     // Defence-in-depth: strip any stray quote characters the CMS
+                     // may inject on re-publish (e.g. stray leading " char)
+                     const label = pub.label_text
+                       .replace(/^"+|"+$/g, '')
+                       .replace(/^'+|'+$/g, '')
+                       .trim();
+                     const href       = pub.pdf_link || pub.pdf_file || `/publications/${pub.slug}`;
+                     const isExternal = !!pub.pdf_link || !!pub.pdf_file;
 
-                    return (
-                      <li key={pub.slug} className="flex items-start gap-3">
+                     return (
+                       <li key={pub.slug} className="flex items-start gap-3">
+                         {/* Round bullet */}
+                         <span
+                           className="mt-1.5 inline-block w-2 h-2 rounded-full bg-brand-orange flex-shrink-0"
+                           aria-hidden="true"
+                         />
                         {isExternal ? (
                           <a
                             href={href}
