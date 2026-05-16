@@ -12,6 +12,8 @@ interface Publication {
   category?: string;
   featured_image?: string;
   pdf_file?: string;
+  label_text?: string;
+  pdf_link?: string;
   slug: string;
   content: string;
 }

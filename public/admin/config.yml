@@ -49,22 +49,24 @@ collections:
     create: true
     slug: '{{slug}}'
     fields:
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Description', name: 'description', widget: 'text', required: true }
+      - { label: 'Title', name: 'title', widget: 'string', required: false }
+      - { label: 'Description', name: 'description', widget: 'text', required: false }
+      - { label: 'Link Label Text', name: 'label_text', widget: 'string', required: true, hint: 'Custom text shown as the link label in the publications listing. Defaults to Title if left blank.' }
+      - { label: 'PDF Link URL', name: 'pdf_link', widget: 'string', required: true, hint: 'Optional explicit PDF URL. If left blank, the PDF File upload field below is used instead.' }
       - { label: 'Author', name: 'author', widget: 'string', required: false }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', required: false }
       - {
           label: 'Category',
           name: 'category',
           widget: 'select',
           options:
             [
-              'Research Papers',
               'Comparative Legal Analysis',
-              'Migration & Asylum Law',
-              'Gender & Sexuality Law',
-              'Policy Commentary',
-              'Legal Analyses',
+              'Migration, Asylum & Transnational Law',
+              'Law & Lived Experience',
+              'Violence, Protection & Legal Gaps',
+              'Policy & Commentary',
+              'German Publications',
             ],
           required: false,
         }

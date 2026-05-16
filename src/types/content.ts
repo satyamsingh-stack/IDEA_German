@@ -25,6 +25,8 @@ export interface Publication {
   category?: string;
   pdf_file?: string;
   featured_image?: string;
+  label_text?: string;
+  pdf_link?: string;
   slug: string;
   content: string;
 }
@@ -113,15 +115,12 @@ export const isBlogPost = (data: any): data is BlogPost => {
  * Type guard for Publication
  */
 export const isPublication = (data: any): data is Publication => {
-  return (
-    data.title &&
-    data.description &&
-    data.date &&
-    data.slug &&
-    typeof data.title === 'string' &&
-    typeof data.description === 'string' &&
-    typeof data.date === 'string'
-  );
+  const hasBase = data.title && data.description && data.date && data.slug
+    && typeof data.title === 'string' && typeof data.description === 'string' && typeof data.date === 'string';
+  if (!hasBase) return false;
+  if (data.label_text !== undefined && typeof data.label_text !== 'string') return false;
+  if (data.pdf_link !== undefined && typeof data.pdf_link !== 'string') return false;
+  return true;
 };
 
 /**
