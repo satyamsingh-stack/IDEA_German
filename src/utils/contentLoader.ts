@@ -18,14 +18,16 @@ export const loadContent = async (
     const allPaths = Object.keys(modules);
     console.log(`[ContentLoader] Total markdown files found: ${allPaths.length}`);
     console.log(`[ContentLoader] Available paths:`, allPaths);
-    console.log(`[ContentLoader] Looking for: /content/${contentType}/`);
+    console.log(`[ContentLoader] Looking for contentType: "${contentType}"`);
     
     const contentItems: any[] = [];
 
     for (const path in modules) {
-      // Match content by checking for the directory structure in the path
-      // Handles both: relative paths (../../content/blogs/...) and absolute paths (/content/blogs/...)
-      const matchesContent = path.includes(`content/${contentType}/`) || path.includes(`/content/${contentType}/`);
+      // Match content by checking if the path contains the content type directory
+      // The actual paths from Vite look like: ../../content/blogs/file.md
+      const matchesContent = path.includes(`/content/${contentType}/`);
+      
+      console.log(`[ContentLoader] Checking path "${path}" matches "${contentType}"?`, matchesContent);
       
       if (matchesContent) {
         try {
@@ -34,6 +36,8 @@ export const loadContent = async (
           
           // Extract slug from filename
           const slug = path.split('/').pop()?.replace('.md', '') || '';
+          
+          console.log(`[ContentLoader] Successfully loaded: ${slug}`);
           
           contentItems.push({
             ...frontmatter,
