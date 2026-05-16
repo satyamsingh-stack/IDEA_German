@@ -10,14 +10,4 @@
     GIT_AUTHOR_NAME = "CMS User"
     GIT_AUTHOR_EMAIL = "cms@netlify.com"
 
-# Redirect rules
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-# Allow admin panel access
-[[redirects]]
-  from = "/admin"
-  to = "/admin/index.html"
-  status = 200
+# Redirect rules are in public/_redirects file for SPA + admin routing
