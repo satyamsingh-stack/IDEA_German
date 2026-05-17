@@ -70,9 +70,14 @@ export const loadBlogPost = async (slug: string): Promise<BlogPost | null> => {
         const content = await modules[path]();
         const { frontmatter, content: markdown } = parseFrontmatter(content);
         return {
-          title:       frontmatter.title       || '',
-          description: frontmatter.description || '',
-          date:        frontmatter.date        || new Date().toISOString().split('T')[0],
+          title:       (frontmatter.title       || '').toString().trim(),
+          description: ((frontmatter.description || '').toString()
+            .replace(/^import\s+\w+\s*/, '')   // strip stray "import X" the CMS may inject
+            .replace(/^\|\s*-\s*\n?/gm, '')    // strip leading/trailing YAML literal-block scalar marker (|- or | -)
+            .replace(/\n?\|\s*-\s*$/gm, '')    // strip any trailing literal-block markers
+            .replace(/\|\s*-/gm, '')            // strip any remaining literal-block markers
+            .trim()),
+          date:        (frontmatter.date        || new Date().toISOString().split('T')[0]).toString(),
           slug,
           content: markdown,
         };
