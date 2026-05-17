@@ -76,7 +76,7 @@ export const BlogPostPage = () => {
         <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-gray-600">
           <div className="flex items-center gap-1">
             <Calendar size={16} />
-            <span>{formatDate(post.date)}</span>
+            <span>{formatDate(post.date) || 'Upcoming'}</span>
           </div>
           {post.author && (
             <span className="text-gray-700">By {post.author}</span>
