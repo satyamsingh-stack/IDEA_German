@@ -10,7 +10,8 @@ export interface BlogPost {
   category?:   string;
   featured_image?: string;
   slug:        string;
-  content:     string;
+  body?:       string;
+  content?:    string;
 }
 
 /**
