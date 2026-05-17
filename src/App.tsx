@@ -25,7 +25,6 @@ import {
   ProgramsEventsPage,
   InitiativesPage,
   NewsletterPage,
-  NewsletterDetailPage,
   ContactPage,
 } from './pages'
 
@@ -54,7 +53,6 @@ function App() {
             <Route path="programs-events" element={<ProgramsEventsPage />} />
             <Route path="initiatives" element={<InitiativesPage />} />
             <Route path="newsletter" element={<NewsletterPage />} />
-            <Route path="newsletter/:slug" element={<NewsletterDetailPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="impressum" element={<ImpressumPage />} />
             <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
