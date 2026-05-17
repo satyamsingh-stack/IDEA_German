@@ -35,11 +35,12 @@ export const loadContent = async (
 
           contentItems.push({
             label_text,
-            category:   frontmatter.category || '',
-            pdf_file:   frontmatter.pdf_file,
-            pdf_link:   frontmatter.pdf_link,
+            category:        frontmatter.category || '',
+            pdf_file:        frontmatter.pdf_file,
+            pdf_link:        frontmatter.pdf_link,
+            featured_image:  frontmatter.featured_image || '',
             slug,
-            content:    markdown,
+            content:         markdown,
           });
         } catch (itemError) {
           console.error(`[ContentLoader] error with ${path}:`, itemError);
