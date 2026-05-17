@@ -108,7 +108,7 @@ export const BlogPostPage = () => {
         )}
 
         <div className="prose prose-lg max-w-none text-gray-800">
-          <ReactMarkdown>{post.content}</ReactMarkdown>
+          <ReactMarkdown>{post.body || post.content || post.description || ''}</ReactMarkdown>
         </div>
 
         <div className="mt-12 pt-6 border-t border-gray-200">

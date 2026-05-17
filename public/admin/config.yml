@@ -25,23 +25,6 @@ collections:
       - { label: 'Description', name: 'description', widget: 'text', required: true }
       - { label: 'Author', name: 'author', widget: 'string', required: false }
       - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD' }
-      - {
-          label: 'Category',
-          name: 'category',
-          widget: 'select',
-          options:
-            [
-              'Gender & Sexuality',
-              'Migration & Asylum',
-              'Comparative Law',
-              'Equality & Non-Discrimination',
-              'Legal Commentary',
-              'Research Insights',
-            ],
-          required: false,
-        }
-      - { label: 'Featured Image', name: 'featured_image', widget: 'image', required: true }
-      - { label: 'Body', name: 'body', widget: 'markdown', required: true }
 
   - name: publications
     label: Publications
