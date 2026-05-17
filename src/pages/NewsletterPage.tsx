@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { X } from 'lucide-react';
 import { loadContent } from '../utils/contentLoader';
 
 interface NewsletterItem {
@@ -10,6 +11,7 @@ interface NewsletterItem {
 export const NewsletterPage = () => {
   const [newsletters, setNewsletters] = useState<NewsletterItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     const loadNewsletters = async () => {
@@ -106,25 +108,49 @@ export const NewsletterPage = () => {
                 const label = nl.label_text.replace(/^"+|"+$/g, '').replace(/^'+|'+$/g, '').trim();
 
                 return (
-                  <li key={nl.slug} className="flex items-start gap-3 min-w-0 w-full">
+                  <li key={nl.slug} className="flex items-start gap-3 min-w-0 w-full text-justify">
                     {/* Round orange bullet */}
                     <span
                       className="mt-1.5 inline-block w-2 h-2 rounded-full bg-brand-orange flex-shrink-0"
                       aria-hidden="true"
                     />
-                    <a
-                      href={nl.featured_image}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-brand-orange hover:underline font-medium break-words min-w-0 flex-1"
+                    <button
+                      onClick={() => setSelectedImage(nl.featured_image)}
+                      className="text-brand-orange hover:underline font-medium break-words min-w-0 flex-1 text-left cursor-pointer"
                       style={{ overflowWrap: 'anywhere', wordBreak: 'normal' }}
                     >
                       {label}
-                    </a>
+                    </button>
                   </li>
                 );
               })}
             </ol>
+          )}
+
+          {/* Image Modal */}
+          {selectedImage && (
+            <div
+              className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+              onClick={() => setSelectedImage(null)}
+            >
+              <div
+                className="relative bg-white rounded-lg max-w-4xl max-h-[90vh] overflow-auto"
+                onClick={e => e.stopPropagation()}
+              >
+                <button
+                  onClick={() => setSelectedImage(null)}
+                  className="absolute top-4 right-4 bg-white rounded-full p-1 hover:bg-gray-100 z-10"
+                  aria-label="Close modal"
+                >
+                  <X size={24} className="text-gray-600" />
+                </button>
+                <img
+                  src={selectedImage}
+                  alt="Newsletter"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
           )}
         </div>
       </section>
