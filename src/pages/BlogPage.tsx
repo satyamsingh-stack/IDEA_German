@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Calendar } from 'lucide-react';
-import { loadContent, getCategories } from '../utils/contentLoader';
+import { loadContent, formatDate } from '../utils/contentLoader';
 
 interface BlogPost {
   title: string;

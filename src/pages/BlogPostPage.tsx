@@ -1,19 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Calendar, Tag } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import { loadBlogPost, formatDate } from '../utils/contentLoader';
-
-interface BlogPost {
-  title: string;
-  description: string;
-  date: string;
-  author?: string;
-  category?: string;
-  featured_image?: string;
-  slug: string;
-  content: string;
-}
+import { BlogPost } from '../types/content';
 
 export const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -91,14 +81,6 @@ export const BlogPostPage = () => {
           {post.author && (
             <span className="text-gray-700">By {post.author}</span>
           )}
-          {post.category && (
-            <div className="flex items-center gap-1">
-              <Tag size={16} />
-              <span className="bg-gray-100 px-2 py-1 rounded text-xs font-medium">
-                {post.category}
-              </span>
-            </div>
-          )}
         </div>
 
         {post.description && (
@@ -108,7 +90,7 @@ export const BlogPostPage = () => {
         )}
 
         <div className="prose prose-lg max-w-none text-gray-800">
-          <ReactMarkdown>{post.body || post.content || post.description || ''}</ReactMarkdown>
+          <ReactMarkdown>{post.content}</ReactMarkdown>
         </div>
 
         <div className="mt-12 pt-6 border-t border-gray-200">
