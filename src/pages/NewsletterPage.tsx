@@ -1,27 +1,29 @@
 import { useState, useEffect } from 'react';
-import { Calendar, Mail } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
-import { loadContent, formatDate, getExcerpt } from '../utils/contentLoader';
+import { X } from 'lucide-react';
+import { loadContent } from '../utils/contentLoader';
 
-interface Newsletter {
-  title: string;
-  description: string;
-  date: string;
-  issue_number: number;
-  featured_image?: string;
+interface NewsletterItem {
+  label_text: string;
+  featured_image: string;
   slug: string;
-  content: string;
 }
 
 export const NewsletterPage = () => {
-  const [newsletters, setNewsletters] = useState<Newsletter[]>([]);
+  const [newsletters, setNewsletters] = useState<NewsletterItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     const loadNewsletters = async () => {
       try {
         const items = await loadContent('newsletter');
-        setNewsletters(items);
+        setNewsletters(
+          items.map(item => ({
+            label_text:      item.label_text || '',
+            featured_image:  item.featured_image || '',
+            slug:            item.slug,
+          }))
+        );
       } catch (error) {
         console.error('Error loading newsletters:', error);
       } finally {
@@ -70,26 +72,6 @@ export const NewsletterPage = () => {
           <p className="text-black text-lg leading-relaxed break-words text-justify mb-8">
             Subscribe to receive accessible legal insights, research updates, and news from the Institute.
           </p>
-
-          {/* Subscribe Section */}
-          <div className="bg-gray-50 border-l-4 border-brand-orange p-6 mb-8 rounded">
-            <div className="flex items-start gap-3">
-              <Mail className="text-brand-orange mt-1 flex-shrink-0" size={20} />
-              <div>
-                <h3 className="text-lg font-semibold text-[#1a2744] mb-2">Subscribe to IDEA Insights</h3>
-                <p className="text-black text-sm mb-4">
-                  Get the latest legal insights, research updates, and institutional news delivered to your inbox monthly.
-                </p>
-                <a
-                  href="mailto:info@ideainstitute.de?subject=Subscribe%20to%20IDEA%20Insights"
-                  className="inline-flex items-center gap-2 bg-brand-orange text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition font-medium text-sm"
-                >
-                  <Mail size={16} />
-                  Subscribe Now
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -121,53 +103,53 @@ export const NewsletterPage = () => {
 
           {/* Newsletters List */}
           {!loading && newsletters.length > 0 && (
-            <div className="space-y-8">
-              {newsletters.map((newsletter) => (
-                <article
-                  key={newsletter.slug}
-                  className="border-b border-gray-200 pb-8 last:border-b-0 hover:shadow-lg transition rounded-lg p-4"
-                >
-                  {newsletter.featured_image && (
-                    <img
-                      src={newsletter.featured_image}
-                      alt={newsletter.title}
-                      className="w-full h-64 object-cover rounded-lg mb-4"
+            <ol className="space-y-4 pl-5" start={1}>
+              {newsletters.map(nl => {
+                const label = nl.label_text.replace(/^"+|"+$/g, '').replace(/^'+|'+$/g, '').trim();
+
+                return (
+                  <li key={nl.slug} className="flex items-start gap-3 min-w-0 w-full text-justify">
+                    {/* Round orange bullet */}
+                    <span
+                      className="mt-1.5 inline-block w-2 h-2 rounded-full bg-brand-orange flex-shrink-0"
+                      aria-hidden="true"
                     />
-                  )}
+                    <button
+                      onClick={() => setSelectedImage(nl.featured_image)}
+                      className="text-brand-orange hover:underline font-medium break-words min-w-0 flex-1 text-left cursor-pointer"
+                      style={{ overflowWrap: 'anywhere', wordBreak: 'normal' }}
+                    >
+                      {label}
+                    </button>
+                  </li>
+                );
+              })}
+            </ol>
+          )}
 
-                  <div className="flex items-center gap-2 mb-2 text-sm text-gray-600">
-                    <span className="bg-brand-orange text-white px-3 py-1 rounded-full text-xs font-bold">
-                      Issue {newsletter.issue_number}
-                    </span>
-                  </div>
-
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#1a2744] mb-2">
-                    {newsletter.title}
-                  </h2>
-
-                  <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
-                    <div className="flex items-center gap-1">
-                      <Calendar size={16} />
-                      <span>{formatDate(newsletter.date)}</span>
-                    </div>
-                  </div>
-
-                  <p className="text-black text-lg leading-relaxed mb-4 text-justify">
-                    {newsletter.description}
-                  </p>
-
-                  <div className="prose prose-sm max-w-none text-gray-700 line-clamp-4 mb-4">
-                    <ReactMarkdown>{getExcerpt(newsletter.content, 400)}</ReactMarkdown>
-                  </div>
-
-                  <a
-                    href={`/newsletter/${newsletter.slug}`}
-                    className="inline-block text-brand-orange hover:underline font-medium"
-                  >
-                    Read full newsletter →
-                  </a>
-                </article>
-              ))}
+          {/* Image Modal */}
+          {selectedImage && (
+            <div
+              className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+              onClick={() => setSelectedImage(null)}
+            >
+              <div
+                className="relative bg-white rounded-lg max-w-4xl max-h-[90vh] overflow-auto"
+                onClick={e => e.stopPropagation()}
+              >
+                <button
+                  onClick={() => setSelectedImage(null)}
+                  className="absolute top-4 right-4 bg-white rounded-full p-1 hover:bg-gray-100 z-10"
+                  aria-label="Close modal"
+                >
+                  <X size={24} className="text-gray-600" />
+                </button>
+                <img
+                  src={selectedImage}
+                  alt="Newsletter"
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
           )}
         </div>
