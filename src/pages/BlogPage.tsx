@@ -98,7 +98,7 @@ export const BlogPage = () => {
                   <div className="flex flex-wrap items-center gap-4 mb-4 text-sm text-gray-600">
                     <div className="flex items-center gap-1">
                       <Calendar size={16} />
-                      <span>{formatDate(post.date) || 'live article'}</span>
+                      <span>{formatDate(post.date)}</span>
                     </div>
                     {post.author && (
                       <span className="text-gray-700">By {post.author}</span>
@@ -113,7 +113,7 @@ export const BlogPage = () => {
                     {getExcerpt(post.content || '', 180)}
                   </p>
 
-                  {(post.content || post.slug) && (
+                  {(post.content || '').trim().length > 0 && post.title.trim() && (
                     <a
                       href={`/blog/${post.slug}`}
                       className="inline-block mt-4 text-brand-orange hover:underline font-medium"
