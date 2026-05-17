@@ -112,22 +112,15 @@ export const NewsletterPage = () => {
                       className="mt-1.5 inline-block w-2 h-2 rounded-full bg-brand-orange flex-shrink-0"
                       aria-hidden="true"
                     />
-                    <span className="min-w-0 flex-1">
-                      <img
-                        src={nl.featured_image}
-                        alt=""
-                        className="mt-1 w-24 h-24 object-cover rounded flex-shrink-0 mb-1"
-                      />
-                      <a
-                        href={nl.featured_image}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-brand-orange hover:underline font-medium break-words"
-                        style={{ overflowWrap: 'anywhere', wordBreak: 'normal' }}
-                      >
-                        {label}
-                      </a>
-                    </span>
+                    <a
+                      href={nl.featured_image}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-brand-orange hover:underline font-medium break-words min-w-0 flex-1"
+                      style={{ overflowWrap: 'anywhere', wordBreak: 'normal' }}
+                    >
+                      {label}
+                    </a>
                   </li>
                 );
               })}
