@@ -39,13 +39,9 @@ export interface Publication {
 }
 
 export interface Newsletter {
-  title:        string;
-  description:  string;
-  date:         string;
-  issue_number: number;
-  featured_image?: string;
-  slug:         string;
-  content:      string;
+  label_text:       string;
+  slug:             string;
+  featured_image:   string;
 }
 
 /* ── Frontmatter parsing ────────────────────────────────────── */
@@ -102,6 +98,5 @@ export const isPublication = (data: any): data is Publication =>
  * Newsletter entry check – required fields it
  */
 export const isNewsletter = (data: any): data is Newsletter =>
-  !!data.title && !!data.description && !!data.date && !!data.slug
-  && typeof data.title === 'string' && typeof data.description === 'string'
-  && typeof data.date === 'string';
+  typeof data.label_text === 'string' && !!data.label_text.trim()
+  && typeof data.slug === 'string';

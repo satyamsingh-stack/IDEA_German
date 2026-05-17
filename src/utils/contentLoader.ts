@@ -132,16 +132,12 @@ export const loadNewsletter = async (slug: string): Promise<Newsletter | null> =
     for (const path in modules) {
       if (path.includes(`newsletter/`) && path.includes(`${slug}.md`)) {
         const content = await modules[path]();
-        const { frontmatter, content: markdown } = parseFrontmatter(content);
+        const { frontmatter } = parseFrontmatter(content);
         return {
-          title:          frontmatter.title        || '',
-          description:    frontmatter.description  || '',
-          date:           frontmatter.date         || new Date().toISOString().split('T')[0],
-          issue_number:   frontmatter.issue_number || 1,
-          featured_image: frontmatter.featured_image,
+          label_text:     frontmatter.label_text || frontmatter.title || '',
           slug,
-          content:        markdown,
-        } as Newsletter;
+          featured_image: frontmatter.featured_image || '',
+        };
       }
     }
     return null;
