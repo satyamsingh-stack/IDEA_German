@@ -69,4 +69,4 @@ collections:
     slug: '{{slug}}'
     fields:
       - { label: 'Label Text', name: 'label_text', widget: 'text', required: true }
-      - { label: 'Featured Image', name: 'featured_image', widget: 'image', required: false }
+      - { label: 'Featured Image', name: 'featured_image', widget: 'image', required: true }
