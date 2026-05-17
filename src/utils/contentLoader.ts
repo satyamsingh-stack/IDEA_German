@@ -68,13 +68,13 @@ export const loadBlogPost = async (slug: string): Promise<BlogPost | null> => {
     for (const path in modules) {
       if (path.includes(`blogs/`) && path.includes(`${slug}.md`)) {
         const content = await modules[path]();
-        const { frontmatter } = parseFrontmatter(content);
+        const { frontmatter, content: markdown } = parseFrontmatter(content);
         return {
           title:       frontmatter.title       || '',
           description: frontmatter.description || '',
           date:        frontmatter.date        || new Date().toISOString().split('T')[0],
           slug,
-          content: frontmatter.content || content,
+          content: markdown,
         };
       }
     }
@@ -175,6 +175,7 @@ export const filterByCategory = (items: any[], category: string): any[] => {
 export const formatDate = (dateString: string): string => {
   try {
     const date = new Date(dateString);
+    if (isNaN(date.getTime())) return '';
     return date.toLocaleDateString('en-US', {
       year:  'numeric',
       month: 'long',
