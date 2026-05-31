@@ -68,12 +68,12 @@ export const BlogPostPage = () => {
           />
         )}
 
-        <h1 className="text-2xl md:text-3xl font-bold text-[#1a2744] mb-2">
-          <span className="font-bold">Title:</span> {post.title}
+        <h1 className="text-2xl md:text-3xl font-bold text-[#1a2744] mb-4">
+          {post.title}
         </h1>
 
         <p className="text-black text-lg leading-relaxed mb-6 text-justify">
-          <span className="font-bold">Description:</span> {post.description}
+          {post.description}
         </p>
 
         <div className="prose prose-lg max-w-none text-gray-800">
