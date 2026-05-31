@@ -90,12 +90,12 @@ export const BlogPage = () => {
                   key={post.slug}
                   className="border-b border-gray-200 pb-8 last:border-b-0"
                 >
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#1a2744] mb-2">
-                    <span className="font-bold">Title:</span> {post.title}
+                  <h2 className="text-2xl md:text-3xl font-bold text-[#1a2744] mb-4">
+                    {post.title}
                   </h2>
 
                   <p className="text-black text-lg leading-relaxed mb-4 text-justify">
-                    <span className="font-bold">Description:</span> {post.description}
+                    {post.description}
                   </p>
 
                   <p className="text-black text-base leading-relaxed mb-4 text-justify break-words">
