@@ -10,6 +10,7 @@ import {
   StaffPage,
   DirectorPage,
   PublicationsPage,
+  PublicationDetailPage,
   LocationPage,
   ImpressumPage,
   PrivacyPolicyPage,
@@ -18,6 +19,7 @@ import {
   ShippingPolicyPage,
   InsightsPage,
   BlogPage,
+  BlogPostPage,
   ExplainersPage,
   FAQPage,
   ProgramsEventsPage,
@@ -42,8 +44,10 @@ function App() {
             <Route path="staff" element={<StaffPage />} />
             <Route path="staff-direktor" element={<DirectorPage />} />
             <Route path="publikationen" element={<PublicationsPage />} />
+            <Route path="publications/:slug" element={<PublicationDetailPage />} />
             <Route path="insights" element={<InsightsPage />} />
             <Route path="blog" element={<BlogPage />} />
+            <Route path="blog/:slug" element={<BlogPostPage />} />
             <Route path="explainers" element={<ExplainersPage />} />
             <Route path="faq" element={<FAQPage />} />
             <Route path="programs-events" element={<ProgramsEventsPage />} />
