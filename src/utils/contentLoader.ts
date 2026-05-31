@@ -33,6 +33,12 @@ export const loadContent = async (
 
           const slug = path.split('/').pop()?.replace('.md', '') || '';
 
+          const cleanedContent = markdown
+            .replace(/^\|\s*-\s*\n?/gm, '')
+            .replace(/\n?\|\s*-\s*$/gm, '')
+            .replace(/\|\s*-/gm, '')
+            .trim();
+
           contentItems.push({
             label_text,
             category:        frontmatter.category || '',
@@ -40,7 +46,7 @@ export const loadContent = async (
             pdf_link:        frontmatter.pdf_link,
             featured_image:  frontmatter.featured_image || '',
             slug,
-            content:         markdown,
+            content:         cleanedContent,
           });
         } catch (itemError) {
           console.error(`[ContentLoader] error with ${path}:`, itemError);
@@ -72,14 +78,18 @@ export const loadBlogPost = async (slug: string): Promise<BlogPost | null> => {
         return {
           title:       (frontmatter.title       || '').toString().trim(),
           description: ((frontmatter.description || '').toString()
-            .replace(/^import\s+\w+\s*/, '')   // strip stray "import X" the CMS may inject
-            .replace(/^\|\s*-\s*\n?/gm, '')    // strip leading/trailing YAML literal-block scalar marker (|- or | -)
-            .replace(/\n?\|\s*-\s*$/gm, '')    // strip any trailing literal-block markers
-            .replace(/\|\s*-/gm, '')            // strip any remaining literal-block markers
+            .replace(/^import\s+\w+\s*/, '')
+            .replace(/^\|\s*-\s*\n?/gm, '')
+            .replace(/\n?\|\s*-\s*$/gm, '')
+            .replace(/\|\s*-/gm, '')
             .trim()),
           date:        (frontmatter.date        || new Date().toISOString().split('T')[0]).toString(),
           slug,
-          content: markdown,
+          content:     markdown
+            .replace(/^\|\s*-\s*\n?/gm, '')
+            .replace(/\n?\|\s*-\s*$/gm, '')
+            .replace(/\|\s*-/gm, '')
+            .trim(),
         };
       }
     }
@@ -196,6 +206,9 @@ export const formatDate = (dateString: string): string => {
  */
 export const getExcerpt = (content: string, length: number = 150): string => {
   let text = content
+    .replace(/^\|\s*-\s*\n?/gm, '')
+    .replace(/\n?\|\s*-\s*$/gm, '')
+    .replace(/\|\s*-/gm, '')
     .replace(/#{1,6}\s/g, '')
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
     .replace(/\*\*([^*]+)\*\*/g, '$1')
