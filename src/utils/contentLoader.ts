@@ -26,9 +26,9 @@ export const loadContent = async (
           // Also aggressively strip any stray quote characters the CMS may inject on re-publish
           const label_text = (
             (frontmatter.label_text || frontmatter.title || '')
-            .replace(/^"+|"+$/g, '')   // strip leading/trailing double-quote artefacts
-            .replace(/^'+|'+$/g, '')   // strip leading/trailing single-quote artefacts
-            .trim()
+              .replace(/^"+|"+$/g, '')
+              .replace(/^'+|'+$/g, '')
+              .trim()
           );
 
           const slug = path.split('/').pop()?.replace('.md', '') || '';
@@ -39,8 +39,23 @@ export const loadContent = async (
             .replace(/\|\s*-/gm, '')
             .trim();
 
+          // Clean up description field (handles multiline YAML folded blocks like >-)
+          const cleanDescription = ((frontmatter.description || '') + '')
+            .replace(/^import\s+\w+\s*/, '')
+            .replace(/^\|\s*-\s*\n?/gm, '')
+            .replace(/\n?\|\s*-\s*$/gm, '')
+            .replace(/\|\s*-/gm, '')
+            .replace(/\n\s*\n/g, '\n')
+            .trim();
+
+          const cleanTitle = (frontmatter.title || '').toString().trim();
+
           contentItems.push({
             label_text,
+            title:           cleanTitle,
+            description:     cleanDescription,
+            author:          frontmatter.author,
+            date:            frontmatter.date || '',
             category:        frontmatter.category || '',
             pdf_file:        frontmatter.pdf_file,
             pdf_link:        frontmatter.pdf_link,
@@ -82,6 +97,7 @@ export const loadBlogPost = async (slug: string): Promise<BlogPost | null> => {
             .replace(/^\|\s*-\s*\n?/gm, '')
             .replace(/\n?\|\s*-\s*$/gm, '')
             .replace(/\|\s*-/gm, '')
+            .replace(/\n\s*\n/g, '\n')
             .trim()),
           date:        (frontmatter.date        || new Date().toISOString().split('T')[0]).toString(),
           slug,

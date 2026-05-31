@@ -1,23 +1,16 @@
 ---
 title: Ghana Passes Controversial Anti-LGBTQ+ Bill Amid Global Criticism
-description: >-
-  Ghana’s parliament has approved a controversial new bill that significantly
-  expands restrictions on LGBTQ+ rights, sparking criticism from human rights
-  organizations around the world.
-
-
-  The legislation proposes prison sentences of up to three years for individuals who identify as lesbian, gay, bisexual, transgender, or queer. It also criminalizes support for LGBTQ+ communities, including people considered “allies,” and introduces a legal obligation for citizens to report prohibited activities to the authorities.
-
-
-  Supporters of the bill argue that it protects Ghanaian cultural and family values. Reverend John Ntim Fordjour, one of the bill’s main sponsors, described the law as a way to strengthen existing legislation against same-sex relationships, which have already been illegal in Ghana under colonial-era laws.
-
-
-  However, international organizations such as Human Rights Watch have condemned the bill, warning that it could increase fear, discrimination, and violence against LGBTQ+ individuals. Critics also argue that the “duty to report” provision may encourage surveillance and deepen social divisions.
-
-
-  The bill still requires approval from President John Dramani Mahama before it can officially become law. Similar legislation passed in 2024 but failed to take effect after legal challenges and the former president’s refusal to sign it.
-
-
-  Ghana joins several African nations, including Uganda and Senegal, that have recently introduced tougher anti-LGBTQ+ measures, reflecting a broader regional debate over human rights, cultural identity, and political influence.
+description: "Ghana's parliament has approved a controversial new bill that significantly expands restrictions on LGBTQ+ rights, sparking criticism from human rights organizations around the world. The legislation proposes prison sentences of up to three years for individuals who identify as lesbian, gay, bisexual, transgender, or queer. It also criminalizes support for LGBTQ+ communities, including people considered \"allies,\" and introduces a legal obligation for citizens to report prohibited activities to the authorities. Supporters of the bill argue that it protects Ghanaian cultural and family values. Reverend John Ntim Fordjour, one of the bill's main sponsors, described the law as a way to strengthen existing legislation against same-sex relationships, which have already been illegal in Ghana under colonial-era laws. However, international organizations such as Human Rights Watch have condemned the bill, warning that it could increase fear, discrimination, and violence against LGBTQ+ individuals. Critics also argue that the \"duty to report\" provision may encourage surveillance and deepen social divisions. The bill still requires approval from President John Dramani Mahama before it can officially become law. Similar legislation passed in 2024 but failed to take effect after legal challenges and the former president's refusal to sign it. Ghana joins several African nations, including Uganda and Senegal, that have recently introduced tougher anti-LGBTQ+ measures, reflecting a broader regional debate over human rights, cultural identity, and political influence."
 date: 2026-05-31
 ---
+Ghana's parliament has approved a controversial new bill that significantly expands restrictions on LGBTQ+ rights, sparking criticism from human rights organizations around the world. The legislation proposes prison sentences of up to three years for individuals who identify as lesbian, gay, bisexual, transgender, or queer.
+
+It also criminalizes support for LGBTQ+ communities, including people considered "allies," and introduces a legal obligation for citizens to report prohibited activities to the authorities.
+
+Supporters of the bill argue that it protects Ghanaian cultural and family values. Reverend John Ntim Fordjour, one of the bill's main sponsors, described the law as a way to strengthen existing legislation against same-sex relationships, which have already been illegal in Ghana under colonial-era laws.
+
+However, international organizations such as Human Rights Watch have condemned the bill, warning that it could increase fear, discrimination, and violence against LGBTQ+ individuals. Critics also argue that the "duty to report" provision may encourage surveillance and deepen social divisions.
+
+The bill still requires approval from President John Dramani Mahama before it can officially become law. Similar legislation passed in 2024 but failed to take effect after legal challenges and the former president's refusal to sign it.
+
+Ghana joins several African nations, including Uganda and Senegal, that have recently introduced tougher anti-LGBTQ+ measures, reflecting a broader regional debate over human rights, cultural identity, and political influence.
