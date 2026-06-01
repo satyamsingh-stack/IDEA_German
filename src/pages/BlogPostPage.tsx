@@ -72,6 +72,16 @@ export const BlogPostPage = () => {
           {post.title}
         </h1>
 
+        {post.date && (
+          <p className="text-gray-600 text-sm mb-4">
+            {new Date(post.date).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })}
+          </p>
+        )}
+
         <p className="text-black text-lg leading-relaxed mb-6 text-justify">
           {post.description}
         </p>
