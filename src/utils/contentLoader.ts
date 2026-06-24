@@ -39,13 +39,11 @@ export const loadContent = async (
             .replace(/\|\s*-/gm, '')
             .trim();
 
-          // Clean up description field (handles multiline YAML folded blocks like >-)
+          // Clean up description field - preserve formatting while removing stray artifacts
           const cleanDescription = ((frontmatter.description || '') + '')
             .replace(/^import\s+\w+\s*/, '')
-            .replace(/^\|\s*-\s*\n?/gm, '')
-            .replace(/\n?\|\s*-\s*$/gm, '')
-            .replace(/\|\s*-/gm, '')
-            .replace(/\n\s*\n/g, '\n')
+            .replace(/^[>|]-\s*\n?/gm, '')  // Remove YAML scalar indicators
+            .replace(/\n?[>|]-\s*$/gm, '')
             .trim();
 
           const cleanTitle = (frontmatter.title || '').toString().trim();
@@ -94,10 +92,8 @@ export const loadBlogPost = async (slug: string): Promise<BlogPost | null> => {
           title:       (frontmatter.title       || '').toString().trim(),
           description: ((frontmatter.description || '').toString()
             .replace(/^import\s+\w+\s*/, '')
-            .replace(/^\|\s*-\s*\n?/gm, '')
-            .replace(/\n?\|\s*-\s*$/gm, '')
-            .replace(/\|\s*-/gm, '')
-            .replace(/\n\s*\n/g, '\n')
+            .replace(/^[>|]-\s*\n?/gm, '')  // Remove YAML scalar indicators
+            .replace(/\n?[>|]-\s*$/gm, '')
             .trim()),
           date:        (frontmatter.date        || new Date().toISOString().split('T')[0]).toString(),
           slug,

@@ -43,3 +43,16 @@ export const getFirstImage = (markdown: string): string | null => {
   const imageMatch = markdown.match(/!\[([^\]]*)\]\(([^)]+)\)/);
   return imageMatch ? imageMatch[2] : null;
 };
+
+/**
+ * Split description into paragraphs for proper rendering
+ * Splits on double newlines to preserve paragraph breaks
+ * @param description - Description text (may contain newlines)
+ * @returns Array of paragraph strings
+ */
+export const getDescriptionParagraphs = (description: string): string[] => {
+  return description
+    .split(/\n\s*\n/)  // Split on double newlines (paragraph breaks)
+    .map(para => para.replace(/\n/g, ' ').trim())  // Replace single newlines with spaces
+    .filter(para => para.length > 0);  // Remove empty paragraphs
+};
