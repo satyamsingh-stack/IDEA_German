@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { loadContent, getExcerpt } from '../utils/contentLoader';
+import { getDescriptionParagraphs } from '../utils/markdown';
 
 interface BlogPost {
   title: string;
@@ -94,9 +95,11 @@ export const BlogPage = () => {
                     {post.title}
                   </h2>
 
-                  <p className="text-black text-lg leading-relaxed mb-4 text-justify">
-                    {post.description}
-                  </p>
+                  <div className="text-black text-lg leading-relaxed mb-4 text-justify space-y-4">
+                    {getDescriptionParagraphs(post.description).map((paragraph, idx) => (
+                      <p key={idx}>{paragraph}</p>
+                    ))}
+                  </div>
 
                   <p className="text-black text-base leading-relaxed mb-4 text-justify break-words">
                     {getExcerpt(post.content || '', 180)}
