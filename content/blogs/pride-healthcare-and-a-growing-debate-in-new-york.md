@@ -1,9 +1,5 @@
 ---
-title: "Pride, Healthcare, and a Growing Debate in New York As Pride Month
-  continues around the world, a new debate has emerged in New York City over the
-  role of healthcare institutions in LGBTQ celebrations.  A group of transgender
-  advocates and former Pride leaders are urging NYC Pride organizers to exclude
-  certain hospital systems from participating in this year's parade. "
+title: " Pride, Healthcare, and a Growing Debate in New York"
 description: >
   As Pride Month continues around the world, a new debate has emerged in New
   York City over the role of healthcare institutions in LGBTQ celebrations.
