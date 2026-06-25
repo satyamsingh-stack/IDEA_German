@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { loadBlogPost } from '../utils/contentLoader';
 import { BlogPost } from '../types/content';
-import { getDescriptionParagraphs } from '../utils/markdown';
 
 export const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -84,8 +83,8 @@ export const BlogPostPage = () => {
         )}
 
         <div className="text-black text-lg leading-relaxed mb-6 text-justify space-y-4">
-          {getDescriptionParagraphs(post.description).map((paragraph, idx) => (
-            <p key={idx}>{paragraph}</p>
+          {post.description.split('\n').filter(line => line.trim()).map((para, idx) => (
+            <p key={idx}>{para}</p>
           ))}
         </div>
 
