@@ -39,12 +39,16 @@ export const loadContent = async (
             .replace(/\|\s*-/gm, '')
             .trim();
 
-          // Clean up description field - preserve formatting while removing stray artifacts
-          const cleanDescription = ((frontmatter.description || '') + '')
-            .replace(/^import\s+\w+\s*/, '')
-            .replace(/^[>|]-\s*\n?/gm, '')  // Remove YAML scalar indicators
-            .replace(/\n?[>|]-\s*$/gm, '')
-            .trim();
+          // Clean up description field - ensure we preserve the full text
+          const rawDescription = (frontmatter.description || '').toString();
+          
+          // For YAML folded scalars that were properly parsed by gray-matter,
+          // the description should be clean already. For fallback parsing,
+          // remove any trailing/leading YAML artifacts only if they exist.
+          const cleanDescription = rawDescription
+            .replace(/^\s+/, '')      // Remove leading whitespace
+            .replace(/\s+$/, '')      // Remove trailing whitespace
+            .trim();                  // Final trim
 
           const cleanTitle = (frontmatter.title || '').toString().trim();
 
@@ -88,14 +92,17 @@ export const loadBlogPost = async (slug: string): Promise<BlogPost | null> => {
       if (path.includes(`blogs/`) && path.includes(`${slug}.md`)) {
         const content = await modules[path]();
         const { frontmatter, content: markdown } = parseFrontmatter(content);
+        
+        // Clean description - preserve the full text, only trim whitespace
+        const cleanDescription = (frontmatter.description || '').toString()
+          .replace(/^\s+/, '')      // Remove leading whitespace
+          .replace(/\s+$/, '')      // Remove trailing whitespace
+          .trim();
+        
         return {
-          title:       (frontmatter.title       || '').toString().trim(),
-          description: ((frontmatter.description || '').toString()
-            .replace(/^import\s+\w+\s*/, '')
-            .replace(/^[>|]-\s*\n?/gm, '')  // Remove YAML scalar indicators
-            .replace(/\n?[>|]-\s*$/gm, '')
-            .trim()),
-          date:        (frontmatter.date        || new Date().toISOString().split('T')[0]).toString(),
+          title:       (frontmatter.title || '').toString().trim(),
+          description: cleanDescription,
+          date:        (frontmatter.date || new Date().toISOString().split('T')[0]).toString(),
           slug,
           content:     markdown
             .replace(/^\|\s*-\s*\n?/gm, '')
