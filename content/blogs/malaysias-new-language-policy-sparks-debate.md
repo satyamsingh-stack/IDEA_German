@@ -1,12 +1,12 @@
 ---
 title: Malaysia's New Language Policy Sparks Debate
-description: "The Malaysian government's decision to replace the term \"LGBT\"
-  with \"budaya songsang\" or \"deviant culture\" has triggered widespread
-  debate both inside and outside the country. Officials argue that the change is
+description: "The Malaysian government's decision to replace the term 'LGBT'
+  with 'budaya songsang' or 'deviant culture' has triggered widespread debate
+  both inside and outside the country. Officials argue that the change is
   necessary to prevent the normalization of LGBTQ+ identities and to align
   public discourse with the country's religious and cultural values. However,
   human rights groups have strongly criticized the move, warning that labelling
-  an entire community as \"deviant\" could deepen social stigma and
+  an entire community as 'deviant' could deepen social stigma and
   discrimination. Activists fear that such language may encourage hostility and
   further marginalize LGBTQ+ individuals, who already face significant legal and
   social challenges in Malaysia. The controversy highlights a broader struggle
