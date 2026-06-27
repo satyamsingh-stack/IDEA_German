@@ -88,20 +88,24 @@ export const loadBlogPost = async (slug: string): Promise<BlogPost | null> => {
       if (path.includes(`blogs/`) && path.includes(`${slug}.md`)) {
         const content = await modules[path]();
         const { frontmatter, content: markdown } = parseFrontmatter(content);
+        const cleanedBody = markdown
+          .replace(/^\|\s*-\s*\n?/gm, '')
+          .replace(/\n?\|\s*-\s*$/gm, '')
+          .replace(/\|\s*-/gm, '')
+          .trim();
+
+        const descriptionText = ((frontmatter.description || '').toString()
+          .replace(/^import\s+\w+\s*/, '')
+          .replace(/^[>|]-\s*\n?/gm, '')  // Remove YAML scalar indicators
+          .replace(/\n?[>|]-\s*$/gm, '')
+          .trim());
+
         return {
           title:       (frontmatter.title       || '').toString().trim(),
-          description: ((frontmatter.description || '').toString()
-            .replace(/^import\s+\w+\s*/, '')
-            .replace(/^[>|]-\s*\n?/gm, '')  // Remove YAML scalar indicators
-            .replace(/\n?[>|]-\s*$/gm, '')
-            .trim()),
+          description: descriptionText,
           date:        (frontmatter.date        || new Date().toISOString().split('T')[0]).toString(),
           slug,
-          content:     markdown
-            .replace(/^\|\s*-\s*\n?/gm, '')
-            .replace(/\n?\|\s*-\s*$/gm, '')
-            .replace(/\|\s*-/gm, '')
-            .trim(),
+          content:     cleanedBody || descriptionText,
         };
       }
     }
