@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { loadBlogPost } from '../utils/contentLoader';
 import { BlogPost } from '../types/content';
-import { getDescriptionParagraphs } from '../utils/markdown';
 
 export const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
