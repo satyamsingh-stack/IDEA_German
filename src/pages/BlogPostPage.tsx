@@ -58,6 +58,10 @@ export const BlogPostPage = () => {
     );
   }
 
+  const hasMarkdownContent = Boolean(post.content && post.content.trim().length > 0);
+  const contentToRender = hasMarkdownContent ? post.content : post.description;
+  const showDescriptionBlock = hasMarkdownContent && post.description.trim().length > 0;
+
   return (
     <div className="min-h-screen bg-white">
       <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
@@ -83,15 +87,19 @@ export const BlogPostPage = () => {
           </p>
         )}
 
-        <div className="text-black text-lg leading-relaxed mb-6 text-justify space-y-4">
-          {getDescriptionParagraphs(post.description).map((paragraph, idx) => (
-            <p key={idx}>{paragraph}</p>
-          ))}
-        </div>
+        {showDescriptionBlock && (
+          <div className="text-black text-lg leading-relaxed mb-6 text-justify space-y-4">
+            {getDescriptionParagraphs(post.description).map((paragraph, idx) => (
+              <p key={idx}>{paragraph}</p>
+            ))}
+          </div>
+        )}
 
-        <div className="prose prose-lg max-w-none text-gray-800">
-          <ReactMarkdown>{post.content}</ReactMarkdown>
-        </div>
+        {contentToRender && (
+          <div className="prose prose-lg max-w-none text-gray-800">
+            <ReactMarkdown>{contentToRender}</ReactMarkdown>
+          </div>
+        )}
 
         <div className="mt-12 pt-6 border-t border-gray-200">
           <a
