@@ -105,7 +105,7 @@ export const loadBlogPost = async (slug: string): Promise<BlogPost | null> => {
           description: descriptionText,
           date:        (frontmatter.date        || new Date().toISOString().split('T')[0]).toString(),
           slug,
-          content:     cleanedBody || descriptionText,
+          content:     cleanedBody || undefined,
         };
       }
     }

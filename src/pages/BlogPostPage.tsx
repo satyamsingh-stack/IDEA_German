@@ -58,9 +58,10 @@ export const BlogPostPage = () => {
     );
   }
 
-  const hasMarkdownContent = Boolean(post.content && post.content.trim().length > 0);
-  const contentToRender = hasMarkdownContent ? post.content : post.description;
-  const showDescriptionBlock = hasMarkdownContent && post.description.trim().length > 0;
+  const markdownBody = post.content?.trim() || '';
+  const descriptionText = post.description || '';
+  const showBody = markdownBody.length > 0;
+  const showDescription = descriptionText.length > 0;
 
   return (
     <div className="min-h-screen bg-white">
@@ -87,17 +88,15 @@ export const BlogPostPage = () => {
           </p>
         )}
 
-        {showDescriptionBlock && (
-          <div className="text-black text-lg leading-relaxed mb-6 text-justify space-y-4">
-            {getDescriptionParagraphs(post.description).map((paragraph, idx) => (
-              <p key={idx}>{paragraph}</p>
-            ))}
+        {showDescription && (
+          <div className="prose prose-lg max-w-none text-gray-800 mb-6">
+            <ReactMarkdown>{descriptionText}</ReactMarkdown>
           </div>
         )}
 
-        {contentToRender && (
+        {showBody && (
           <div className="prose prose-lg max-w-none text-gray-800">
-            <ReactMarkdown>{contentToRender}</ReactMarkdown>
+            <ReactMarkdown>{markdownBody}</ReactMarkdown>
           </div>
         )}
 
