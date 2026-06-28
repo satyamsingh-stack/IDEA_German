@@ -1,23 +1,6 @@
 import { parseFrontmatter, BlogPost, Publication, Newsletter } from '../types/content';
 
 /**
- * Strip CMS artifacts from frontmatter text without
- * destroying multi-line content.
- */
-const cleanFrontmatterText = (raw: string): string => {
-  return raw
-    // Remove accidental JS import leakage from CMS
-    .replace(/^import\s+\w+.*$/m, '')
-    // Remove ONLY a leading "| " or "> " on the very first line
-    // (YAML block scalar indicator left behind by parser)
-    .replace(/^[|>]\s+/, '')
-    // Remove leading/trailing dash-separator artifacts  |- or >-
-    .replace(/^\s*[|>]-\s*/, '')
-    .replace(/\s*[|>]-\s*$/, '')
-    .trim();
-};
-
-/**
  * Load markdown files from a specific directory
  * @param contentType - Type of content (blogs, publications, newsletter)
  * @returns Array of parsed content items
@@ -56,9 +39,12 @@ export const loadContent = async (
             .replace(/\|\s*-/gm, '')
             .trim();
 
-          const cleanDescription = cleanFrontmatterText(
-            (frontmatter.description || '').toString()
-          );
+          // Clean up description field - preserve formatting while removing stray artifacts
+          const cleanDescription = ((frontmatter.description || '') + '')
+            .replace(/^import\s+\w+\s*/, '')
+            .replace(/^[>|]-\s*\n?/gm, '')  // Remove YAML scalar indicators
+            .replace(/\n?[>|]-\s*$/gm, '')
+            .trim();
 
           const cleanTitle = (frontmatter.title || '').toString().trim();
 
@@ -109,9 +95,11 @@ export const loadBlogPost = async (slug: string): Promise<BlogPost | null> => {
           .replace(/\|\s*-/gm, '')
           .trim();
 
-        const descriptionText = cleanFrontmatterText(
-          (frontmatter.description || '').toString()
-        );
+        const descriptionText = ((frontmatter.description || '').toString()
+          .replace(/^import\s+\w+\s*/, '')
+          .replace(/^[>|]-\s*\n?/gm, '')  // Remove YAML scalar indicators
+          .replace(/\n?[>|]-\s*$/gm, '')
+          .trim());
 
         return {
           title:       (frontmatter.title       || '').toString().trim(),
