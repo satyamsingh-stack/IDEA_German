@@ -88,7 +88,6 @@ export const loadBlogPost = async (slug: string): Promise<BlogPost | null> => {
       if (path.includes(`blogs/`) && path.includes(`${slug}.md`)) {
         const content = await modules[path]();
         const { frontmatter, content: markdown } = parseFrontmatter(content);
-
         const cleanedBody = markdown
           .replace(/^\|\s*-\s*\n?/gm, '')
           .replace(/\n?\|\s*-\s*$/gm, '')
@@ -131,6 +130,7 @@ export const loadPublication = async (slug: string): Promise<Publication | null>
       if (path.includes(`publications/`) && path.includes(`${slug}.md`)) {
         const content = await modules[path]();
         const { frontmatter } = parseFrontmatter(content);
+        console.log("Printing description:",frontmatter.description);
         return {
           label_text:     frontmatter.label_text || frontmatter.title || '',
           category:       frontmatter.category   || '',
