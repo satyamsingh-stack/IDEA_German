@@ -1,6 +1,7 @@
 ---
 title: Oklahoma Expands Restrictions on Trans Healthcare
-description: Oklahoma has joined a growing number of the United States
+description: >
+  Oklahoma has joined a growing number of the United States
   restricting gender-affirming healthcare. A new law passed in May blocks
   Medicaid funding for gender-affirming treatments and bans such care in public
   facilities for both minors and adults. Although the law officially takes
