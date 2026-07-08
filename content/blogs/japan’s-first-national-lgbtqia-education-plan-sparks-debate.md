@@ -1,6 +1,7 @@
 ---
 title: Japan’s First National LGBTQIA+ Education Plan Sparks Debate
-description: Japan has introduced its first national LGBTQIA+ education plan,
+description: >
+  Japan has introduced its first national LGBTQIA+ education plan,
   aiming to raise awareness of sexual orientation and gender diversity in
   schools, universities, workplaces, and public institutions. While the move is
   being welcomed as progress, many experts and activists say it does not go far
