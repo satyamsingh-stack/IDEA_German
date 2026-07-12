@@ -1,6 +1,7 @@
 ---
 title: Testing1
-description: The UK government has announced plans to introduce legislation
+description: >
+  The UK government has announced plans to introduce legislation
   banning abusive conversion practices in England and Wales, marking a
   significant step in protecting LGBTQ+ individuals from harmful treatment. The
   proposed law aims to criminalize practices that seek to change a person's
