@@ -1,6 +1,6 @@
 ---
 title: Anti-LGBTQ+ Laws Rising Across West Africa
-description: "LGBTQ+ rights are facing a growing crackdown across West Africa,
+description:> "LGBTQ+ rights are facing a growing crackdown across West Africa,
   with several countries introducing or strenthening laws criminalising same-sex
   relationships and LGBTQ+ activities. Senegal has increase the maximun prision
   sentence for same-sex relations to 10 years, while Niger, Mali and Burkina
