@@ -10,7 +10,8 @@ export interface BlogPost {
   category?:   string;
   featured_image?: string;
   slug:        string;
-  content:     string;
+  body?:       string;
+  content?:    string;
 }
 
 /**
@@ -58,15 +59,51 @@ export const parseFrontmatter = (fileContent: string) => {
     const [, frontmatterStr, content] = match;
     const frontmatter: Record<string, any> = {};
     const lines = frontmatterStr.split('\n');
-    for (const line of lines) {
+    
+    let i = 0;
+    while (i < lines.length) {
+      const line = lines[i];
       const colonIndex = line.indexOf(':');
-      if (colonIndex === -1) continue;
-      const key   = line.substring(0, colonIndex).trim();
-      let   value = line.substring(colonIndex + 1).trim();
-      if ((value.startsWith('"') && value.endsWith('"')) ||
-          (value.startsWith("'") && value.endsWith("'"))) {
+      if (colonIndex === -1) {
+        i++;
+        continue;
+      }
+
+      const key = line.substring(0, colonIndex).trim();
+      let value = line.substring(colonIndex + 1).trim();
+
+      // Handle YAML folded/literal scalars (>-, |-, >, |)
+      if (value === '|-' || value === '>-' || value === '|' || value === '>') {
+        const indicator = value;
+        const multilineValue: string[] = [];
+        i++;
+        
+        // Collect indented lines following the scalar indicator
+        while (i < lines.length && lines[i].length > 0 && /^\s/.test(lines[i])) {
+          multilineValue.push(lines[i].trim());
+          i++;
+        }
+        
+        // Join based on indicator type
+        if (indicator === '>' || indicator === '>-') {
+          // Folded scalar: join with spaces, preserve paragraph breaks (double newline)
+          value = multilineValue.join('\n').replace(/\n(?!\n)/g, ' ');
+          if (indicator === '>-') {
+            value = value.trim();
+          }
+        } else {
+          // Literal scalar: preserve line breaks
+          value = multilineValue.join('\n');
+          if (indicator === '|-') {
+            value = value.trim();
+          }
+        }
+        i--;
+      } else if ((value.startsWith('"') && value.endsWith('"')) ||
+                 (value.startsWith("'") && value.endsWith("'"))) {
         value = value.slice(1, -1);
       }
+
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       let castValue: any = value;
       if (value === 'true') castValue = true;
@@ -75,7 +112,9 @@ export const parseFrontmatter = (fileContent: string) => {
         castValue = Number(value);
       }
       frontmatter[key] = castValue;
+      i++;
     }
+    
     return { frontmatter, content };
   }
 };
