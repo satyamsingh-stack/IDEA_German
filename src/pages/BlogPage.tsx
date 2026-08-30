@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Calendar } from 'lucide-react';
-import { loadContent, formatDate, getExcerpt } from '../utils/contentLoader';
+import { loadContent } from '../utils/contentLoader';
+import { getDescriptionPreview } from '../utils/markdown';
 
 interface BlogPost {
   title: string;
@@ -91,26 +91,12 @@ export const BlogPage = () => {
                   key={post.slug}
                   className="border-b border-gray-200 pb-8 last:border-b-0"
                 >
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#1a2744] mb-2">
+                  <h2 className="text-2xl md:text-3xl font-bold text-[#1a2744] mb-4">
                     {post.title}
                   </h2>
 
-                  <div className="flex flex-wrap items-center gap-4 mb-4 text-sm text-gray-600">
-                    <div className="flex items-center gap-1">
-                      <Calendar size={16} />
-                      <span>{formatDate(post.date) || 'live article'}</span>
-                    </div>
-                    {post.author && (
-                      <span className="text-gray-700">By {post.author}</span>
-                    )}
-                  </div>
-
                   <p className="text-black text-lg leading-relaxed mb-4 text-justify">
-                    {post.description}
-                  </p>
-
-                  <p className="text-black text-base leading-relaxed mb-4 text-justify break-words">
-                    {getExcerpt(post.content || '', 180)}
+                    {getDescriptionPreview(post.description, 250)}
                   </p>
 
                   {(post.content || post.slug) && (
