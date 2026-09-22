@@ -1,16 +1,6 @@
 ---
-title: Hungary Moves to Roll Back Anti-LGBTQ+ Laws
+title: Oklahoma Extends Restrictions on Transgender Healthcare
 description: >- 
-  Hungary’s new government has submitted a bill to parliament that would remove
-  key restrictions on LGBTQ+ content introduced under former Prime Minister
-  Viktor Orbán in 2021. Those rules restricted the portrayal or “promotion” of
-  homosexuality and gender transition in content accessible to minors.
-  The proposed legislation follows an April ruling by the EU’s top court that
-  Hungary’s restrictions violated EU law. Prime Minister Péter Magyar has also
-  said his government plans to change rules that have effectively restricted
-  adoption by gay people.
-  LGBTQ+ rights groups have welcomed the proposed changes but say further
-  reforms are needed because other restrictive provisions remain in Hungarian
-  law.
+  Oklahoma has expanded restrictions on gender-affirming healthcare through Senate Bill 904, signed into law on May 12, 2026.      The law prohibits the use of public funds and state facilities for gender-transition procedures for both minors and adults       and prevents the state Medicaid program from covering such care. The measure includes hormone treatments, puberty blockers and   certain surgical procedures. It has affected transgender adults receiving care through state-linked health systems, with some    patients having to seek treatment from private providers instead. The law marks a significant expansion of Oklahoma's previous   restrictions, which had focused primarily on gender-affirming medical care for minors.
   date: 2026-09-22
 ---
