@@ -1,16 +1,16 @@
 ---
-title: Oklahoma Expands Restrictions on Trans Healthcare
-description: >
-  Oklahoma has joined a growing number of the United States
-  restricting gender-affirming healthcare. A new law passed in May blocks
-  Medicaid funding for gender-affirming treatments and bans such care in public
-  facilities for both minors and adults. Although the law officially takes
-  effect in November, Medicaid has already stopped covering related treatments,
-  disrupting care for some patients. Supporters say the law protects taxpayer
-  money, while critics argue it limits access to medically recognized healthcare
-  for transgender people. Oklahoma is now among about a dozen states restricting
-  Medicaid coverage for gender-affirming care for adults, raising concerns that
-  similar measures could spread across the United States following the Supreme
-  Court's ruling in United States vs Skrmetti.
-date: 2026-07-06
+title: Hungary Moves to Roll Back Anti-LGBTQ+ Laws
+description: >- 
+  Hungary’s new government has submitted a bill to parliament that would remove
+  key restrictions on LGBTQ+ content introduced under former Prime Minister
+  Viktor Orbán in 2021. Those rules restricted the portrayal or “promotion” of
+  homosexuality and gender transition in content accessible to minors.
+  The proposed legislation follows an April ruling by the EU’s top court that
+  Hungary’s restrictions violated EU law. Prime Minister Péter Magyar has also
+  said his government plans to change rules that have effectively restricted
+  adoption by gay people.
+  LGBTQ+ rights groups have welcomed the proposed changes but say further
+  reforms are needed because other restrictive provisions remain in Hungarian
+  law.
+  date: 2026-09-22
 ---
