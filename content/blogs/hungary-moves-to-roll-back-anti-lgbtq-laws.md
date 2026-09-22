@@ -1,6 +1,6 @@
 ---
 title: Hungary Moves to Roll Back Anti-LGBTQ+ Laws
-description:> >-
+description: >-
   Hungary’s new government has submitted a bill to parliament that would remove
   key restrictions on LGBTQ+ content introduced under former Prime Minister
   Viktor Orbán in 2021. Those rules restricted the portrayal or “promotion” of
