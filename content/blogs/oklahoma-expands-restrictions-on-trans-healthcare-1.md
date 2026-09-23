@@ -10,5 +10,5 @@ description: "Oklahoma has expanded restrictions on gender-affirming healthcare
   some    patients having to seek treatment from private providers instead. The
   law marks a significant expansion of Oklahoma's previous   restrictions, which
   had focused primarily on gender-affirming medical care for minors. "
-date: 2026-09-23
+
 ---
