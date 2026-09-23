@@ -1,6 +1,6 @@
 ---
 title: Oklahoma Extends Restrictions on Transgender Healthcare
-description:>
+description: >
   "Oklahoma has expanded restrictions on gender-affirming healthcare
   through Senate Bill 904, signed into law on May 12, 2026.      The law
   prohibits the use of public funds and state facilities for gender-transition
