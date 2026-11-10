@@ -43,3 +43,42 @@ export const getFirstImage = (markdown: string): string | null => {
   const imageMatch = markdown.match(/!\[([^\]]*)\]\(([^)]+)\)/);
   return imageMatch ? imageMatch[2] : null;
 };
+
+/**
+ * Split description into paragraphs for proper rendering
+ * Splits on double newlines to preserve paragraph breaks
+ * @param description - Description text (may contain newlines)
+ * @returns Array of paragraph strings
+ */
+export const getDescriptionParagraphs = (description: string): string[] => {
+  return description
+    .split(/\n\s*\n/)  // Split on double newlines (paragraph breaks)
+    .map(para => para.replace(/\n/g, ' ').trim())  // Replace single newlines with spaces
+    .filter(para => para.length > 0);  // Remove empty paragraphs
+};
+
+/**
+ * Get a preview excerpt of the description (first 1-2 sentences)
+ * @param description - Full description text
+ * @param maxLength - Maximum length of excerpt (default 250 chars)
+ * @returns Limited description preview
+ */
+export const getDescriptionPreview = (description: string, maxLength: number = 250): string => {
+  // Get first paragraph
+  const firstParagraph = description.split(/\n\s*\n/)[0] || '';
+  
+  // If first paragraph is short enough, return it with ellipsis if there's more content
+  if (firstParagraph.length <= maxLength) {
+    const hasMoreContent = description.length > firstParagraph.length;
+    return hasMoreContent ? firstParagraph + '...' : firstParagraph;
+  }
+  
+  // Otherwise truncate at word boundary
+  let truncated = firstParagraph.substring(0, maxLength);
+  const lastSpace = truncated.lastIndexOf(' ');
+  if (lastSpace > 0) {
+    truncated = truncated.substring(0, lastSpace);
+  }
+  
+  return truncated + '...';
+};

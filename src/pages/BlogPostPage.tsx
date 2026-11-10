@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Calendar } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
-import { loadBlogPost, formatDate } from '../utils/contentLoader';
+import { loadBlogPost } from '../utils/contentLoader';
 import { BlogPost } from '../types/content';
 
 export const BlogPostPage = () => {
@@ -58,6 +57,11 @@ export const BlogPostPage = () => {
     );
   }
 
+  const markdownBody = post.content?.trim() || '';
+  const descriptionText = post.description || '';
+  const showBody = markdownBody.length > 0;
+  const showDescription = descriptionText.length > 0;
+
   return (
     <div className="min-h-screen bg-white">
       <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
@@ -69,29 +73,31 @@ export const BlogPostPage = () => {
           />
         )}
 
-        <h1 className="text-3xl md:text-4xl font-bold text-[#1a2744] mb-4">
+        <h1 className="text-2xl md:text-3xl font-bold text-[#1a2744] mb-4">
           {post.title}
         </h1>
 
-        <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-gray-600">
-          <div className="flex items-center gap-1">
-            <Calendar size={16} />
-            <span>{formatDate(post.date) || 'Upcoming'}</span>
-          </div>
-          {post.author && (
-            <span className="text-gray-700">By {post.author}</span>
-          )}
-        </div>
-
-        {post.description && (
-          <p className="text-black text-lg leading-relaxed mb-8 text-justify border-l-4 border-brand-orange pl-4">
-            {post.description}
+        {post.date && (
+          <p className="text-gray-600 text-sm mb-4">
+            {new Date(post.date).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })}
           </p>
         )}
 
-        <div className="prose prose-lg max-w-none text-gray-800">
-          <ReactMarkdown>{post.content}</ReactMarkdown>
-        </div>
+        {showDescription && (
+          <div className="prose prose-lg max-w-none text-gray-800 mb-6">
+            <ReactMarkdown>{descriptionText}</ReactMarkdown>
+          </div>
+        )}
+
+        {showBody && (
+          <div className="prose prose-lg max-w-none text-gray-800">
+            <ReactMarkdown>{markdownBody}</ReactMarkdown>
+          </div>
+        )}
 
         <div className="mt-12 pt-6 border-t border-gray-200">
           <a

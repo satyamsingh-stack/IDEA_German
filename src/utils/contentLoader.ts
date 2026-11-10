@@ -26,21 +26,40 @@ export const loadContent = async (
           // Also aggressively strip any stray quote characters the CMS may inject on re-publish
           const label_text = (
             (frontmatter.label_text || frontmatter.title || '')
-            .replace(/^"+|"+$/g, '')   // strip leading/trailing double-quote artefacts
-            .replace(/^'+|'+$/g, '')   // strip leading/trailing single-quote artefacts
-            .trim()
+              .replace(/^"+|"+$/g, '')
+              .replace(/^'+|'+$/g, '')
+              .trim()
           );
 
           const slug = path.split('/').pop()?.replace('.md', '') || '';
 
+          const cleanedContent = markdown
+            .replace(/^\|\s*-\s*\n?/gm, '')
+            .replace(/\n?\|\s*-\s*$/gm, '')
+            .replace(/\|\s*-/gm, '')
+            .trim();
+
+          // Clean up description field - preserve formatting while removing stray artifacts
+          const cleanDescription = ((frontmatter.description || '') + '')
+            .replace(/^import\s+\w+\s*/, '')
+            .replace(/^[>|]-\s*\n?/gm, '')  // Remove YAML scalar indicators
+            .replace(/\n?[>|]-\s*$/gm, '')
+            .trim();
+
+          const cleanTitle = (frontmatter.title || '').toString().trim();
+
           contentItems.push({
             label_text,
+            title:           cleanTitle,
+            description:     cleanDescription,
+            author:          frontmatter.author,
+            date:            frontmatter.date || '',
             category:        frontmatter.category || '',
             pdf_file:        frontmatter.pdf_file,
             pdf_link:        frontmatter.pdf_link,
             featured_image:  frontmatter.featured_image || '',
             slug,
-            content:         markdown,
+            content:         cleanedContent,
           });
         } catch (itemError) {
           console.error(`[ContentLoader] error with ${path}:`, itemError);
@@ -69,17 +88,24 @@ export const loadBlogPost = async (slug: string): Promise<BlogPost | null> => {
       if (path.includes(`blogs/`) && path.includes(`${slug}.md`)) {
         const content = await modules[path]();
         const { frontmatter, content: markdown } = parseFrontmatter(content);
+        const cleanedBody = markdown
+          .replace(/^\|\s*-\s*\n?/gm, '')
+          .replace(/\n?\|\s*-\s*$/gm, '')
+          .replace(/\|\s*-/gm, '')
+          .trim();
+
+        const descriptionText = ((frontmatter.description || '').toString()
+          .replace(/^import\s+\w+\s*/, '')
+          .replace(/^[>|]-\s*\n?/gm, '')  // Remove YAML scalar indicators
+          .replace(/\n?[>|]-\s*$/gm, '')
+          .trim());
+
         return {
           title:       (frontmatter.title       || '').toString().trim(),
-          description: ((frontmatter.description || '').toString()
-            .replace(/^import\s+\w+\s*/, '')   // strip stray "import X" the CMS may inject
-            .replace(/^\|\s*-\s*\n?/gm, '')    // strip leading/trailing YAML literal-block scalar marker (|- or | -)
-            .replace(/\n?\|\s*-\s*$/gm, '')    // strip any trailing literal-block markers
-            .replace(/\|\s*-/gm, '')            // strip any remaining literal-block markers
-            .trim()),
+          description: descriptionText,
           date:        (frontmatter.date        || new Date().toISOString().split('T')[0]).toString(),
           slug,
-          content: markdown,
+          content:     cleanedBody || undefined,
         };
       }
     }
@@ -104,6 +130,7 @@ export const loadPublication = async (slug: string): Promise<Publication | null>
       if (path.includes(`publications/`) && path.includes(`${slug}.md`)) {
         const content = await modules[path]();
         const { frontmatter } = parseFrontmatter(content);
+        console.log("Printing description:",frontmatter.description);
         return {
           label_text:     frontmatter.label_text || frontmatter.title || '',
           category:       frontmatter.category   || '',
@@ -196,6 +223,9 @@ export const formatDate = (dateString: string): string => {
  */
 export const getExcerpt = (content: string, length: number = 150): string => {
   let text = content
+    .replace(/^\|\s*-\s*\n?/gm, '')
+    .replace(/\n?\|\s*-\s*$/gm, '')
+    .replace(/\|\s*-/gm, '')
     .replace(/#{1,6}\s/g, '')
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
     .replace(/\*\*([^*]+)\*\*/g, '$1')
