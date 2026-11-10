@@ -8,5 +8,7 @@ export default defineConfig({
         allowedHosts: [
             'paragogic-grant-noninternational.ngrok-free.dev'
         ]
-    }
+    },
+    // Ensure markdown files are properly included in the build
+    assetsInclude: ['**/*.md']
 });
